@@ -11,6 +11,8 @@ $idprocedimento = $_GET['idprocedimento'];
 
 // new comment
 
+//chupamos
+
 // get the old published 
 
 $getIdPublished = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto WHERE publicado_versao_rosto = 1 AND tbl_procedimentos_id_procedimento = '$idprocedimento'";
