@@ -1,0 +1,309 @@
+//to do 
+
+
+-> editar modelo
+	- formulario de edição dos campos editaveis (todos os campos que constam na base de dados, são editáveis...)
+
+-> guardar alterações
+	- guarda todos os campos como um novo registo (faz insert em todas as tabelas que tiveram campos que foram alterados, inclusive cria um novo registo na tabela procedimentos e nas outras respectivamente no entanto mantém o seu estado por validar e não publicado)
+	- cria nova notificação visivel para o responsavel de procedimento
+
+-> alterações têm de ser aprovadas pelo responsável do procedimento
+	- responsavel do procedimento recebe email a dizer que houve alterações no respectivo ficheiro
+	- responsavel do procedimento tem mensagens de alerta na plataforma inclusive no dashboard
+
+-> responsável do procedimento recebe notificação no email a informar que existem alterações no procedimento que precisam de ser aprovadas.
+
+-> responsavel do procedimento pode aprovar ou recusar as alterações.
+
+	-> * caso aprove, as alterações efectuadas são atualizadas na página 
+
+	-> * caso o responsavel de procedimento nao aprove, o utilizador que fez as alterações recebe uma email de notificação a dizer que o responsavel nao aprovou as alterações
+
+
+/* ----------------------------- SISTEMA DE NOTIFICACÕES ----------------------------- */
+O quero quero guardar na tabela notifições
+
+- autor da notificacao
+- data da notificacao
+- tipo de notificacao
+- destinatario(s) da notificacao
+sssss
+
+TBL_NOTIFICACOES
+id_notificacao
+autor_notificacao
+data_notificacao
+tbl_tipos_notificacao_id_tipo_notificacao (FK)
+objecto_notificacao
+
+
+TBL_TIPOS_NOTIFICACAO
+id_tipo_notificacao
+nome_notificacao
+texto_notifacao
+
+/* INSERTS DA TABELA TBL_TIPOS_NOTIFICACAO */
+
+	1.
+	Alteração de ficheiro
+	"fez alterações no ficheiro"
+
+	2.
+	Ficheiro aprovado
+	"aprovou o ficheiro"
+
+	3. Ficheiro não aprovado
+	"não aprovou as alterações feitas ao ficheiro "
+
+
+
+/* FIM DOS INSERTS DA TABELA TBL_TIPOS_NOTIFICACAO */
+
+
+/ --------------------------------
+| PROCESS OF NOTIFICATIONS SYSTEM
+| -------------------------------
+| insert na tabela notificações
+| 
+
+
+
+// saidas
+"Inês Lima fez alterações "
+
+
+
+
+
+MANUTENÇOES
+
+
+CAMPOS A PREENCEHER
+
+        EQUIPAMENTO
+        CONTADOR NºPRINTS
+        TIPO DE MANUTENÇÃO - CORRECTIVA/PREVENTIVA
+        INTERNA OU Externa
+        PROBLEMA (DESCRIÇÃO)
+        DESCRIÇÃO DA INTERVENÇÃO
+        DATA PREVISTA (QUANDO PREVENTIVA)
+        DATA DE REALIZAÇÃO
+        HORA DE REALIZAÇÃO
+        Custos
+        OBSERVAÇÕES
+      -->
+
+
+
+
+
+
+
+
+steps to edit metodo de um procedimento
+
+-> carregar no separador editar (tabela do metodo fica com todos os campos editaveis);
+-> submeter todos os campos que estavam editaveis. (enviar para pagina - editMetodoGestao.php);
+-> após formulario ser submetido, escrever novos registos nas tabelas (actividades, sub processos, metodos e procedimentos).
+->na pagina, "aprovações pendentes", mostrar lista do Documento que foi alterado e o nome do rspectivo procedimento.
+-> após clicar "validar" ou "não validar" o documento. 
+    
+    Caso seja validado:
+        -> alteração do campo tbl_estados_id_estado da tabela procedimentos para "aprovado".
+        -> uma vez que se encontra aprovada, alterar na página do procedimento os documentos que foram atuliazados e aprovados.... 
+
+    Caso não seja validado:
+        -> enviar email a dizer que as altrações não foram aprovadas.
+
+-> se conseguires isto, és o maior simplesmente e vais beber um copo!!! :D go on! let's go bb! =)
+
+
+
+//metodo gestao
+ <thead>
+                  <tr role="row">
+                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Rendering engine: activate to sort column descending" aria-sort="ascending" style="width: 430px;">Sub processos</th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 518px;">Actividades</th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 465px;">Observações</th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 374px;">Procedimentos</th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 281px;">Versão Vigor</th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 281px;">Data atulização</th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 281px;">Instruções de trabalho</th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 281px;">Versão Vigor</th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 281px;">Data atualização</th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 281px;">Modelos associados</th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 281px;">Versão Vigor</th>
+                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 281px;">Data atualização</th>
+                  </tr>
+                </thead>
+
+
+
+  <?php
+                      if ( $_SESSION['tipouser'] == 1){
+                      ?>
+                          <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" >Accoes</th>
+                      <?php
+                        }
+                      ?>
+
+
+                       <?php
+                      if ( $_SESSION['tipouser'] == 1){
+                        echo "<td valign='center' align='center'><a href='editmetodo.php?id_sub=".$idsub."&id_act=".$idact."'><i class='fa fa-fw fa-edit'></i></a></td>";
+                        }
+                      ?>
+
+
+
+
+
+
+
+
+
+
+CONTEUDOS DO STARTER.PHP QUE FORAM RETIRADOS
+
+
+
+    <div class="col-md-8 col-sm-12 col-xs-12">
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Actividades Recentes</h3>
+          <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div><!-- /.box-header -->
+        <div class="box-body">
+          <div class="table-responsive">
+            <table class="table no-margin">
+              <thead>
+                <tr>
+                  <th>Versão</th>
+                  <th>Evento</th>
+                  <th>Status</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                <td><a href="pages/examples/invoice.html">XX.00.00</a></td>
+                  <td><a href="#">Bruno Marques</a> alterou o documento <a href="#">Rosto</a></td>
+                  <td><span class="label label-success">Aprovado</span></td>
+
+                </tr>
+                <tr>
+                  <td><a href="pages/examples/invoice.html">XX.00.00</a></td>
+                  <td><a href="#">Bruno Marques</a> alterou o documento <a href="#">Rosto</a></td>
+                  <td><span class="label label-info">Aguarda Aprovação</span></td>
+
+                </tr>
+                <tr>
+                   <td><a href="pages/examples/invoice.html">XX.00.00</a></td>
+                  <td><a href="#">Bruno Marques</a> alterou o documento <a href="#">Rosto</a></td>
+                  <td><span class="label label-warning">Aguarda Aprovação</span></td>
+
+                </tr>
+                <tr>
+                   <td><a href="pages/examples/invoice.html">XX.00.00</a></td>
+                  <td><a href="#">Bruno Marques</a> alterou o documento <a href="#">Rosto</a></td>
+                  <td><span class="label label-danger">Aguarda Aprovação</span></td>
+
+                </tr>
+                <tr>
+                  <td><a href="pages/examples/invoice.html">XX.00.00</a></td>
+                  <td><a href="#">Bruno Marques</a> alterou o documento <a href="#">Rosto</a></td>
+                  <td><span class="label label-warning">Aguarda Aprovação</span></td>
+
+                </tr>
+                <tr>
+                 <td><a href="pages/examples/invoice.html">XX.00.00</a></td>
+                  <td><a href="#">Bruno Marques</a> alterou o documento <a href="#">Rosto</a></td>
+                  <td><span class="label label-warning">Aguarda Aprovação</span></td>
+
+                </tr>
+                <tr>
+                   <td><a href="pages/examples/invoice.html">XX.00.00</a></td>
+                  <td><a href="#">Bruno Marques</a> alterou o documento <a href="#">Rosto</a></td>
+                  <td><span class="label label-warning">Aguarda Aprovação</span></td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div><!-- /.table-responsive -->
+        </div><!-- /.box-body -->
+        <div class="box-footer clearfix">
+       <!--    <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
+       <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
+     </div><!-- /.box-footer -->
+   </div>
+ </div>
+
+
+ <div class="col-md-4 col-sm-12 col-xs-12">
+  <div class="box box-primary">
+    <div class="box-header with-border">
+      <h3 class="box-title">Documentos Realbase</h3>
+      <div class="box-tools pull-right">
+        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+      </div>
+    </div><!-- /.box-header -->
+    <div class="box-body">
+      <ul class="products-list product-list-in-box">
+        <li class="item">
+          <div class="product-img">
+            <img src="dist/img/default-50x50.gif" alt="Product Image">
+          </div>
+          <div class="product-info">
+            <a href="javascript::;" class="product-title">Política RB <span class="label label-info pull-right">ver documento</span></a>
+            <span class="product-description">
+              Descrição do documento da Politica Realbase
+            </span>
+          </div>
+        </li><!-- /.item -->
+        <li class="item">
+          <div class="product-img">
+            <img src="dist/img/default-50x50.gif" alt="Product Image">
+          </div>
+          <div class="product-info">
+            <a href="javascript::;" class="product-title">Regulamento Interno<span class="label img label-info pull-right vertical-middle">ver documento</span></a>
+            <span class="product-description">
+              Consulte o regulamento interno da Realbase
+            </span>
+          </div>
+        </li><!-- /.item -->
+        <li class="item">
+          <div class="product-img">
+            <img src="dist/img/default-50x50.gif" alt="Product Image">
+          </div>
+          <div class="product-info">
+            <a href="javascript::;" class="product-title">Outro documento<span class="label label-info pull-right">ver documento</span></a>
+            <span class="product-description">
+              Descrição de outro documento
+            </span>
+          </div>
+        </li><!-- /.item -->
+        <li class="item">
+          <div class="product-img">
+            <img src="dist/img/default-50x50.gif" alt="Product Image">
+          </div>
+          <div class="product-info">
+            <a href="javascript::;" class="product-title">Outro documento<span class="label label-info pull-right">ver documento</span></a>
+            <span class="product-description">
+              Descrição de outro documento
+            </span>
+          </div>
+        </li><!-- /.item -->
+      </ul>
+    </div><!-- /.box-body -->
+    <div class="box-footer text-center">
+      <a href="javascript::;" class="uppercase">Ver todos os documentos</a>
+    </div><!-- /.box-footer -->
+  </div>
+</div>
+
+      
