@@ -160,7 +160,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 			<!-- content here please -->
-			<div class="col-md-6">
+			<div class="col-md-8">
               <!-- <div class="box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Obsoletos</h3>
@@ -172,29 +172,69 @@ scratch. This page gets rid of all links and provides the needed markup only.
               			<div class="box-header with-border">
               				<h4 class="box-title">
               					<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" class="">
-              						Instruções de trabalho
+
+              						<?php 
+              						
+              						$dir = "modelos_obsoletos/";
+
+              						$filesQuantity = new FilesystemIterator($dir, FilesystemIterator::SKIP_DOTS);
+              						//printf("There were %d Files", iterator_count($fi));
+
+              						?>
+              						Instruções de trabalho - <?php echo iterator_count($filesQuantity)." ficheiros";?>
               					</a>
               				</h4>
               			</div>
               			<div id="collapseOne" class="panel-collapse collapse in" aria-expanded="true">
               				<div class="box-body">
+              					<div class="box-body">
+              						<div class="table-responsive">
+              							<table class="table no-margin">
+              								<thead>
+              									<tr>
+              										<th>Nome documento</th>
+              										<th>Extensão</th>
+              										<th>Status</th>
+              										
+              									</tr>
+              								</thead>
+              								<tbody>
+              									<?php
 
-              					<?php
-
-              					$dir = "modelos_obsoletos/";
+              									$dir = "modelos_obsoletos/";
 
 									// Open a directory, and read its contents
-              					if (is_dir($dir)){
-              						if ($dh = opendir($dir)){
+              									if (is_dir($dir)){
+              										if ($dh = opendir($dir)){
 
-              							echo "entrou aqui";
-              							while (($file = readdir($dh)) !== false){
-              								echo "Ficheiro:" . $file . "<br>";
-              							}
-              							closedir($dh);
-              						}
-              					}
-              					?>
+              											while (($file = readdir($dh)) !== false){
+
+              												$ext = substr($file, strpos($file, ".") + 1);
+              												$mark    = '.';
+              												$fileName =  strstr($file, $mark, true);
+
+
+              												?>
+              												<tr>
+              													<td><?php echo $fileName;?></td>
+              													<td><?php echo $ext;?></td>
+              													<td><a href="<?php echo $dir.$file; ?>"><span class="label label-info">Ver / Download</span></a></td>
+
+              												</tr>
+              												<?php	
+              											}
+              											closedir($dh);
+              										}
+              									}
+              									?>
+              								</tbody>
+              							</table>
+              						</div><!-- /.table-responsive -->
+              					</div>
+
+
+
+
               				</div>
               			</div>
               		</div>
