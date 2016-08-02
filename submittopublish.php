@@ -26,24 +26,40 @@ while ($rowGetIdPublished = mysqli_fetch_object($resultGetIdPublished)) {
 }
 
 
+
+if ($_POST['action'] == "toAprove"){
+
 // remove published status of old rosto
 
-$notPublish = 0;
+	$notPublish = 0;
 
-$changeOldPublished = "UPDATE tbl_versoes_rostos SET publicado_versao_rosto = '$notPublish' WHERE id_versao_rosto = '$idToChange'";
+	$changeOldPublished = "UPDATE tbl_versoes_rostos SET publicado_versao_rosto = '$notPublish' WHERE id_versao_rosto = '$idToChange'";
 
-$resultChangeOldPublished = mysqli_query($link,$changeOldPublished);
+	$resultChangeOldPublished = mysqli_query($link,$changeOldPublished);
 
 
 
 
 // publish new rosto
 
-$publishNewRosto = "UPDATE tbl_versoes_rostos SET publicado_versao_rosto = 1 WHERE tbl_rostos_id_rosto = '$idrostoedicao'";
+	$publishNewRosto = "UPDATE tbl_versoes_rostos SET publicado_versao_rosto = 1 WHERE tbl_rostos_id_rosto = '$idrostoedicao'";
 
-$resultPublishNewRosto = mysqli_query($link,$publishNewRosto);
+	$resultPublishNewRosto = mysqli_query($link,$publishNewRosto);
 
 
-header('location: controlodocumental.php');
+	header('location: controlodocumental.php');
 
+}
+
+if ($_POST['action'] == "toValidate"){
+
+	$toValidate = "UPDATE tbl_versoes_rostos SET aprovado_versao_rosto = 1, publicado_versao_rosto = 0, validado_versao_rosto = 0 WHERE tbl_rostos_id_rosto = '$idrostoedicao'";
+
+	$resultToEdit = mysqli_query($link,$toValidate);
+
+	//$url = "viewedicaorosto.php?idrosto=".$idrostoedicao."&idprocedimento=".$idprocedimento;
+
+	header('location:revisaoaprovacoes.php');
+
+}
 ?>

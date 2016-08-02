@@ -188,6 +188,8 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
 			<div class="box-tools pull-right">
 <form action="submittopublish.php?id=<?php echo $idrostoedicao; ?>&idprocedimento=<?php echo $idprocedimento; ?>" name="formEdicaoRostoControlDoc" method="POST">
 				<button type="submit" name="action" value="toAprove" class="btn btn-danger">Publicar</button>
+
+					<button type="submit" name="action" value="toValidate" class="btn btn-warning">Remeter para Aprovação</button>
 				<!-- <button type="button" id="btn-editmode" onclick="editMode();" class="btn btn-info">Editar</button> -->
 
 			</div>

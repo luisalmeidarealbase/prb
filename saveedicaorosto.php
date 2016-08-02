@@ -48,6 +48,9 @@ $resultUpdateEstadoAprovacao = mysqli_query($link, $updateEstadoAprovacao);
 	header('location: '.$url);
 
 }
+
+
+
 else{
 
 	// begin - code to update/save rosto 

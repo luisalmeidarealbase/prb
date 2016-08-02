@@ -12,23 +12,43 @@ $values = array_values($_POST);
 
 $getIdProcedimento = "SELECT * FROM tbl_rostos WHERE id_rosto = '$idrostoedicao'";
 
-	$resultGetIdProcedimento = mysqli_query($link, $getIdProcedimento);
+$resultGetIdProcedimento = mysqli_query($link, $getIdProcedimento);
 
-	while ($rowIdProcedimento = mysqli_fetch_object($resultGetIdProcedimento)){
+while ($rowIdProcedimento = mysqli_fetch_object($resultGetIdProcedimento)){
 
-		$idprocedimento = $rowIdProcedimento->tbl_procedimentos_id_procedimento;
+	$idprocedimento = $rowIdProcedimento->tbl_procedimentos_id_procedimento;
 
-	}
+}
 
-$validadoTrue = 1;
 
-$submitToValidation = "UPDATE tbl_versoes_rostos SET validado_versao_rosto = '$validadoTrue' WHERE tbl_rostos_id_rosto = '$idrostoedicao'";
+if ($_POST['action'] == "toAprove"){
 
-$resultSubmitToValidation = mysqli_query($link,$submitToValidation);
+	$validadoTrue = 1;
+
+	$submitToValidation = "UPDATE tbl_versoes_rostos SET validado_versao_rosto = '$validadoTrue' WHERE tbl_rostos_id_rosto = '$idrostoedicao'";
+
+	$resultSubmitToValidation = mysqli_query($link,$submitToValidation);
 
 //add here the correct URL.
-$url = "viewedicaorosto.php?idrosto=".$idrostoedicao."&idprocedimento=".$idprocedimento;
+	$url = "viewedicaorosto.php?idrosto=".$idrostoedicao."&idprocedimento=".$idprocedimento;
 
-header('location: '.$url);
+	header('location:revisaovalidacoes.php');
+
+}
+
+if ($_POST['action'] == "toEdit") {
+
+	// send to edit
+
+	$toEdit = "UPDATE tbl_versoes_rostos SET aprovado_versao_rosto = 0, publicado_versao_rosto = 0 WHERE tbl_rostos_id_rosto = '$idrostoedicao'";
+
+	$resultToEdit = mysqli_query($link,$toEdit);
+
+	//$url = "viewedicaorosto.php?idrosto=".$idrostoedicao."&idprocedimento=".$idprocedimento;
+
+	header('location:revisaoedicoes.php');
+
+
+}
 
 ?>
