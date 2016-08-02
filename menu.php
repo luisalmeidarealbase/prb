@@ -48,6 +48,7 @@
             <ul class="treeview-menu">
               <li><a href="controlodocumental.php"><i class="fa fa-file-o"></i>Controlo Documental</a></li>
               <li><a href="#"><i class="fa fa-balance-scale"></i>Legislação Aplicada</a></li>
+               <li><a href="#"><i class="fa fa-balance-scale"></i>Obsoletos</a></li>
             </ul>
           </li> 
 <!--           <li><a href="aprovacoesgeral.php"><i class="fa fa-file-o"></i> <span>Aprovações</span></a></li>
