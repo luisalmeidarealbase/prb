@@ -196,7 +196,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             Editar <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#tab_4-1" onclick="checkEditRosto();" data-toggle="tab">Rosto</a></li>
+            <li><a href="#tab_4-1" data-toggle="tab">Rosto</a></li>
             <li><a href="#tab_4-2">Método</a></li>
             <li role="presentation"><a role="menuitem" tabindex="-1" href="#tab_4-3">Matriz</a></li>
            <!--  <li role="presentation" class="divider"></li>
@@ -773,18 +773,7 @@ include("footer.php");
     <!-- FastClick -->
     <script src="plugins/fastclick/fastclick.min.js"></script>
     
-    <script type="text/javascript">
-      
-      //checkEditRosto function
-      
-      function checkEditRosto() {
-
-          alert("oi");
-
-      }
-
-
-    </script>
+   
     
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
