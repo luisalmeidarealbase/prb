@@ -380,10 +380,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	              												$ext = substr($file, strpos($file, ".") + 1);
 	              												$mark    = '.';
 	              												$fileName =  strstr($file, $mark, true);
-	              												
-	              					
-	              											
-
               												?>
               												<tr>
               													<td><?php echo $fileName;?></td>

@@ -256,24 +256,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         
 
-
+<div id="rostoToExport">
         <div class="box box-solid">
           <div class="box-header with-border">
 <!--             <i class="fa fa-file-o"></i>
  --><!--             <h3 class="box-title">Procedimento </h3> <br> <br>
 
 -->
-<br>
-<dl class="dl-horizontal">
-  <dt>Procedimento:</dt>
-  <dd><?php echo $nomeprocedimento; ?></dd>
-  <dt>Ref. Doc Versão em vigor</dt>
-  <dd>XXX.01-04</dd>
-  <dt>Data de Aprovação.</dt>
-  <dd>24 de Agosto 2015</dd>
-  <dt>Responsável</dt>
-  <dd><?php echo $responsavel_procedimento; ?></dd>
-</dl>
+
+<button id="btn-export-pdf">Exportar para PDF</button>
+
+  <br>
+  <br>
+  <br>
+  <dl class="dl-horizontal">
+    <dt>Procedimento:</dt>
+    <dd><?php echo $nomeprocedimento; ?></dd>
+    <dt>Ref. Doc Versão em vigor</dt>
+    <dd>XXX.01-04</dd>
+    <dt>Data de Aprovação.</dt>
+    <dd>24 de Agosto 2015</dd>
+    <dt>Responsável</dt>
+    <dd><?php echo $responsavel_procedimento; ?></dd>
+  </dl>
 </div><!-- /.box-header -->
 <div class="box-body">
   <br>
@@ -312,7 +317,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <br>      
     </div>
   </div>
-  <br><!-- /.box-body -->
+</div>
+<br><!-- /.box-body -->
 </div>
 </div><!-- /.tab-pane -->
 
@@ -749,8 +755,8 @@ include("footer.php");
 
     <!-- FIIIIIIM -->
 
-
-
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+   
 
 
 
@@ -773,7 +779,24 @@ include("footer.php");
     <!-- FastClick -->
     <script src="plugins/fastclick/fastclick.min.js"></script>
     
-   
+
+     <script>
+      var doc = new jsPDF();
+      var specialElementHandlers = {
+        '#editor': function (element, renderer) {
+          return true;
+        }
+      };
+
+      $('#btn-export-pdf').click(function () {
+        doc.fromHTML($('#rostoToExport').html(), 15, 15, {
+          'width': 170,
+          'elementHandlers': specialElementHandlers
+        });
+        doc.save('sample-file.pdf');
+      });
+    </script>
+    
     
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
