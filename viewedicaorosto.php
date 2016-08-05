@@ -184,7 +184,7 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
 	<br><br><br>
 	<div class="box box-info">
 		<div class="box-header with-border">
-			<h3 class="box-title">Página de Aprovação/Publicação do Rostos do Procedimento XX</h3>
+			<h3 class="box-title">Modo de edição do rosto do procedimento <?php echo $nomeprocedimento; ?></h3>
 			<div class="box-tools pull-right">
 <form action="saveedicaorosto.php?id=<?php echo $idrostoedicao; ?>" name="formEdicaoRostoControlDoc" method="POST">
 				<button type="submit" name="action" value="toAprove" class="btn btn-warning">Submeter para aprovação</button>
@@ -200,6 +200,8 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
 
 
 <br>
+
+
 
 <dl class="dl-horizontal">
   <dt>Procedimento:</dt>

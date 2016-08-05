@@ -184,7 +184,7 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
 	<br><br><br>
 	<div class="box box-info">
 		<div class="box-header with-border">
-			<h3 class="box-title">Página de Validação do Rosto do Procedimento XX</h3>
+			<h3 class="box-title">Documento rosto em modo Aprovação activo</h3>
 			<div class="box-tools pull-right">
 <form action="submittovalidation.php?id=<?php echo $idrostoedicao; ?>" name="formEdicaoRostoControlDoc" method="POST">
 				<button type="submit" name="action" value="toAprove" class="btn btn-danger">Submeter para validação</button>
