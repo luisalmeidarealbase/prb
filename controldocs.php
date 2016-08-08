@@ -315,7 +315,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
             </div>
             <div class="box-body">
-              Insert fluxogram image here.
+              <img class="img-responsive pad" src="../dist/img/photo2.png" alt="Photo">
             </div><!-- /.box-body -->
             <div class="box-footer">
               Footer
