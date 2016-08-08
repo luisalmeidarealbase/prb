@@ -241,10 +241,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 -->
 
-<button id="btn-export-pdf">Exportar para PDF</button>
+<!-- <button id="btn-export-pdf">Exportar para PDF</button>
+ -->
 
-<br>
-<br>
 <br>
 <dl class="dl-horizontal">
   <dt>Procedimento:</dt>
@@ -318,7 +317,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <img class="img-responsive pad" src="../dist/img/photo2.png" alt="Photo">
             </div><!-- /.box-body -->
             <div class="box-footer">
-              Footer
+              <!-- fluxogram footer content here -->
             </div><!-- /.box-footer-->
 </div>
 
