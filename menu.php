@@ -69,7 +69,8 @@
             </ul>
           
           </li> 
-       
+        
+        <li><a href="revisao.php"><i class="fa fa-eye"></i> <span>Revisão</span></a></li>
 
         </ul><!-- /.sidebar-menu -->
       

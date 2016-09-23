@@ -17,7 +17,11 @@ $indicadores = $_POST['indicadores'];
 $acompanhamento = $_POST['acompanhamento'];
 $avaliacaomedicao = $_POST['avaliacaomedicao'];
 
-$insertNewRosto = "INSERT INTO tbl_rostos (objectivo_procedimento, ambito_procedimento, entradas, saidas, indicadores, norma_pontos_norma, acompanhamento, avaliacao_e_medicao, tbl_procedimentos_id_procedimento) VALUES ('$objectivoprocedimento','$ambitoprocedimento','$entradas','$saidas','$indicadores','--','$acompanhamento','$avaliacaomedicao','2')";
+
+// new code using ckeditor
+$metodo = $_POST['control-doc-metodo-matriz'];
+
+$insertNewRosto = "INSERT INTO tbl_rostos (objectivo_procedimento, ambito_procedimento, entradas, saidas, indicadores, norma_pontos_norma, acompanhamento, avaliacao_e_medicao, tbl_procedimentos_id_procedimento, metodo) VALUES ('$objectivoprocedimento','$ambitoprocedimento','$entradas','$saidas','$indicadores','--','$acompanhamento','$avaliacaomedicao','2', '$metodo')";
 
 
 

@@ -48,6 +48,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+        <script src="plugins/ckeditor/ckeditor.js"></script>
     </head>
   <!--
   BODY TAG OPTIONS:
@@ -170,6 +172,7 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
 	$acompanhamento = utf8_encode($rowrosto->acompanhamento);
 	$avaliacao_e_medicao = utf8_encode($rowrosto->avaliacao_e_medicao);
 	$responsavel_procedimento = utf8_encode($rowrosto->responsavel_procedimento);
+	$metodo = $rowrosto->metodo;
 }
 
 
@@ -251,8 +254,21 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
       <br>      
     </div> 
     <br>
+    
     <br><br><br><br>
-    <div class="col-md-4">
+    <div class="col-md-12">
+    
+	<textarea name="control-doc-metodo-matriz" id="control-doc-metodo-matriz" rows="10" cols="80">
+    <?php echo htmlspecialchars( $metodo ); ?>
+  </textarea>
+  <script>
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace( 'control-doc-metodo-matriz' );
+  </script>
+
+
+    <br>
       <button type="submit" name="action" value="toSave" class="btn btn-block btn-info">
         Gravar
       </button>

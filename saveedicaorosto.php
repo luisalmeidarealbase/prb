@@ -17,7 +17,8 @@ $indicadores = $_POST['indicadores'];
 $acompanhamento = $_POST['acompanhamento'];
 $avaliacaomedicao = $_POST['avaliacaomedicao'];
 
-
+// new code using ckeditor
+$metodo = $_POST['control-doc-metodo-matriz'];
 
 $getIdProcedimento = "SELECT * FROM tbl_rostos WHERE id_rosto = '$idrostoedicao'";
 
@@ -55,7 +56,7 @@ else{
 
 	// begin - code to update/save rosto 
 
-	$saveedicaorosto = "UPDATE tbl_rostos SET objectivo_procedimento = '$objectivoprocedimento', ambito_procedimento = '$ambitoprocedimento', entradas = '$entradas', saidas = '$saidas', indicadores = '$indicadores', acompanhamento = '$acompanhamento', avaliacao_e_medicao = '$avaliacaomedicao' WHERE id_rosto = '$idrostoedicao'";
+	$saveedicaorosto = "UPDATE tbl_rostos SET objectivo_procedimento = '$objectivoprocedimento', ambito_procedimento = '$ambitoprocedimento', entradas = '$entradas', saidas = '$saidas', indicadores = '$indicadores', acompanhamento = '$acompanhamento', avaliacao_e_medicao = '$avaliacaomedicao', metodo = '$metodo' WHERE id_rosto = '$idrostoedicao'";
 
 	$resultsaveedicaorosto = mysqli_query($link,$saveedicaorosto);
 
