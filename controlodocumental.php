@@ -306,7 +306,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
   </div><!-- /.box-header -->
   <div class="box-body" style="display: none;">
-sdadsad
+
   <?php echo $metodo; ?>
 
 </div><!-- /.box-body -->
