@@ -444,18 +444,9 @@ $resultmetodo = mysqli_query($link,$querymetodo);
  <?php
 
 
-        // no futuro, a solução passa por acrescentar à query condicao do estado do proc estar aprovado para poder mostrar
 
- /*$queryrosto = "SELECT * FROM tbl_rostos INNER JOIN tbl_procedimentos ON tbl_rostos.tbl_procedimentos_id_procedimento = tbl_procedimentos.id_procedimento WHERE id_procedimento = 2  ORDER BY id_rosto DESC LIMIT 1"; */
-
- /* TESTE */
 
  $queryrosto = "SELECT * FROM tbl_procedimentos INNER JOIN tbl_rostos ON id_procedimento = tbl_procedimentos_id_procedimento INNER JOIN tbl_versoes_rostos ON id_rosto = tbl_rostos_id_rosto WHERE tbl_versoes_rostos.publicado_versao_rosto = 1 AND id_procedimento = 2";
-
-
- /* FIM TESTE*/
-
- // $queryrosto = "SELECT * FROM tbl_rostos INNER JOIN tbl_procedimentos ON tbl_rostos.tbl_procedimentos_id_procedimento = tbl_procedimentos.id_procedimento INNER JOIN tbl_versoes_rostos ON tbl_rostos.id_rosto = tbl_versoes_rostos.tbl_rostos_id_rosto WHERE id_procedimento = 2 AND publicado_versao_rosto = 1 ORDER BY id_rosto DESC LIMIT 1";
 
 
 

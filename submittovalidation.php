@@ -32,7 +32,7 @@ if ($_POST['action'] == "toAprove"){
 //add here the correct URL.
 	$url = "viewedicaorosto.php?idrosto=".$idrostoedicao."&idprocedimento=".$idprocedimento;
 
-	header('location:revisaovalidacoes.php');
+	header('location:revisao.php');
 
 }
 
@@ -46,7 +46,7 @@ if ($_POST['action'] == "toEdit") {
 
 	//$url = "viewedicaorosto.php?idrosto=".$idrostoedicao."&idprocedimento=".$idprocedimento;
 
-	header('location:revisaoedicoes.php');
+	header('location:revisao.php');
 
 
 }

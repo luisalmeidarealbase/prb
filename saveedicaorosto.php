@@ -44,7 +44,7 @@ $resultUpdateEstadoAprovacao = mysqli_query($link, $updateEstadoAprovacao);
 // end - code to submit to aprove
 
 //add here the correct URL.
-	$url = "revisaoaprovacoes.php";
+	$url = "revisao.php";
 
 	header('location: '.$url);
 
