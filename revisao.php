@@ -256,7 +256,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <tr>
                 <td><a href="controlodocumental.php"><?php echo $rowQueryAprovacoesRostos->nome_procedimento; ?></a></td>
                 <td><?php echo $rowQueryAprovacoesRostos->data_versao_rosto; ?></td>
-                <td><span class="label label-success">Aguarda envio para Validação</span></td>
+                <td><span class="label label-warning">Aguarda envio para Validação</span></td>
                 <td><a href='viewedicaorosto.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Editar</span></a> <span class="label label-info">Visualizar</span></td>
               </tr>
               <?php
