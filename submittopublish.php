@@ -59,7 +59,7 @@ if ($_POST['action'] == "toValidate"){
 
 	//$url = "viewedicaorosto.php?idrosto=".$idrostoedicao."&idprocedimento=".$idprocedimento;
 
-	header('location:revisaoaprovacoes.php');
+	header('location:revisao.php');
 
 }
 ?>

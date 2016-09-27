@@ -62,7 +62,7 @@
            
             <ul class="treeview-menu">
               
-              <li><a href="revisaoedicoes.php"><i class="fa fa-file-o"></i>Ediçãddo</a></li>
+              <li><a href="revisaoedicoes.php"><i class="fa fa-file-o"></i>Edição/a></li>
               <li><a href="revisaoaprovacoes.php"><i class="fa fa-files-o"></i>Aprovação</a></li>
               <li><a href="revisaovalidacoes.php"><i class="fa fa-files-o"></i>Validação</a></li>
 
