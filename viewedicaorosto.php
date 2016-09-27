@@ -275,7 +275,7 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
     </div>
     <div class="col-md-6">
     <br>
-      <button type="submit" name="action" value="toClose" class="btn btn-block btn-info">
+      <button type="submit" name="action" value="toClose" class="btn btn-block btn-info" onclick="return confirm('Deseja sair sem guardar as alterações efectuadas?')">
         Fechar
       </button>
     </div>
