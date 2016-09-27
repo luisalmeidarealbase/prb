@@ -46,6 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <![endif]-->
 
         <script src="plugins/ckeditor/ckeditor.js"></script>
+
       </head>
   <!--
   BODY TAG OPTIONS:
@@ -140,17 +141,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <small>Recreating DNA</small>
         </h1>
         <br>
-          <div class="btn-group">
-                          <a href="edicao-controlodocumental.php"><button type="button" class="btn btn-info">Editar Procedimento</button></a>
-                      
+        <div class="btn-group">
+          <a href="edicao-controlodocumental.php"><button type="button" class="btn btn-info">Editar Procedimento</button></a>
 
-                     
+
+
         </div>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
           <br>
 
- <br>
+          <br>
 
 <!--       <li class="active">Here</li>
 -->    </ol>
@@ -307,10 +308,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div><!-- /.box-header -->
   <div class="box-body" style="display: none;">
 
-  <?php echo $metodo; ?>
+    <?php echo $metodo; ?>
 
-</div><!-- /.box-body -->
-<div class="box-footer clearfix" style="display: none;">
+  </div><!-- /.box-body -->
+  <div class="box-footer clearfix" style="display: none;">
      <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
      <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
    </div><!-- /.box-footer -->
@@ -404,6 +405,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- jQuery 2.1.4 -->
     <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script>
+      function tableWidth(){
+
+        $('table:first-of-type').css('width', '100%');
+
+      }
+
+      tableWidth();
+    </script>
     <!-- Bootstrap 3.3.5 -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->

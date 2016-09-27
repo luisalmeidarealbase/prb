@@ -267,11 +267,18 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
     CKEDITOR.replace( 'control-doc-metodo-matriz' );
   </script>
 
-
+	<div class="col-md-6">
     <br>
-      <button type="submit" name="action" value="toSave" class="btn btn-block btn-info">
+      <button type="submit" name="action" value="toSave"  onclick="return confirm('Deseja gravar as alterações efectuadas?')" class="btn btn-block btn-info">
         Gravar
       </button>
+    </div>
+    <div class="col-md-6">
+    <br>
+      <button type="submit" name="action" value="toClose" class="btn btn-block btn-info">
+        Fechar
+      </button>
+    </div>
     </div>
 
 

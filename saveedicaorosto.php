@@ -33,23 +33,27 @@ $getIdProcedimento = "SELECT * FROM tbl_rostos WHERE id_rosto = '$idrostoedicao'
 if ($_POST['action'] == "toAprove"){
 	
 
-// begin - code to submit to aprove
+	// begin - code to submit to aprove
 
-$estadoAprovado = 1;
+	$estadoAprovado = 1;
 
-$updateEstadoAprovacao = "UPDATE tbl_versoes_rostos SET aprovado_versao_rosto = '$estadoAprovado' WHERE tbl_rostos_id_rosto = '$idrostoedicao'";
+	$updateEstadoAprovacao = "UPDATE tbl_versoes_rostos SET aprovado_versao_rosto = '$estadoAprovado' WHERE tbl_rostos_id_rosto = '$idrostoedicao'";
 
-$resultUpdateEstadoAprovacao = mysqli_query($link, $updateEstadoAprovacao);
+	$resultUpdateEstadoAprovacao = mysqli_query($link, $updateEstadoAprovacao);
 
-// end - code to submit to aprove
+	// end - code to submit to aprove
 
-//add here the correct URL.
-	$url = "revisao.php";
+	//add here the correct URL.
+		$url = "revisao.php";
 
-	header('location: '.$url);
+		header('location: '.$url);
 
 }
+if ($_POST['action'] == "toClose"){
 
+	header('location: revisao.php');
+
+}
 
 
 else{
