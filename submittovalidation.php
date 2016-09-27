@@ -70,6 +70,15 @@ if ($_POST['action'] == "toEdit") {
 
 }
 
+if ($_POST['action'] == "toClose") {
+
+			// send to revisao.php
+
+			header('location: revisao.php');
+
+
+}
+
 
 
 if ($_POST['action'] == "toSave") {
@@ -81,9 +90,9 @@ if ($_POST['action'] == "toSave") {
 		$resultsaveedicaorosto = mysqli_query($link,$saveedicaorosto);
 
 		//add here the correct URL.
-		//$url = "viewedicaorosto.php?idrosto=".$idrostoedicao."&idprocedimento=".$idprocedimento;
+		$url = "viewvalidacaorosto.php?idrosto=".$idrostoedicao."&idprocedimento=".$idprocedimento;
 
-		header('location: revisao.php');
+		header('location: ' .$url);
 
 		// end - code to update/save rosto
 }

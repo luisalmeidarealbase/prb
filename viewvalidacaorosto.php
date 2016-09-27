@@ -48,7 +48,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-             <script src="plugins/ckeditor/ckeditor.js"></script>
+        <script src="plugins/ckeditor/ckeditor.js"></script>
     </head>
   <!--
   BODY TAG OPTIONS:
@@ -188,87 +188,96 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
 		<div class="box-header with-border">
 			<h3 class="box-title">Documento rosto em modo Aprovação activo</h3>
 			<div class="box-tools pull-right">
-<form action="submittovalidation.php?id=<?php echo $idrostoedicao; ?>" name="formEdicaoRostoControlDoc" method="POST">
-				<button type="submit" name="action" value="toAprove" class="btn btn-danger">Submeter para validação</button>
-				<button type="submit" name="action" value="toEdit" class="btn btn-info">Remeter para Edição</button>
-				<!-- <button type="button" id="btn-editmode" onclick="editMode();" class="btn btn-info">Editar</button> -->
+				<form action="submittovalidation.php?id=<?php echo $idrostoedicao; ?>" name="formEdicaoRostoControlDoc" method="POST">
+					<button type="submit" name="action" value="toAprove" class="btn btn-danger">Submeter para validação</button>
+					<button type="submit" name="action" value="toEdit" class="btn btn-info">Remeter para Edição</button>
+					<!-- <button type="button" id="btn-editmode" onclick="editMode();" class="btn btn-info">Editar</button> -->
 
-			</div>
-		</div><!-- /.box-header -->
+				</div>
+			</div><!-- /.box-header -->
 
-		<div class="box box-solid">
-			<div class="box-header with-border">
+			<div class="box box-solid">
+				<div class="box-header with-border">
 
 
 
-<br>
-<dl class="dl-horizontal">
-  <dt>Procedimento:</dt>
-  <dd><?php echo $nomeprocedimento; ?></dd>
-  <dt>Ref. Doc Versão em vigor</dt>
-  <dd>XXX.01-04</dd>
-  <dt>Data de Aprovação.</dt>
-  <dd>24 de Agosto 2015</dd>
-  <dt>Responsável</dt>
-  <dd><?php echo $responsavel_procedimento; ?></dd>
-</dl>
-</div><!-- /.box-header -->
-<div class="box-body">
-  <br>
-  
-    <dl class="dl-horizontal">
-      <dt>Objectivo procedimento</dt>
-      <dd><input type="text" value='<?php echo utf8_decode($objectivo); ?>' name="objectivoprocedimento" style="width: 100%;"></dt><br><br>
-        <dt>Âmbito de Procedimento</dt>
-        <dd><input type="text" value='<?php echo utf8_decode($ambito); ?>' name="ambitoprocedimento" style="width: 100%;"></dd> <br><br>
-        <dt>Entradas</dt>
-        <dd><input type="text" value='<?php echo utf8_decode($entradas); ?>' name="entradas" style="width: 100%; height: auto;"></dd> <br><br>
-        <dt>Saídas</dt>
-        <dd><input type="text" value='<?php echo $saidas; ?>' name="saidas" style="width: 100%";></dd> <br><br>
+					<br>
+					<dl class="dl-horizontal">
+						<dt>Procedimento:</dt>
+						<dd><?php echo $nomeprocedimento; ?></dd>
+						<dt>Ref. Doc Versão em vigor</dt>
+						<dd>XXX.01-04</dd>
+						<dt>Data de Aprovação.</dt>
+						<dd>24 de Agosto 2015</dd>
+						<dt>Responsável</dt>
+						<dd><?php echo $responsavel_procedimento; ?></dd>
+					</dl>
+				</div><!-- /.box-header -->
+				<div class="box-body">
+					<br>
+
+					<dl class="dl-horizontal">
+						<dt>Objectivo procedimento</dt>
+						<dd><input type="text" value='<?php echo utf8_decode($objectivo); ?>' name="objectivoprocedimento" style="width: 100%;"></dt><br><br>
+							<dt>Âmbito de Procedimento</dt>
+							<dd><input type="text" value='<?php echo utf8_decode($ambito); ?>' name="ambitoprocedimento" style="width: 100%;"></dd> <br><br>
+							<dt>Entradas</dt>
+							<dd><input type="text" value='<?php echo utf8_decode($entradas); ?>' name="entradas" style="width: 100%; height: auto;"></dd> <br><br>
+							<dt>Saídas</dt>
+							<dd><input type="text" value='<?php echo $saidas; ?>' name="saidas" style="width: 100%";></dd> <br><br>
        <!--  <dt>Definição e abreviatura</dt>
        <dd><input type="text" value='<?php // echo $definicaoAbreviatura; ?>' name="definicaoabreviatura" style="width: 100%;"></dd> <br><br> -->
       <!-- <dt>Pontos por norma</dt>
       <dd><?php //echo $pontosnorma; ?></dd> <br> -->
-    </dl>
+  </dl>
 
-    <div class="col-md-4">
-      <b>Indicadores</b> <br>
-      <br>
-      <input type="text" value='<?php echo utf8_decode($indicadores); ?>' name="indicadores" style="width: 100%; height: 20%;">
-      <br>      
-    </div>
-    <div class="col-md-4">
-      <b>Acompanhamento</b> <br>
-      <br>
-      <input type="text" value='<?php echo utf8_decode($acompanhamento); ?>' name="acompanhamento" style="width: 100%; height: 20%;">
-      <br>      
-    </div>
-    <div class="col-md-4">
-      <b>Avaliação e medição</b> <br>
-      <br>
-      <input type="text" value='<?php echo utf8_decode($avaliacao_e_medicao); ?>' name="avaliacaomedicao" style="width: 100%; height: 20%;">
-      <br>      
-    </div> 
-    <br>
-    
-    <br><br><br><br>
-    <div class="col-md-12">
-    
-	<textarea name="control-doc-metodo-matriz" id="control-doc-metodo-matriz" rows="10" cols="80">
-    <?php echo htmlspecialchars( $metodo ); ?>
-  </textarea>
-  <script>
+  <div class="col-md-4">
+  	<b>Indicadores</b> <br>
+  	<br>
+  	<input type="text" value='<?php echo utf8_decode($indicadores); ?>' name="indicadores" style="width: 100%; height: 20%;">
+  	<br>      
+  </div>
+  <div class="col-md-4">
+  	<b>Acompanhamento</b> <br>
+  	<br>
+  	<input type="text" value='<?php echo utf8_decode($acompanhamento); ?>' name="acompanhamento" style="width: 100%; height: 20%;">
+  	<br>      
+  </div>
+  <div class="col-md-4">
+  	<b>Avaliação e medição</b> <br>
+  	<br>
+  	<input type="text" value='<?php echo utf8_decode($avaliacao_e_medicao); ?>' name="avaliacaomedicao" style="width: 100%; height: 20%;">
+  	<br>      
+  </div> 
+  <br>
+
+  <br><br><br><br>
+  <div class="col-md-12">
+
+  	<textarea name="control-doc-metodo-matriz" id="control-doc-metodo-matriz" rows="10" cols="80">
+  		<?php echo htmlspecialchars( $metodo ); ?>
+  	</textarea>
+  	<script>
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
     CKEDITOR.replace( 'control-doc-metodo-matriz' );
-  </script>
+</script>
 
 
+<br>
+<div class="col-md-6">
     <br>
-      <button type="submit" name="action" value="toSave" class="btn btn-block btn-info">
+      <button type="submit" name="action" value="toSave"  onclick="return confirm('Deseja gravar as alterações efectuadas?')" class="btn btn-block btn-info">
         Gravar
       </button>
     </div>
+    <div class="col-md-6">
+    <br>
+      <button type="submit" name="action" value="toClose" class="btn btn-block btn-info" onclick="return confirm('Deseja sair sem guardar as alterações efectuadas?')">
+        Fechar
+      </button>
+    </div>
+</div>
 
 
 <br><!-- /.box-body -->
