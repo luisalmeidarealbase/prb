@@ -10,6 +10,10 @@ if (!isset($_SESSION['fullname'])) {
   header('location: index.php');
 }
 
+$idprocedimento = $_GET['idprocedimento'];
+$idrosto = $_GET['idrosto'];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -35,16 +39,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
-        -->
-        <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+      -->
+      <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-      </head>
+        <![endif]-->
+
+        <script src="plugins/ckeditor/ckeditor.js"></script>
+    </head>
   <!--
   BODY TAG OPTIONS:
   =================
@@ -143,209 +149,180 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->    </ol>
 </section>
 
+
+<?php 
+
+
+$queryrosto = "SELECT * FROM tbl_rostos INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento WHERE id_rosto = '$idrosto' AND id_procedimento = '$idprocedimento'";
+$resultrosto = mysqli_query($link,$queryrosto);
+
+while ($rowrosto = mysqli_fetch_object($resultrosto)) {
+
+
+          //save data to variables from the previous query
+  $idrostoedicao = $rowrosto->id_rosto;
+  $objectivo = utf8_encode($rowrosto->objectivo_procedimento);
+  $ambito = utf8_encode($rowrosto->ambito_procedimento);
+  $entradas = utf8_encode($rowrosto->entradas);
+  $saidas = utf8_encode($rowrosto->saidas);
+  $definicaoAbreviatura = utf8_encode($rowrosto->indicadores);
+  $pontosnorma = utf8_encode($rowrosto->norma_pontos_norma);
+  $nomeprocedimento = utf8_encode($rowrosto->nome_procedimento);
+  $indicadores = utf8_encode($rowrosto->indicadores);
+  $acompanhamento = utf8_encode($rowrosto->acompanhamento);
+  $avaliacao_e_medicao = utf8_encode($rowrosto->avaliacao_e_medicao);
+  $responsavel_procedimento = utf8_encode($rowrosto->responsavel_procedimento);
+  $metodo = $rowrosto->metodo;
+}
+
+
+
+?>
+
+
+
+
 <!-- Main content -->
 <section class="content">
   <br><br><br>
+  <div class="alert alert-success alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h4><i class="icon fa fa-warning"></i> Modo de Pré Visualização do Procedimento <b><?php echo $nomeprocedimento; ?></b></h4>
+    
+</div>
+
   <div class="box box-info">
     <div class="box-header with-border">
-      <h3 class="box-title">Modo de Edição</h3>
+      <h3 class="box-title">Rosto</h3>
       <div class="box-tools pull-right">
-        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+      <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+<form action="saveedicaorosto.php?id=<?php echo $idrostoedicao; ?>" name="formEdicaoRostoControlDoc" method="POST">
+        <!-- <button type="submit" name="action" value="toAprove" class="btn btn-warning">Submeter para aprovação</button> -->
+      
+        <!-- <button type="button" id="btn-editmode" onclick="editMode();" class="btn btn-info">Editar</button> -->
+
       </div>
     </div><!-- /.box-header -->
-    <div class="box-body" style="display: block;">
 
-      <div class="table-responsive">
+    <div class="box box-solid">
+      <div class="box-header with-border">
 
-        <table class="table no-margin">
 
-          <thead>
 
-            <tr>
-
-              <th>Procedimento</th>
-              <th>Data de última Edição</th>
-              <th>Status</th>
-              <th>Acções</th>
-
-            </tr>
-
-          </thead>
-
-          <tbody>
-            <?php 
+<br>
 
 
 
 
+ <dl class="dl-horizontal">
+      <dt>Procedimento:</dt>
+      <dd><?php echo $nomeprocedimento; ?></dd>
+      <dt>Ref. Doc Versão em vigor</dt>
+      <dd>XXX.01-04</dd>
+      <dt>Data de Aprovação.</dt>
+      <dd>24 de Agosto 2015</dd>
+      <dt>Responsável</dt>
+      <dd><?php echo $responsavel_procedimento; ?></dd>
+    </dl>
+  </div><!-- /.box-header -->
+  <div class="box-body">
+    <br>
 
-            $queryAprovacoesRostos = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento WHERE id_procedimento = 2 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 0 ORDER BY data_versao_rosto DESC";
+    <dl class="dl-horizontal">
+      <dt>Objectivo procedimento</dt>
+      <dd><?php echo $objectivo; ?></dt><br><br>
+        <dt>Âmbito de Procedimento</dt>
+        <dd><?php echo $ambito; ?></dd> <br><br>
+        <dt>Entradas</dt>
+        <dd><?php echo $entradas; ?></dd> <br><br>
+        <dt>Saídas</dt>
+        <dd><?php echo $saidas; ?></dd> <br><br>
+      </dl>
 
-            $resultQueryAprovacoesRostos = mysqli_query($link,$queryAprovacoesRostos);
+      <div class="col-md-2">
+        <b>Indicadores</b> <br>
+        <br>
+        <?php echo $indicadores; ?>
+        <br>      
+      </div>
+      <div class="col-md-2">
+        <b>Acompanhamento</b> <br>
+        <br>
+        <?php echo $acompanhamento; ?>
+        <br>      
+      </div>
+      <div class="col-md-2">
+        <b>Avaliação e medição</b> <br>
+        <br>
+        <?php echo $avaliacao_e_medicao; ?>
+        <br>      
+      </div>
 
-            while ($rowQueryAprovacoesRostos = mysqli_fetch_object($resultQueryAprovacoesRostos)){
-
-              ?>
 
 
-              <tr>
-                <td><a href="controlodocumental.php"><?php echo $rowQueryAprovacoesRostos->nome_procedimento; ?></a></td>
-                <td><?php echo $rowQueryAprovacoesRostos->data_versao_rosto; ?></td>
-                <td><span class="label label-success">Aguarda envio para Aprovação</span></td>
-                <td><a href='viewedicaorosto.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Editar</span></a> <a href='preview-procedimento-edicao.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Visualizar</span></a></td>
-              </tr>
-              <?php
-                }
-              ?>
-
-
-            </tr> 
-          </tbody>
-        </table>
-      </div><!-- /.table-responsive -->
     </div><!-- /.box-body -->
     <div class="box-footer clearfix" style="display: block;">
      <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
      <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
    </div><!-- /.box-footer -->
  </div>
-
-
-<div class="box box-info">
-    <div class="box-header with-border">
-      <h3 class="box-title">Modo de Aprovação</h3>
-      <div class="box-tools pull-right">
-        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-      </div>
-    </div><!-- /.box-header -->
-    <div class="box-body" style="display: block;">
-
-      <div class="table-responsive">
-
-        <table class="table no-margin">
-
-          <thead>
-
-            <tr>
-
-              
-              <th>Procedimento</th>
-              <th>Data de última Edição</th>
-              <th>Status</th>
-              <th>Acções</th>
-            </tr>
-
-          </thead>
-
-          <tbody>
-            <?php 
-
-
-
-
-
-            $queryAprovacoesRostos = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento WHERE id_procedimento = 2 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 1 AND validado_versao_rosto = 0 ORDER BY data_versao_rosto DESC";
-
-            $resultQueryAprovacoesRostos = mysqli_query($link,$queryAprovacoesRostos);
-
-            while ($rowQueryAprovacoesRostos = mysqli_fetch_object($resultQueryAprovacoesRostos)){
-
-              ?>
-
-
-              <tr>
-                <td><a href="controlodocumental.php"><?php echo $rowQueryAprovacoesRostos->nome_procedimento; ?></a></td>
-                <td><?php echo $rowQueryAprovacoesRostos->data_versao_rosto; ?></td>
-                <td><span class="label label-warning">Aguarda envio para Validação</span></td>
-                <td><a href='viewvalidacaorosto.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Editar</span></a> <a href='preview-procedimento-validacao.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Visualizar</span></a></td>
-              </tr>
-              <?php
-                }
-              ?>
-
-
-            </tr> 
-          </tbody>
-        </table>
-      </div><!-- /.table-responsive -->
-    </div><!-- /.box-body -->
-    <div class="box-footer clearfix" style="display: block;">
-     <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-     <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
-   </div><!-- /.box-footer -->
 </div>
 
-
-<div class="box box-info">
-    <div class="box-header with-border">
-      <h3 class="box-title">Modo de Validação</h3>
-      <div class="box-tools pull-right">
-        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-        
-      </div>
-    </div><!-- /.box-header -->
-    <div class="box-body" style="display: block;">
-
-      <div class="table-responsive">
-
-        <table class="table no-margin">
-
-          <thead>
-
-            <tr>
-
-              <th>Procedimento</th>
-              <th>Data de última Edição</th>
-              <th>Status</th>
-              <th>Acções</th>
-
-            </tr>
-
-          </thead>
-
-          <tbody>
-           <?php 
+ <!-- ------------------------------- END - LISTA DE ROSTO ------------------------------- -->
 
 
+ <!-- ------------------------------- BEGIN - LISTA DE FLUXOGRAMA PROCEDIMENTO  ------------------------------- -->
 
+ <div class="box box-info collapsed-box">
+  <div class="box-header with-border">
+    <h3 class="box-title">Fluxograma</h3>
+    <div class="box-tools pull-right">
+      <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+    </div>
+  </div><!-- /.box-header -->
+  <div class="box-body" style="display: none;">
 
+    <img class="img-responsive" src="http://placehold.it/2560x1440" alt="fluxo-controlo-documental">
 
-            $queryAprovacoesRostos = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento WHERE id_procedimento = 2 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 1 AND validado_versao_rosto = 1 ORDER BY data_versao_rosto DESC";
-
-            $resultQueryAprovacoesRostos = mysqli_query($link,$queryAprovacoesRostos);
-
-            while ($rowQueryAprovacoesRostos = mysqli_fetch_object($resultQueryAprovacoesRostos)){
-
-              ?>
-
-
-              <tr>
-                <td><a href="controlodocumental.php"><?php echo $rowQueryAprovacoesRostos->nome_procedimento; ?></a></td>
-                <td><?php echo $rowQueryAprovacoesRostos->data_versao_rosto; ?></td>
-                <td><span class="label label-danger">Aguarda envio para Publicação</span></td>
-                <td><a href='viewpublicacaorosto.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Editar</span></a> <a href='preview-procedimento-publicacao.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Visualizar</span></a></td>
-              </tr>
-              <?php
-                }
-              ?>
-
-
-            </tr> 
-          </tbody>
-        </table>
-      </div><!-- /.table-responsive -->
-    </div><!-- /.box-body -->
-    <div class="box-footer clearfix" style="display: block;">
+  </div><!-- /.box-body -->
+  <div class="box-footer clearfix" style="display: none;">
      <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
      <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
    </div><!-- /.box-footer -->
+ </div>
 
-   </div>
+
+ <!-- ------------------------------- END - LISTA DE FLUXOGRAMA PROCEDIMENTO ------------------------------- -->
+
+
+
+ <!-- ------------------------------- BEGIN - LISTA DE METODO  ------------------------------- -->
+
+ <div class="box box-info collapsed-box">
+  <div class="box-header with-border">
+    <h3 class="box-title">Método e Matriz RH</h3>
+    <div class="box-tools pull-right">
+      <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+    </div>
+  </div><!-- /.box-header -->
+  <div class="box-body" style="display: none;">
+
+    <?php echo $metodo; ?>
+
+  </div><!-- /.box-body -->
+  <div class="box-footer clearfix" style="display: none;">
+     <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
+     <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
+   </div><!-- /.box-footer -->
+ </div>
+
+ <!-- ------------------------------- END - LISTA DE METODO ------------------------------- -->
 
 
 
 
  <!-- Your Page Content Here -->
+
 
 </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
@@ -400,7 +377,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </ul><!-- /.control-sidebar-menu -->
 
     </div><!-- /.tab-pane -->
-    <!-- Stats tab content -->
+    <!-- Stats tab content <--></-->
     <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
     <!-- Settings tab content -->
     <div class="tab-pane" id="control-sidebar-settings-tab">
@@ -422,20 +399,56 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Add the sidebar's background. This div must be placed
       immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>
-    </div><!-- ./wrapper -->
+  </div><!-- ./wrapper -->
 
-    <!-- REQUIRED JS SCRIPTS -->
+  <!-- REQUIRED JS SCRIPTS -->
 
-    <!-- jQuery 2.1.4 -->
-    <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <!-- Bootstrap 3.3.5 -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="dist/js/app.min.js"></script>
+  <!-- jQuery 2.1.4 -->
+  <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+  <!-- Bootstrap 3.3.5 -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/app.min.js"></script>
 
+  <script>
+    
+    function editMode(){
+      alert("edit mode activated");
+      $('#btn-editmode').html("Gravar");
+      $('.native').hide();
+      $('.editing').show();
+    }
+
+    function beginLoad(){
+
+      $('.editing').hide();
+
+    }
+
+    beginLoad();
+
+  </script>
+    <script>
+      function tableWidth(){
+
+        $('table:first-of-type').css('width', '100%');
+
+      }
+
+      tableWidth();
+    </script>
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
          user experience. Slimscroll is required when using the
          fixed layout. -->
-       </body>
-       </html>
+     </body>
+     </html>
+
+
+
+
+
+
+
+
+

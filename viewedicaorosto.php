@@ -190,7 +190,7 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
 			<h3 class="box-title">Modo de edição do rosto do procedimento <?php echo $nomeprocedimento; ?></h3>
 			<div class="box-tools pull-right">
 <form action="saveedicaorosto.php?id=<?php echo $idrostoedicao; ?>" name="formEdicaoRostoControlDoc" method="POST">
-				<button type="submit" name="action" value="toAprove" class="btn btn-warning">Submeter para aprovação</button>
+				<!-- <button type="submit" name="action" value="toAprove" class="btn btn-warning">Submeter para aprovação</button> -->
 			
 				<!-- <button type="button" id="btn-editmode" onclick="editMode();" class="btn btn-info">Editar</button> -->
 
@@ -204,6 +204,12 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
 
 <br>
 
+
+<div class="alert alert-warning alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h4><i class="icon fa fa-warning"></i> Modo de Edição do Procedimento <b><?php echo $nomeprocedimento; ?></b></h4>
+    Clique na secção do procedimento que deseja editar. Não se esqueça de gravar as suas alterações.
+  </div>
 
 
 <dl class="dl-horizontal">
