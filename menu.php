@@ -56,7 +56,7 @@
 
           <!-- code to menu revisao -->
 
-           <li class="treeview">
+          <!-- <li class="treeview">
 
             <a href="#"><i class="fa fa-eye"></i> <span>Revisão de Sistema</span> <i class="fa fa-angle-left pull-right"></i></a>
            
@@ -68,7 +68,7 @@
 
             </ul>
           
-          </li> 
+          </li> -->
         
         <li><a href="revisao.php"><i class="fa fa-eye"></i> <span>Revisão</span></a></li>
 
