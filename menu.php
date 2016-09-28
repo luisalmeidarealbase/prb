@@ -41,16 +41,21 @@
           <li><a href="recursoshumanos.php"><i class="fa fa-file-o"></i> <span>Recursos Humanos</span></a></li> -->
 
 			
-
+ <li><a href="controlodocumental.php"><i class="fa fa-file-o"></i> <span>Controlo Documental</span></a></li>
 		<!-- code to create sub menu levels -->
-           <li class="treeview">
+          
+<!-- menu antigo de contorlo documental com os respectivos sub menus -->
+          <!--  <li class="treeview">
             <a href="#"><i class="fa fa-files-o"></i> <span>Controlo Docs</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
               <li><a href="controlodocumental.php"><i class="fa fa-file-o"></i>Controlo Documental</a></li>
               <li><a href="#"><i class="fa fa-balance-scale"></i>Legislação Aplicada</a></li>
                <li><a href="obscontroldocs.php"><i class="fa fa-balance-scale"></i>Obsoletos</a></li>
             </ul>
-          </li> 
+          </li> --> 
+
+
+
 <!--           <li><a href="aprovacoesgeral.php"><i class="fa fa-file-o"></i> <span>Aprovações</span></a></li>
  -->
 
