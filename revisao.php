@@ -183,8 +183,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             $resultQueryAprovacoesRostos = mysqli_query($link,$queryAprovacoesRostos);
 
+            $editcount = 0;
+
             while ($rowQueryAprovacoesRostos = mysqli_fetch_object($resultQueryAprovacoesRostos)){
 
+                $editcount++;
               ?>
 
 
@@ -195,7 +198,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <td><a href='viewedicaorosto.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Editar</span></a> <a href='preview-procedimento-edicao.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Visualizar</span></a></td>
               </tr>
               <?php
+
                 }
+              
+                if ($editcount == 0){
+                  echo "Nenhum registo a mostrar.";
+                }
+
               ?>
 
 
@@ -248,8 +257,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             $resultQueryAprovacoesRostos = mysqli_query($link,$queryAprovacoesRostos);
 
-            while ($rowQueryAprovacoesRostos = mysqli_fetch_object($resultQueryAprovacoesRostos)){
+            $aprovacoescount = 0;
 
+            while ($rowQueryAprovacoesRostos = mysqli_fetch_object($resultQueryAprovacoesRostos)){
+                 $aprovacoescount++;
               ?>
 
 
@@ -261,6 +272,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </tr>
               <?php
                 }
+                if ($aprovacoescount == 0){
+                  echo "Nenhum registo a mostrar.";
+                }
+
               ?>
 
 
@@ -314,8 +329,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             $resultQueryAprovacoesRostos = mysqli_query($link,$queryAprovacoesRostos);
 
-            while ($rowQueryAprovacoesRostos = mysqli_fetch_object($resultQueryAprovacoesRostos)){
+            $validacoescount = 0;
 
+
+            while ($rowQueryAprovacoesRostos = mysqli_fetch_object($resultQueryAprovacoesRostos)){
+              $validacoescount++;
               ?>
 
 
@@ -326,6 +344,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <td><a href='viewpublicacaorosto.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Editar</span></a> <a href='preview-procedimento-validacao.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Visualizar</span></a></td>
               </tr>
               <?php
+                }
+                if ($validacoescount == 0){
+                  echo "Nenhum registo a mostrar.";
                 }
               ?>
 

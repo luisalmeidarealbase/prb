@@ -283,7 +283,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div><!-- /.box-header -->
   <div class="box-body" style="display: none;">
 
-    <img class="img-responsive" src="http://placehold.it/2560x1440" alt="fluxo-controlo-documental">
+<!--     <img class="img-responsive" src="http://placehold.it/2560x1440" alt="fluxo-controlo-documental"> -->
+    
+    <!-- code to embed a pdf file -->
+    <embed src="teste2.pdf" style="min-width: 100%;  min-height: 800px;" class="img-responsive" type='application/pdf'>
 
   </div><!-- /.box-body -->
   <div class="box-footer clearfix" style="display: none;">
