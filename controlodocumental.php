@@ -195,17 +195,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
           //save data to variables from the previous query
-      $objectivo = utf8_encode($rowrosto->objectivo_procedimento);
-      $ambito = utf8_encode($rowrosto->ambito_procedimento);
-      $entradas = utf8_encode($rowrosto->entradas);
-      $saidas = utf8_encode($rowrosto->saidas);
-      $definicaoAbreviatura = utf8_encode($rowrosto->indicadores);
-      $pontosnorma = utf8_encode($rowrosto->norma_pontos_norma);
-      $nomeprocedimento = utf8_encode($rowrosto->nome_procedimento);
-      $indicadores = utf8_encode($rowrosto->indicadores);
-      $acompanhamento = utf8_encode($rowrosto->acompanhamento);
-      $avaliacao_e_medicao = utf8_encode($rowrosto->avaliacao_e_medicao);
-      $responsavel_procedimento = utf8_encode($rowrosto->responsavel_procedimento);
+      $objectivo = $rowrosto->objectivo_procedimento;
+      $ambito = $rowrosto->ambito_procedimento;
+      $entradas = $rowrosto->entradas;
+      $saidas = $rowrosto->saidas;
+      $definicaoAbreviatura = $rowrosto->indicadores;
+      $pontosnorma = $rowrosto->norma_pontos_norma;
+      $nomeprocedimento = $rowrosto->nome_procedimento;
+      $indicadores = $rowrosto->indicadores;
+      $acompanhamento = $rowrosto->acompanhamento;
+      $avaliacao_e_medicao = $rowrosto->avaliacao_e_medicao;
+      $responsavel_procedimento = $rowrosto->responsavel_procedimento;
       $metodo = $rowrosto->metodo;
 
     }

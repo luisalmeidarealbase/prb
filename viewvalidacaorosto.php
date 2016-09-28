@@ -183,7 +183,15 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
 
 <!-- Main content -->
 <section class="content">
-	<br><br><br>
+	<br><br>
+
+	<div class="alert alert-warning alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h4><i class="icon fa fa-warning"></i> Modo de Edição do Procedimento <b><?php echo $nomeprocedimento; ?></b></h4>
+    Clique na secção do procedimento que deseja editar. Não se esqueça de gravar as suas alterações.
+  </div>
+
+	<br>
 	<div class="box box-info">
 		<div class="box-header with-border">
 			<h3 class="box-title">Documento rosto em modo Aprovação activo</h3>
