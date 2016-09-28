@@ -188,14 +188,24 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
   <div class="alert alert-success alert-dismissable">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
     <h4><i class="icon fa fa-warning"></i> Modo de Pré Visualização do Procedimento <b><?php echo $nomeprocedimento; ?></b></h4>
+      
     
+
 </div>
+  <form action="update-estados.php?id=<?php echo $idrostoedicao; ?>" name="formEdicaoRostoControlDoc" method="POST">
+        <button type="submit" name="action" value="toValidate" class="btn btn-warning">Submeter para aprovação</button> 
+      </form>
+
+<br>
 
   <div class="box box-info">
+
     <div class="box-header with-border">
       <h3 class="box-title">Rosto</h3>
       <div class="box-tools pull-right">
+
       <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+
 <form action="saveedicaorosto.php?id=<?php echo $idrostoedicao; ?>" name="formEdicaoRostoControlDoc" method="POST">
         <!-- <button type="submit" name="action" value="toAprove" class="btn btn-warning">Submeter para aprovação</button> -->
       
