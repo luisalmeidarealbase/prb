@@ -50,7 +50,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <![endif]-->
 
         <script src="plugins/ckeditor/ckeditor.js"></script>
-    </head>
+        <style>
+        	/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(images/Preloader_2.gif) center no-repeat #fff;
+}
+
+</style>
+
+
+</head>
   <!--
   BODY TAG OPTIONS:
   =================
@@ -72,6 +91,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   |---------------------------------------------------------|
 -->
 <body class="hold-transition skin-blue sidebar-mini">
+	<div class="se-pre-con"></div>
 	<div class="wrapper">
 
 		<!-- Main Header -->
@@ -186,109 +206,109 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
 <section class="content">
 	<br><br>
 	<div class="alert alert-warning alert-dismissable">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h4><i class="icon fa fa-warning"></i> Modo de Edição do Procedimento <b><?php echo $nomeprocedimento; ?></b></h4>
-    Clique na secção do procedimento que deseja editar. Não se esqueça de gravar as suas alterações.
-  </div>
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		<h4><i class="icon fa fa-warning"></i> Modo de Edição do Procedimento <b><?php echo $nomeprocedimento; ?></b></h4>
+		Clique na secção do procedimento que deseja editar. Não se esqueça de gravar as suas alterações.
+	</div>
 
 	<br>
 	<div class="box box-info">
 		<div class="box-header with-border">
 			<h3 class="box-title">Modo de edição do rosto do procedimento <?php echo $nomeprocedimento; ?></h3>
 			<div class="box-tools pull-right">
-<form action="saveedicaorosto.php?id=<?php echo $idrostoedicao; ?>" name="formEdicaoRostoControlDoc" method="POST">
-				<!-- <button type="submit" name="action" value="toAprove" class="btn btn-warning">Submeter para aprovação</button> -->
-			
-				<!-- <button type="button" id="btn-editmode" onclick="editMode();" class="btn btn-info">Editar</button> -->
+				<form action="saveedicaorosto.php?id=<?php echo $idrostoedicao; ?>" name="formEdicaoRostoControlDoc" method="POST">
+					<!-- <button type="submit" name="action" value="toAprove" class="btn btn-warning">Submeter para aprovação</button> -->
 
-			</div>
-		</div><!-- /.box-header -->
+					<!-- <button type="button" id="btn-editmode" onclick="editMode();" class="btn btn-info">Editar</button> -->
 
-		<div class="box box-solid">
-			<div class="box-header with-border">
+				</div>
+			</div><!-- /.box-header -->
 
-
-
-<br>
+			<div class="box box-solid">
+				<div class="box-header with-border">
 
 
 
+					<br>
 
 
-<dl class="dl-horizontal">
-  <dt>Procedimento:</dt>
-  <dd><?php echo $nomeprocedimento; ?></dd>
-  <dt>Ref. Doc Versão em vigor</dt>
-  <dd>XXX.01-04</dd>
-  <dt>Data de Aprovação.</dt>
-  <dd>24 de Agosto 2015</dd>
-  <dt>Responsável</dt>
-  <dd><?php echo $responsavel_procedimento; ?></dd>
-</dl>
-</div><!-- /.box-header -->
-<div class="box-body">
-  <br>
-  
-    <dl class="dl-horizontal">
-      <dt>Objectivo procedimento</dt>
-      <dd><input type="text" value='<?php echo utf8_decode($objectivo); ?>' name="objectivoprocedimento" style="width: 100%;"></dt><br><br>
-        <dt>Âmbito de Procedimento</dt>
-        <dd><input type="text" value='<?php echo utf8_decode($ambito); ?>' name="ambitoprocedimento" style="width: 100%;"></dd> <br><br>
-        <dt>Entradas</dt>
-        <dd><input type="text" value='<?php echo utf8_decode($entradas); ?>' name="entradas" style="width: 100%; height: auto;"></dd> <br><br>
-        <dt>Saídas</dt>
-        <dd><input type="text" value='<?php echo $saidas; ?>' name="saidas" style="width: 100%";></dd> <br><br>
+
+
+
+					<dl class="dl-horizontal">
+						<dt>Procedimento:</dt>
+						<dd><?php echo $nomeprocedimento; ?></dd>
+						<dt>Ref. Doc Versão em vigor</dt>
+						<dd>XXX.01-04</dd>
+						<dt>Data de Aprovação.</dt>
+						<dd>24 de Agosto 2015</dd>
+						<dt>Responsável</dt>
+						<dd><?php echo $responsavel_procedimento; ?></dd>
+					</dl>
+				</div><!-- /.box-header -->
+				<div class="box-body">
+					<br>
+
+					<dl class="dl-horizontal">
+						<dt>Objectivo procedimento</dt>
+						<dd><input type="text" value='<?php echo utf8_decode($objectivo); ?>' name="objectivoprocedimento" style="width: 100%;"></dt><br><br>
+							<dt>Âmbito de Procedimento</dt>
+							<dd><input type="text" value='<?php echo utf8_decode($ambito); ?>' name="ambitoprocedimento" style="width: 100%;"></dd> <br><br>
+							<dt>Entradas</dt>
+							<dd><input type="text" value='<?php echo utf8_decode($entradas); ?>' name="entradas" style="width: 100%; height: auto;"></dd> <br><br>
+							<dt>Saídas</dt>
+							<dd><input type="text" value='<?php echo $saidas; ?>' name="saidas" style="width: 100%";></dd> <br><br>
        <!--  <dt>Definição e abreviatura</dt>
        <dd><input type="text" value='<?php // echo $definicaoAbreviatura; ?>' name="definicaoabreviatura" style="width: 100%;"></dd> <br><br> -->
       <!-- <dt>Pontos por norma</dt>
       <dd><?php //echo $pontosnorma; ?></dd> <br> -->
-    </dl>
+  </dl>
 
-    <div class="col-md-4">
-      <b>Indicadores</b> <br>
-      <br>
-      <input type="text" value='<?php echo utf8_decode($indicadores); ?>' name="indicadores" style="width: 100%; height: 20%;">
-      <br>      
-    </div>
-    <div class="col-md-4">
-      <b>Acompanhamento</b> <br>
-      <br>
-      <input type="text" value='<?php echo utf8_decode($acompanhamento); ?>' name="acompanhamento" style="width: 100%; height: 20%;">
-      <br>      
-    </div>
-    <div class="col-md-4">
-      <b>Avaliação e medição</b> <br>
-      <br>
-      <input type="text" value='<?php echo utf8_decode($avaliacao_e_medicao); ?>' name="avaliacaomedicao" style="width: 100%; height: 20%;">
-      <br>      
-    </div> 
-    <br>
-    
-    <br><br><br><br>
-    <div class="col-md-12">
-    
-	<textarea name="control-doc-metodo-matriz" id="control-doc-metodo-matriz" rows="10" cols="80">
-    <?php echo htmlspecialchars( $metodo ); ?>
-  </textarea>
-  <script>
+  <div class="col-md-4">
+  	<b>Indicadores</b> <br>
+  	<br>
+  	<input type="text" value='<?php echo utf8_decode($indicadores); ?>' name="indicadores" style="width: 100%; height: 20%;">
+  	<br>      
+  </div>
+  <div class="col-md-4">
+  	<b>Acompanhamento</b> <br>
+  	<br>
+  	<input type="text" value='<?php echo utf8_decode($acompanhamento); ?>' name="acompanhamento" style="width: 100%; height: 20%;">
+  	<br>      
+  </div>
+  <div class="col-md-4">
+  	<b>Avaliação e medição</b> <br>
+  	<br>
+  	<input type="text" value='<?php echo utf8_decode($avaliacao_e_medicao); ?>' name="avaliacaomedicao" style="width: 100%; height: 20%;">
+  	<br>      
+  </div> 
+  <br>
+
+  <br><br><br><br>
+  <div class="col-md-12">
+
+  	<textarea name="control-doc-metodo-matriz" id="control-doc-metodo-matriz" rows="10" cols="80">
+  		<?php echo htmlspecialchars( $metodo ); ?>
+  	</textarea>
+  	<script>
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
     CKEDITOR.replace( 'control-doc-metodo-matriz' );
-  </script>
+</script>
 
-	<div class="col-md-6">
-    <br>
-      <button type="submit" name="action" value="toSave"  onclick="return confirm('Deseja gravar as alterações efectuadas?')" class="btn btn-block btn-info">
-        Gravar
-      </button>
-    </div>
-    <div class="col-md-6">
-    <br>
-      <button type="submit" name="action" value="toClose" class="btn btn-block btn-info" onclick="return confirm('Deseja fechar a edição do procedimento?')">
-        Fechar
-      </button>
-    </div>
-    </div>
+<div class="col-md-6">
+	<br>
+	<button type="submit" name="action" value="toSave"  onclick="return confirm('Deseja gravar as alterações efectuadas?')" class="btn btn-block btn-info">
+		Gravar
+	</button>
+</div>
+<div class="col-md-6">
+	<br>
+	<button type="submit" name="action" value="toClose" class="btn btn-block btn-info" onclick="return confirm('Deseja fechar a edição do procedimento?')">
+		Fechar
+	</button>
+</div>
+</div>
 
 
 <br><!-- /.box-body -->
@@ -401,6 +421,16 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
   	beginLoad();
 
   </script>
+
+  <script>
+	//paste this code under the head tag or in a separate js file.
+	// Wait for window load
+
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+</script>
 
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
