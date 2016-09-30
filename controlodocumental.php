@@ -322,7 +322,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
  <!-- ------------------------------- END - LISTA DE METODO ------------------------------- -->
 
+ <!-- ------------------------------- BEGIN - NOVO METODO FRONT END BUILDING  ------------------------------- -->
 
+ <div class="box box-info collapsed-box">
+  <div class="box-header with-border">
+    <h3 class="box-title">Novo Método Front End</h3>
+    <div class="box-tools pull-right">
+      <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+    </div>
+  </div><!-- /.box-header -->
+  <div class="box-body" style="display: none;">
+
+    <?php echo $metodo; ?>
+
+  </div><!-- /.box-body -->
+  <div class="box-footer clearfix" style="display: none;">
+     <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
+     <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
+   </div><!-- /.box-footer -->
+ </div>
+
+ <!-- ------------------------------- END - NOVO METODO FRONT END BUILDING ------------------------------- -->
 
 
  <!-- Your Page Content Here -->
