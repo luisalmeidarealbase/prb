@@ -32,6 +32,7 @@ $last_id = $link->insert_id;
 
 
 
+
 //set data to insert on Database -> tbl_versoes_rostos
 date_default_timezone_set("Europe/Lisbon");
 $dataVersaoRosto = date("Y/m/d") . "-" . date("h:i:sa");

@@ -283,13 +283,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div><!-- /.box-header -->
   <div class="box-body" style="display: none;">
 
-<!--     <img class="img-responsive" src="http://placehold.it/2560x1440" alt="fluxo-controlo-documental"> -->
+    <!--     <img class="img-responsive" src="http://placehold.it/2560x1440" alt="fluxo-controlo-documental"> -->
     
     <!-- code to embed a pdf file -->
     <embed src="teste2.pdf" style="min-width: 100%;  min-height: 800px;" class="img-responsive" type='application/pdf'>
 
-  </div><!-- /.box-body -->
-  <div class="box-footer clearfix" style="display: none;">
+    </div><!-- /.box-body -->
+    <div class="box-footer clearfix" style="display: none;">
      <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
      <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
    </div><!-- /.box-footer -->
@@ -326,17 +326,219 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
  <div class="box box-info collapsed-box">
   <div class="box-header with-border">
-    <h3 class="box-title">Novo Método Front End</h3>
+    <h3 class="box-title">New Method</h3>
     <div class="box-tools pull-right">
       <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
     </div>
   </div><!-- /.box-header -->
   <div class="box-body" style="display: none;">
 
-    information goes here
+    <!-- information goes here -->
 
-  </div><!-- /.box-body -->
-  <div class="box-footer clearfix" style="display: none;">
+    <div class="box box-default collapsed-box">
+      <div class="box-header with-border">
+        <h3 class="box-title">Definições Relevantes</h3>
+        <div class="box-tools pull-right">
+          <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+        </div><!-- /.box-tools -->
+      </div><!-- /.box-header -->
+      <div class="box-body" style="display: none;">
+
+        <div class="box box-default collapsed-box">
+          <div class="box-header with-border">
+            <h3 class="box-title">Revisão</h3>
+            <div class="box-tools pull-right">
+              <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+            </div><!-- /.box-tools -->
+          </div><!-- /.box-header -->
+          <div class="box-body" style="display: none;">
+            <dl>
+              <dt>Descrição</dt>
+              <dd>A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.</dd>
+              <br>
+              <dt>Observações</dt>
+              <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.A description list is perfect for defining terms.</dd>
+
+            </dl>
+            <br>
+            
+            <table class="table table-bordered center">
+              <tbody>
+              
+                <tr>
+                 <th>Código</th>
+                 <th>Vigor</th>
+                 <th>9001:2008</th>
+                 <th>9001:2015</th>
+                 <th>FSC</th>
+                 <th>PEFC</th>
+               </tr>
+
+               <tr>
+                <td>467</td>
+                <td>468</td>
+                <td>XX.712.1</td>
+                <td>aa.bb.cc</td>
+                <td>XX.712.1</td>
+                <td>aa.bb.cc</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div><!-- /.box-body -->
+      </div>
+      <div class="box box-default collapsed-box">
+        <div class="box-header with-border">
+          <h3 class="box-title">Verificação</h3>
+          <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+          </div><!-- /.box-tools -->
+        </div><!-- /.box-header -->
+        <div class="box-body" style="display: none;">
+          <dl>
+            <dt>Descrição</dt>
+            <dd>A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.</dd>
+            <br>
+            <dt>Observações</dt>
+            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.A description list is perfect for defining terms.</dd>
+
+          </dl>
+          <br>
+            
+            <table class="table table-bordered center">
+              <tbody>
+              
+                <tr>
+                 <th>Código</th>
+                 <th>Vigor</th>
+                 <th>9001:2008</th>
+                 <th>9001:2015</th>
+                 <th>FSC</th>
+                 <th>PEFC</th>
+               </tr>
+
+               <tr>
+                <td>467</td>
+                <td>468</td>
+                <td>XX.712.1</td>
+                <td>aa.bb.cc</td>
+                <td>XX.712.1</td>
+                <td>aa.bb.cc</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div><!-- /.box-body -->
+      </div>
+
+
+    </div><!-- /.box-body -->
+  </div>
+
+  <div class="box box-default collapsed-box">
+    <div class="box-header with-border">
+      <h3 class="box-title">Briefing Comercial</h3>
+      <div class="box-tools pull-right">
+        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+      </div><!-- /.box-tools -->
+    </div><!-- /.box-header -->
+    <div class="box-body" style="display: none;">
+
+      <div class="box box-default collapsed-box">
+        <div class="box-header with-border">
+          <h3 class="box-title">Revisão</h3>
+          <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+          </div><!-- /.box-tools -->
+        </div><!-- /.box-header -->
+        <div class="box-body" style="display: none;">
+          <dl>
+            <dt>Descrição</dt>
+            <dd>A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.</dd>
+            <br>
+            <dt>Observações</dt>
+            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.A description list is perfect for defining terms.</dd>
+
+          </dl>
+          <br>
+            
+            <table class="table table-bordered center">
+              <tbody>
+              
+                <tr>
+                 <th>Código</th>
+                 <th>Vigor</th>
+                 <th>9001:2008</th>
+                 <th>9001:2015</th>
+                 <th>FSC</th>
+                 <th>PEFC</th>
+               </tr>
+
+               <tr>
+                <td>467</td>
+                <td>468</td>
+                <td>XX.712.1</td>
+                <td>aa.bb.cc</td>
+                <td>XX.712.1</td>
+                <td>aa.bb.cc</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div><!-- /.box-body -->
+      </div>
+      <div class="box box-default collapsed-box">
+        <div class="box-header with-border">
+          <h3 class="box-title">Verificação</h3>
+          <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+          </div><!-- /.box-tools -->
+        </div><!-- /.box-header -->
+        <div class="box-body" style="display: none;">
+          <dl>
+            <dt>Descrição</dt>
+            <dd>A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.</dd>
+            <br>
+            <dt>Observações</dt>
+            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.A description list is perfect for defining terms.</dd>
+
+          </dl>
+          <br>
+            
+            <table class="table table-bordered center">
+              <tbody>
+              
+                <tr>
+                 <th>Código</th>
+                 <th>Vigor</th>
+                 <th>9001:2008</th>
+                 <th>9001:2015</th>
+                 <th>FSC</th>
+                 <th>PEFC</th>
+               </tr>
+
+               <tr>
+                <td>467</td>
+                <td>468</td>
+                <td>XX.712.1</td>
+                <td>aa.bb.cc</td>
+                <td>XX.712.1</td>
+                <td>aa.bb.cc</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div><!-- /.box-body -->
+      </div>
+
+
+    </div><!-- /.box-body -->
+  </div>
+
+</div><!-- /.box-body -->
+<div class="box-footer clearfix" style="display: none;">
+  A good place to put some useful information. Just a simple footer code. 
      <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
      <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
    </div><!-- /.box-footer -->
