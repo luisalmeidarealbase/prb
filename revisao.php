@@ -138,7 +138,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <small>Recreating DNA</small>
         </h1>
         <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+          <li><a href="index.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 <!--       <li class="active">Here</li>
 -->    </ol>
 </section>

@@ -333,7 +333,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div><!-- /.box-header -->
   <div class="box-body" style="display: none;">
 
-    <?php echo $metodo; ?>
+    information goes here
 
   </div><!-- /.box-body -->
   <div class="box-footer clearfix" style="display: none;">
