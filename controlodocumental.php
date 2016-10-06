@@ -37,6 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           apply the skin class to the body tag so the changes take effect.
         -->
         <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+        <link rel="stylesheet" type="text/css" href="dist/css/personalcss.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -326,7 +327,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
  <div class="box box-info collapsed-box">
   <div class="box-header with-border">
-    <h3 class="box-title">New Method</h3>
+    <h3 class="box-title">New Method Section</h3>
     <div class="box-tools pull-right">
       <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
     </div>
@@ -337,7 +338,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <div class="box box-default collapsed-box">
       <div class="box-header with-border">
-        <h3 class="box-title">Definições Relevantes</h3>
+        <h3 class="box-title sub-titulo-1">Definições Relevantes</h3>
         <div class="box-tools pull-right">
           <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
         </div><!-- /.box-tools -->
@@ -346,12 +347,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <div class="box box-default collapsed-box">
           <div class="box-header with-border">
-            <h3 class="box-title">Revisão</h3>
+            <h3 class="box-title sub-titulo-2">Revisão</h3>
             <div class="box-tools pull-right">
               <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
             </div><!-- /.box-tools -->
           </div><!-- /.box-header -->
           <div class="box-body" style="display: none;">
+            <div class="col-md-7">
             <dl>
               <dt>Descrição</dt>
               <dd>A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.</dd>
@@ -360,6 +362,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.A description list is perfect for defining terms.</dd>
 
             </dl>
+            </div>
+            <div class="col-md-5">
+            <br>
+              <table class="table table-bordered center">
+              <tbody>
+              
+                <tr>
+                 <th>Responsável</th>
+                 <th>Subs. Resp.</th>
+                 <th>Executante</th>
+                 <th>Subs. Exec.</th>
+               </tr>
+
+               <tr align="center">
+                <td>-</td>
+                <td>-</td>
+                <td>X</td>
+                <td>-</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+            </div>
             <br>
             
             <table class="table table-bordered center">
@@ -390,21 +416,46 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div>
       <div class="box box-default collapsed-box">
         <div class="box-header with-border">
-          <h3 class="box-title">Verificação</h3>
+          <h3 class="box-title sub-titulo-2">Verificação</h3>
           <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
           </div><!-- /.box-tools -->
         </div><!-- /.box-header -->
         <div class="box-body" style="display: none;">
-          <dl>
-            <dt>Descrição</dt>
-            <dd>A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.</dd>
-            <br>
-            <dt>Observações</dt>
-            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.A description list is perfect for defining terms.</dd>
+         <div class="col-md-7">
+            <dl>
+              <dt>Descrição</dt>
+              <dd>A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.A description list is perfect for defining terms.</dd>
+              <br>
+              <dt>Observações</dt>
+              <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.A description list is perfect for defining terms.</dd>
 
-          </dl>
-          <br>
+            </dl>
+            </div>
+            <div class="col-md-5">
+            <br>
+              <table class="table table-bordered center">
+              <tbody>
+              
+                <tr>
+                 <th>Responsável</th>
+                 <th>Subs. Resp.</th>
+                 <th>Executante</th>
+                 <th>Subs. Exec.</th>
+               </tr>
+
+               <tr align="center">
+                <td>-</td>
+                <td>-</td>
+                <td>X</td>
+                <td>-</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+            </div>
+            <br>
             
             <table class="table table-bordered center">
               <tbody>
@@ -438,7 +489,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <div class="box box-default collapsed-box">
     <div class="box-header with-border">
-      <h3 class="box-title">Briefing Comercial</h3>
+      <h3 class="box-title sub-titulo-1">Briefing Comercial</h3>
       <div class="box-tools pull-right">
         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
       </div><!-- /.box-tools -->
@@ -447,7 +498,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <div class="box box-default collapsed-box">
         <div class="box-header with-border">
-          <h3 class="box-title">Revisão</h3>
+          <h3 class="box-title sub-titulo-2">Revisão</h3>
           <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
           </div><!-- /.box-tools -->
@@ -490,7 +541,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div>
       <div class="box box-default collapsed-box">
         <div class="box-header with-border">
-          <h3 class="box-title">Verificação</h3>
+          <h3 class="box-title sub-titulo-2">Verificação</h3>
           <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
           </div><!-- /.box-tools -->
