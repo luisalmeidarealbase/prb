@@ -425,7 +425,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                  <th>Subs. Exec.</th>
                </tr>
 
-               <tr align="center">
+               <tr class="text-left">
                 <td>-</td>
                 <td>-</td>
                 <td>X</td>
