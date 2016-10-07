@@ -166,36 +166,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- ------------------------------- BEGIN - LISTA DE ROSTO  ------------------------------- -->
 
-  <div class="box box-info">
-    <div class="box-header with-border">
-      <h3 class="box-title">Rosto</h3>
-      <div class="box-tools pull-right">
-        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-      </div>
+ <div class="box box-info collapsed-box">
+  <div class="box-header with-border">
+    <h3 class="box-title">Rosto</h3>
+    <div class="box-tools pull-right">
+      <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+    </div>
     </div><!-- /.box-header -->
-    <div class="box-body" style="display: block;">
-
-
-
-
+    <div class="box-body" style="display: none;">
      <?php
 
      $queryrosto = "SELECT * FROM tbl_procedimentos INNER JOIN tbl_rostos ON id_procedimento = tbl_procedimentos_id_procedimento INNER JOIN tbl_versoes_rostos ON id_rosto = tbl_rostos_id_rosto WHERE tbl_versoes_rostos.publicado_versao_rosto = 1 AND id_procedimento = 2";
 
-
-     /*------------ THIS IS A TEST - BEGIN ---------------*/
-
-     $sql1 = "SELECT * FROM tbl_rostos INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto WHERE tbl_versoes_rostos.publicado_versao_rosto = 1 AND tbl_procedimentos.id_procedimento = 2";
-
-     /*------------ THIS IS A TEST - END -----------------*/
-
-
      $resultrosto = mysqli_query($link,$queryrosto);
 
      while ($rowrosto = mysqli_fetch_object($resultrosto)) {
-
-
-          //save data to variables from the previous query
+      //save data to variables from the previous query
       $objectivo = $rowrosto->objectivo_procedimento;
       $ambito = $rowrosto->ambito_procedimento;
       $entradas = $rowrosto->entradas;
@@ -210,13 +196,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
       $metodo = $rowrosto->metodo;
 
     }
-
-
-
     ?>
+ 
 
-
-    <dl class="dl-horizontal">
+  <dl class="dl-horizontal">
       <dt>Procedimento:</dt>
       <dd><?php echo $nomeprocedimento; ?></dd>
       <dt>Ref. Doc Versão em vigor</dt>
@@ -226,8 +209,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <dt>Responsável</dt>
       <dd><?php echo $responsavel_procedimento; ?></dd>
     </dl>
-  </div><!-- /.box-header -->
-  <div class="box-body">
     <br>
 
     <dl class="dl-horizontal">
@@ -263,7 +244,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
     </div><!-- /.box-body -->
-    <div class="box-footer clearfix" style="display: block;">
+    <div class="box-footer clearfix" style="display: none;">
      <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
      <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
    </div><!-- /.box-footer -->
@@ -375,11 +356,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                  <th>Subs. Exec.</th>
                </tr>
 
-               <tr align="center">
-                <td>-</td>
-                <td>-</td>
-                <td>X</td>
-                <td>-</td>
+               <tr class="text-left">
+                <td>Designer</td>
+                <td>Responsável Qualidade</td>
+                <td>Operador Guilhotina</td>
+                <td>Designer</td>
               </tr>
 
             </tbody>
