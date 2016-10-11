@@ -53,9 +53,9 @@
         <entry file="file://$PROJECT_DIR$/edicao-controlodocumental.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
-              <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
+              <caret line="78" column="42" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
               <folding>
-                <marker date="1476193015000" expanded="true" signature="5614:5862" ph="SELECT * FRO... tbl_procedimentos" />
+                <marker date="1476193063000" expanded="true" signature="5613:5861" ph="SELECT * FRO... tbl_procedimentos" />
               </folding>
             </state>
           </provider>
@@ -174,12 +174,20 @@
       <updated>1466524257225</updated>
       <workItem from="1466524258963" duration="707000" />
       <workItem from="1475753967132" duration="37000" />
-      <workItem from="1476185356152" duration="719000" />
+      <workItem from="1476185356152" duration="763000" />
     </task>
+    <task id="LOCAL-00001" summary="added an e">
+      <created>1476193038190</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1476193038190</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1463000" />
+    <option name="totallyTimeSpent" value="1507000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -224,6 +232,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added an e" />
+    <option name="LAST_COMMIT_MESSAGE" value="added an e" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -365,9 +377,9 @@
     <entry file="file://$PROJECT_DIR$/edicao-controlodocumental.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
-          <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
+          <caret line="78" column="42" selection-start-line="78" selection-start-column="42" selection-end-line="78" selection-end-column="42" />
           <folding>
-            <marker date="1476193015000" expanded="true" signature="5614:5862" ph="SELECT * FRO... tbl_procedimentos" />
+            <marker date="1476193063000" expanded="true" signature="5613:5861" ph="SELECT * FRO... tbl_procedimentos" />
           </folding>
         </state>
       </provider>
