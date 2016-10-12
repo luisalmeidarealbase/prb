@@ -115,8 +115,9 @@ while ($rowGetIdPublished = mysqli_fetch_object($resultGetIdPublished)) {
 // remove published status of old rosto
 
 	$notPublish = 0;
+	$historyStatus = 1;
 
-	$changeOldPublished = "UPDATE tbl_versoes_rostos SET publicado_versao_rosto = '$notPublish' WHERE id_versao_rosto = '$idToChange'";
+	$changeOldPublished = "UPDATE tbl_versoes_rostos SET publicado_versao_rosto = '$notPublish', historico_versao_rosto = '$historyStatus' WHERE id_versao_rosto = '$idToChange'";
 
 	$resultChangeOldPublished = mysqli_query($link,$changeOldPublished);
 
