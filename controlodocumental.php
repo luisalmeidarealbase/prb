@@ -144,6 +144,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <br>
         <div class="btn-group">
           <a href="edicao-controlodocumental.php"><button type="button" class="btn btn-info">Editar Procedimento</button></a>
+            <a href="procedimento-historico.php?id=2"><button type="button" class="btn btn-info">Histórico</button></a>
 
 
 
