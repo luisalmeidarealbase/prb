@@ -348,7 +348,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <br>
               <table class="table table-bordered center">
               <tbody>
-              
+                <tr>
+                    <th colspan="4" class="text-center" style="background-color: #ededed;">Matriz RH</th>
+                </tr>
                 <tr>
                  <th>Responsável</th>
                  <th>Subs. Resp.</th>
