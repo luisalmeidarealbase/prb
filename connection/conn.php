@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect("localhost", "root", "root", "prbdb");
+$link = mysqli_connect("localhost", "root", "root", "prbgitdb");
 
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;

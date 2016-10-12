@@ -39,7 +39,7 @@ $dataVersaoRosto = date("Y/m/d") . "-" . date("h:i:sa");
 
 //set name to insert on Database -> tbl_versoes_rostos
 $nomeVersaoRosto = "Versão do rosto nº XX ";
-$nomeFinalVersaoRosto = utf8_decode($nomeVersaoRosto);
+$nomeFinalVersaoRosto =$nomeVersaoRosto;
 
 
 $insertNewRostoVersao = "INSERT INTO tbl_versoes_rostos (nome_versao_rosto, data_versao_rosto, aprovado_versao_rosto, publicado_versao_rosto, tbl_rostos_id_rosto) VALUES ('$nomeFinalVersaoRosto', '$dataVersaoRosto','0','0','$last_id')";
