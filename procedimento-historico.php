@@ -244,7 +244,7 @@ desired effect
             SGQ&CoC
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2016 <a href="#">Portal Realbase</a>.</strong> Todos os direitos reservados.
+        <strong>Copyright &copy; 2016 <a href="#">Portal Realbase</a>.</strong> Todos os direitos reservadoos.
     </footer>
 
     <!-- Control Sidebar -->
