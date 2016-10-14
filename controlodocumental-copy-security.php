@@ -391,7 +391,16 @@ desired effect
                                                     <dd><?php echo $descricaoActividade; ?></dd>
                                                     <br>
                                                     <dt>Observações</dt>
-                                                    <dd><?php echo $observacaoActividade;?></dd>
+                                                    <dd>
+                                                        <?php
+                                                            if ($observacaoActividade == ""){
+                                                                echo "Não existem observações." ;
+                                                            }
+                                                        else {
+                                                            echo $observacaoActividade;
+                                                        }
+                                                        ?>
+                                                    </dd>
 
                                                 </dl>
                                             </div>
@@ -428,8 +437,6 @@ desired effect
                                                 <tbody>
 
                                                 <tr>
-                                                    <th>Códigoooo</th>
-                                                    <th>Vigor</th>
                                                     <th>9001:2008</th>
                                                     <th>9001:2015</th>
                                                     <th>FSC</th>
@@ -437,12 +444,46 @@ desired effect
                                                 </tr>
 
                                                 <tr>
-                                                    <td>467</td>
-                                                    <td>468</td>
-                                                    <td>XX.712.1</td>
-                                                    <td>aa.bb.cc</td>
-                                                    <td>XX.712.1</td>
-                                                    <td>aa.bb.cc</td>
+
+                                                    <td>
+                                                        <?php
+                                                        if ($c90012008 == ""){
+                                                            echo "--";
+                                                        }
+                                                        else {
+                                                            echo $c90012008;
+                                                        }
+                                                        ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php
+                                                            if ($c90012015 == "") {
+                                                                echo "--";
+                                                            }
+                                                            else {
+                                                                echo $c90012015;
+                                                            }
+                                                        ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php
+                                                        if ($fsc == "") {
+                                                            echo "--";
+                                                        }
+                                                        else{
+                                                            echo $fsc;
+                                                        } ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php
+                                                        if ($pefc == "" ){
+                                                            echo "--";
+                                                        }
+                                                        else {
+                                                            echo $pefc;
+                                                        }
+                                                         ?>
+                                                    </td>
                                                 </tr>
 
                                                 </tbody>
