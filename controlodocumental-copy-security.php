@@ -293,23 +293,23 @@ desired effect
 
             <!-- ------------------------------- BEGIN - LISTA DE METODO  ------------------------------- -->
 
-            <div class="box box-info collapsed-box">
+            <!--<div class="box box-info collapsed-box">
                 <div class="box-header with-border">
                     <h3 class="box-title">Método e Matriz RH</h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
                     </div>
                 </div><!-- /.box-header -->
-                <div class="box-body" style="display: none;">
+              <!--  <div class="box-body" style="display: none;">-->
 
-                    <?php echo $metodo; ?>
+                    <?php /*echo $metodo; */?>
 
-                </div><!-- /.box-body -->
-                <div class="box-footer clearfix" style="display: none;">
+            <!--    </div><!-- /.box-body -->
+                <!--<div class="box-footer clearfix" style="display: none;">
                     <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
                     <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
-                </div><!-- /.box-footer -->
-            </div>
+              <!--  </div><!-- /.box-footer -->
+           <!-- </div>-->
 
             <!-- ------------------------------- END - LISTA DE METODO ------------------------------- -->
 
