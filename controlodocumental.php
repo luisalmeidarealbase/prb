@@ -330,6 +330,7 @@ desired effect
 
                     <?php
 
+                    //query to show dub processos
                     $querySubProcessos = "SELECT * FROM tbl_sub_processos WHERE tbl_rostos_id_rosto = '$idrosto'";
 
                     $resultSubProcessos = mysqli_query($link, $querySubProcessos);
@@ -355,6 +356,7 @@ desired effect
 
                                 <?php
 
+                                //query to show actividades
                                 $queryActividade = "SELECT * FROM tbl_actividades WHERE tbl_sub_processos_id_sub_processo = '$idsubprocesso'";
                                 $resultActividade = mysqli_query($link, $queryActividade);
 

@@ -170,7 +170,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
  while ($rowrosto = mysqli_fetch_object($resultrosto)) {
 
-  //save data to variables from the previous query
+
+          //save data to variables from the previous query
   $objectivo = utf8_encode($rowrosto->objectivo_procedimento);
   $ambito = utf8_encode($rowrosto->ambito_procedimento);
   $entradas = utf8_encode($rowrosto->entradas);
@@ -183,9 +184,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   $avaliacao_e_medicao = utf8_encode($rowrosto->avaliacao_e_medicao);
   $responsavel_procedimento = utf8_encode($rowrosto->responsavel_procedimento);
   $metodo = $rowrosto->metodo;
-
-     $idrosto = $rowrosto->id_rosto;
- }
+}
 
 
 
@@ -303,156 +302,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </div><!-- /.box-header -->
   <div class="box-body" style="display: none;">
 
-      <?php
-
-      //query to show dub processos
-      $querySubProcessos = "SELECT * FROM tbl_sub_processos WHERE tbl_rostos_id_rosto = '$idrosto'";
-
-      $resultSubProcessos = mysqli_query($link, $querySubProcessos);
-
-      while ($rowSubProcessos = mysqli_fetch_object($resultSubProcessos)) {
-
-          $idsubprocesso = $rowSubProcessos->id_sub_processo;
-          $nomeSubProcesso = utf8_encode($rowSubProcessos->nome_sub_processo);
-          ?>
-
-
-          <!-- information goes here -->
-
-          <div class="box box-default collapsed-box">
-              <div class="box-header with-border">
-                  <h3 class="box-title sub-titulo-1"><input type="text" style="min-width:100%; padding: 5px;" name="subprocesso<?php echo $idsubprocesso; ?>" value="<?php echo $nomeSubProcesso; ?>"></h3>
-                  <div class="box-tools pull-right">
-                      <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
-                      </button>
-                  </div><!-- /.box-tools -->
-              </div><!-- /.box-header -->
-              <div class="box-body" style="display: none;">
-
-                  <?php
-
-                  //query to show actividades
-                  $queryActividade = "SELECT * FROM tbl_actividades WHERE tbl_sub_processos_id_sub_processo = '$idsubprocesso'";
-                  $resultActividade = mysqli_query($link, $queryActividade);
-
-                  while ($rowActividade = mysqli_fetch_object($resultActividade)) {
-
-                      $idActividade = $rowActividade->id_actividade;
-                      $nomeActividade = utf8_encode($rowActividade->nome_actividade);
-                      $descricaoActividade = utf8_encode($rowActividade->descricao_actividade);
-                      $observacaoActividade = utf8_encode($rowActividade->observacao_actividade);
-                      $c90012008 = utf8_encode($rowActividade->c9001_2008);
-                      $c90012015 = utf8_encode($rowActividade->c9001_2015);
-                      $fsc = utf8_encode($rowActividade->fsc);
-                      $pefc = utf8_encode($rowActividade->pefc);
-
-
-                      ?>
-                      <!-- information goes here -->
-
-
-                      <div class="box box-default collapsed-box">
-                          <div class="box-header with-border">
-                              <h3 class="box-title sub-titulo-2"><input type="text" style="min-width:100%; padding: 5px;" name="nomeactividade<?php echo $idActividade; ?>" value="<?php echo $nomeActividade; ?>"></h3>
-                              <div class="box-tools pull-right">
-                                  <button class="btn btn-box-tool" data-widget="collapse"><i
-                                          class="fa fa-plus"></i></button>
-                              </div><!-- /.box-tools -->
-                          </div><!-- /.box-header -->
-
-
-                          <div class="box-body" style="display: none;">
-                              <div class="col-md-7">
-                                  <dl>
-                                      <dt>Descrição</dt>
-                                      <dd><textarea style="padding: 5px; width: 100%; height: auto;" rows="10" name="descricaoactividade<?php echo $idActividade;?>"><?php echo $descricaoActividade; ?></textarea></dd>
-                                      <br>
-                                      <dt>Observações</dt>
-                                      <dd>
-                                          <textarea style="padding: 5px; width: 100%; height: auto;" rows="5" name="observacoesactividade<?php echo $idActividade;?>"><?php echo $observacaoActividade; ?></textarea>
-                                      </dd>
-
-                                  </dl>
-                              </div>
-                              <div class="col-md-5">
-                                  <br>
-                                  <table class="table table-bordered center">
-                                      <tbody>
-                                      <tr>
-                                          <th colspan="4" class="text-center"
-                                              style="background-color: #ededed;">Matriz RH
-                                          </th>
-                                      </tr>
-                                      <tr>
-                                          <th>Responsável</th>
-                                          <th>Subs. Resp.</th>
-                                          <th>Executante</th>
-                                          <th>Subs. Exec.</th>
-                                      </tr>
-
-                                      <tr class="text-left">
-                                          <td>Designer</td>
-                                          <td>Responsável Qualidade</td>
-                                          <td>Operador Guilhotina</td>
-                                          <td>Designer</td>
-                                      </tr>
-
-                                      </tbody>
-                                  </table>
-
-                              </div>
-                              <br>
-
-                              <table class="table table-bordered center">
-                                  <tbody>
-
-                                  <tr>
-                                      <th>9001:2008</th>
-                                      <th>9001:2015</th>
-                                      <th>FSC</th>
-                                      <th>PEFC</th>
-                                  </tr>
-
-                                  <tr>
-
-                                      <td>
-                                          <input type="text" name="c90012008IdAct<?php echo $idActividade;?>" value="<?php echo $c90012008; ?>">
-                                      </td>
-                                      <td>
-                                          <input type="text" name="c90012015IdAct<?php echo $idActividade;?>" value="<?php echo $c90012015; ?>">
-                                      </td>
-                                      <td>
-                                          <input type="text" name="fscIdAct<?php echo $idActividade;?>" value="<?php echo $fsc; ?>">
-                                      </td>
-                                      <td>
-                                          <input type="text" name="pefcIdAct<?php echo $idActividade;?>" value="<?php echo $pefc; ?>">
-                                      </td>
-                                  </tr>
-
-                                  </tbody>
-                              </table>
-
-                          </div><!-- /.box-body -->
-                      </div>
-
-                      <?php
-
-                  }
-
-                  ?>
-
-
-
-
-
-              </div><!-- /.box-body -->
-          </div>
-
-          <?php
-
-      }
-
-      ?>
+     <textarea name="control-doc-metodo-matriz" id="control-doc-metodo-matriz" rows="10" cols="80">
+    <?php echo  htmlspecialchars( $metodo ); ?>
+  </textarea>
+  <script>
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace( 'control-doc-metodo-matriz' );
+  </script>
 
 </div><!-- /.box-body -->
 <div class="box-footer clearfix" style="display: none;">
