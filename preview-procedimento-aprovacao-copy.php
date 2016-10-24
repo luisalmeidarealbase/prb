@@ -306,218 +306,28 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
  <!-- ------------------------------- END - LISTA DE FLUXOGRAMA PROCEDIMENTO ------------------------------- -->
 
 
-  <!-- ------------------------------- BEGIN - LISTA DE METODO  ------------------------------- -->
 
-  <div class="box box-info collapsed-box">
-    <div class="box-header with-border">
-      <h3 class="box-title">Método | Matriz RH</h3>
-      <div class="box-tools pull-right">
-        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
-      </div>
-    </div><!-- /.box-header -->
-    <div class="box-body" style="display: none;">
+ <!-- ------------------------------- BEGIN - LISTA DE METODO  ------------------------------- -->
 
+ <div class="box box-info collapsed-box">
+  <div class="box-header with-border">
+    <h3 class="box-title">Método e Matriz RH</h3>
+    <div class="box-tools pull-right">
+      <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+    </div>
+  </div><!-- /.box-header -->
+  <div class="box-body" style="display: none;">
 
-      <!-- information goes here -->
+    <?php echo $metodo; ?>
 
+  </div><!-- /.box-body -->
+  <div class="box-footer clearfix" style="display: none;">
+     <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
+     <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
+   </div><!-- /.box-footer -->
+ </div>
 
-      <?php
-
-      //query to show dub processos
-      $querySubProcessos = "SELECT * FROM tbl_sub_processos WHERE tbl_rostos_id_rosto = '$idrosto'";
-
-      $resultSubProcessos = mysqli_query($link, $querySubProcessos);
-
-      while ($rowSubProcessos = mysqli_fetch_object($resultSubProcessos)) {
-
-        $idsubprocesso = $rowSubProcessos->id_sub_processo;
-        $nomeSubProcesso = utf8_encode($rowSubProcessos->nome_sub_processo);
-        ?>
-
-
-        <!-- information goes here -->
-
-        <div class="box box-default collapsed-box">
-          <div class="box-header with-border">
-            <h3 class="box-title sub-titulo-1"><?php echo $nomeSubProcesso; ?></h3>
-            <div class="box-tools pull-right">
-              <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
-              </button>
-            </div><!-- /.box-tools -->
-          </div><!-- /.box-header -->
-          <div class="box-body" style="display: none;">
-
-            <?php
-
-            //query to show actividades
-            $queryActividade = "SELECT * FROM tbl_actividades WHERE tbl_sub_processos_id_sub_processo = '$idsubprocesso'";
-            $resultActividade = mysqli_query($link, $queryActividade);
-
-            while ($rowActividade = mysqli_fetch_object($resultActividade)) {
-
-              $idActividade = $rowActividade->id_actividade;
-              $nomeActividade = utf8_encode($rowActividade->nome_actividade);
-              $descricaoActividade = utf8_encode($rowActividade->descricao_actividade);
-              $observacaoActividade = utf8_encode($rowActividade->observacao_actividade);
-              $c90012008 = utf8_encode($rowActividade->c9001_2008);
-              $c90012015 = utf8_encode($rowActividade->c9001_2015);
-              $fsc = utf8_encode($rowActividade->fsc);
-              $pefc = utf8_encode($rowActividade->pefc);
-
-
-              ?>
-              <!-- information goes here -->
-
-
-              <div class="box box-default collapsed-box">
-                <div class="box-header with-border">
-                  <h3 class="box-title sub-titulo-2"><?php echo $nomeActividade;?></h3>
-                  <div class="box-tools pull-right">
-                    <button class="btn btn-box-tool" data-widget="collapse"><i
-                          class="fa fa-plus"></i></button>
-                  </div><!-- /.box-tools -->
-                </div><!-- /.box-header -->
-
-
-                <div class="box-body" style="display: none;">
-                  <div class="col-md-7">
-                    <dl>
-                      <dt>Descrição</dt>
-                      <dd><?php echo $descricaoActividade; ?></dd>
-                      <br>
-                      <dt>Observações</dt>
-                      <dd>
-                        <?php
-                        if ($observacaoActividade == ""){
-                          echo "Não existem observações." ;
-                        }
-                        else {
-                          echo $observacaoActividade;
-                        }
-                        ?>
-                      </dd>
-
-                    </dl>
-                  </div>
-                  <div class="col-md-5">
-                    <br>
-                    <table class="table table-bordered center">
-                      <tbody>
-                      <tr>
-                        <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Matriz RH
-                        </th>
-                      </tr>
-                      <tr>
-                        <th>Responsável</th>
-                        <th>Subs. Resp.</th>
-                        <th>Executante</th>
-                        <th>Subs. Exec.</th>
-                      </tr>
-
-                      <tr class="text-left">
-                        <td>Designer</td>
-                        <td>Responsável Qualidade</td>
-                        <td>Operador Guilhotina</td>
-                        <td>Designer</td>
-                      </tr>
-
-                      </tbody>
-                    </table>
-
-                  </div>
-                  <br>
-
-                  <table class="table table-bordered center">
-                    <tbody>
-
-                    <tr>
-                      <th>9001:2008</th>
-                      <th>9001:2015</th>
-                      <th>FSC</th>
-                      <th>PEFC</th>
-                    </tr>
-
-                    <tr>
-
-                      <td>
-                        <?php
-                        if ($c90012008 == ""){
-                          echo "--";
-                        }
-                        else {
-                          echo $c90012008;
-                        }
-                        ?>
-                      </td>
-                      <td>
-                        <?php
-                        if ($c90012015 == "") {
-                          echo "--";
-                        }
-                        else {
-                          echo $c90012015;
-                        }
-                        ?>
-                      </td>
-                      <td>
-                        <?php
-                        if ($fsc == "") {
-                          echo "--";
-                        }
-                        else{
-                          echo $fsc;
-                        } ?>
-                      </td>
-                      <td>
-                        <?php
-                        if ($pefc == "" ){
-                          echo "--";
-                        }
-                        else {
-                          echo $pefc;
-                        }
-                        ?>
-                      </td>
-                    </tr>
-
-                    </tbody>
-                  </table>
-
-                </div><!-- /.box-body -->
-              </div>
-
-              <?php
-
-            }
-
-            ?>
-
-
-
-
-
-          </div><!-- /.box-body -->
-        </div>
-
-        <?php
-
-      }
-
-      ?>
-
-
-    </div><!-- /.box-body -->
-  </div>
-
-    </div><!-- /.box-body -->
-    <div class="box-footer clearfix" style="display: none;">
-      A good place to put some useful information. Just a simple footer code.
-      <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-      <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
-    </div><!-- /.box-footer -->
-  </div>
-  <!-- ------------------------------- END - LISTA DE METODO ------------------------------- -->
+ <!-- ------------------------------- END - LISTA DE METODO ------------------------------- -->
 
 
 

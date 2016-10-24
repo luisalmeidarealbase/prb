@@ -369,7 +369,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                       <br>
                                       <dt>Observações</dt>
                                       <dd>
-                                          <textarea style="padding: 5px; width: 100%; height: auto;" rows="5" name="observacoesactividade<?php echo $idActividade;?>"><?php echo $observacaoActividade; ?></textarea>
+                                          <textarea style="padding: 5px; width: 100%; height: auto;" rows="5" name="observacaoactividade<?php echo $idActividade;?>"><?php echo $observacaoActividade; ?></textarea>
                                       </dd>
 
                                   </dl>
