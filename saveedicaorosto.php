@@ -70,7 +70,7 @@ else{
     $contArray = 0;
     $actividadeArray = array();
 
-        echo "<table style='border:1px solid;'>";
+        //echo "<table style='border:1px solid;'>";
         foreach ($_POST as $key => $value) {
 
 			$keys = array_keys($_POST);
@@ -89,7 +89,7 @@ else{
 					//echo "<b>o meu sub processo tem o seguinte id:</b>". $idSubProcesso;
 					$nomeSubProcesso = $_POST[$key];
 
-					echo "o novo nome do subprocesso é: " . $nomeSubProcesso . " ------------------------------------------------------------------------- <br>";
+					//echo "o novo nome do subprocesso é: " . $nomeSubProcesso . " ------------------------------------------------------------------------- <br>";
 
 					// preciso do id do sub processo que esta a ser atualizado
 					//$lastIdRostoInserted = 0;
@@ -171,15 +171,15 @@ else{
 				if ($numElementosArray == 7) {
 
 					//echo "<br>" . $numElementosArray . "<br>";
-					echo "<br><br>";
-					echo "o ultimo sub processo inserido foi o: ".$lastIdSubProcesso."<br>";
+					//echo "<br><br>";
+					/*echo "o ultimo sub processo inserido foi o: ".$lastIdSubProcesso."<br>";
 					echo "posicao 0 do actividadearray: ".$actividadeArray[0]."<br>";
 					echo "posicao 1 do actividadearray: ".$actividadeArray[1]."<br>";
 					echo "posicao 2 do actividadearray: ".$actividadeArray[2]."<br>";
 					echo "posicao 3 do actividadearray: ".$actividadeArray[3]."<br>";
 					echo "posicao 4 do actividadearray: ".$actividadeArray[4]."<br>";
 					echo "posicao 5 do actividadearray: ".$actividadeArray[5]."<br>";
-					echo "posicao 6 do actividadearray: ".$actividadeArray[6]."<br>";
+					echo "posicao 6 do actividadearray: ".$actividadeArray[6]."<br>";*/
 
 
 
@@ -219,31 +219,18 @@ else{
 			$contArray++;
 		}
 
-    echo "</table>";
+    //echo "</table>";
 
     /* -------------------------- ETAPA 3 - END ------------------------------ >*/
 
-	
-	// end - code to update all method fields on db
-
-
-
-
-	
-
-	//add here the correct URL.
 	$url = "viewedicaorosto.php?idrosto=".$idrostoedicao."&idprocedimento=".$idprocedimento;
 
 	header('location: '.$url);
-
-	// end - code to update/save rosto
 }
 
 
 
 ?>
-
-
 
 
 
