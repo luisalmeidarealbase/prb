@@ -18,7 +18,7 @@ $acompanhamento = $_POST['acompanhamento'];
 $avaliacaomedicao = $_POST['avaliacaomedicao'];
 
 // new code using ckeditor
-$metodo = $_POST['control-doc-metodo-matriz'];
+//$metodo = $_POST['control-doc-metodo-matriz'];
 
 $getIdProcedimento = "SELECT * FROM tbl_rostos WHERE id_rosto = '$idrostoedicao'";
 
@@ -84,16 +84,19 @@ else{
 
 					//echo "o sub processo encontrado foi o seguinte: ".$key;
 
+                    // extract the numbers where is the sub process id - using preg_replace
+                    $idSubProcesso = preg_replace("/[^0-9]/","",$key);
+					//echo "<b>o meu sub processo tem o seguinte id:</b>". $idSubProcesso;
 					$nomeSubProcesso = $_POST[$key];
 
 					echo "o novo nome do subprocesso é: " . $nomeSubProcesso . " ------------------------------------------------------------------------- <br>";
 
 					// preciso do id do sub processo que esta a ser atualizado
-					$lastIdRostoInserted = 0;
+					//$lastIdRostoInserted = 0;
 					// 3.1 query aqui para atualizar sub processo - atenção à chave estrangeira do rosto
-					$updateSubProcesso = "UPDATE tbl_sub_processos SET nome_sub_processo = '$nomeSubProcesso', tbl_rostos_id_rosto = '$lastIdRostoInserted' WHERE id_sub_processo =";
+					$updateSubProcesso = "UPDATE tbl_sub_processos SET nome_sub_processo = '$nomeSubProcesso' WHERE id_sub_processo = '$idSubProcesso'";
 					//$queryInsertSubProcesso = "INSERT INTO tbl_sub_processos (nome_sub_processo, tbl_rostos_id_rosto) VALUES ('$nomeSubProcesso','$lastIdRostoInserted')";
-					$ResultInsertSubProcesso = mysqli_query($link,$updateSubProcesso);
+					$ResultUpdateSubProcesso = mysqli_query($link,$updateSubProcesso);
 
 					// 3.2 check last if of sub processo inserted
 					$lastIdSubProcesso = mysqli_insert_id($link);
@@ -104,6 +107,7 @@ else{
 				$nomeActividadeStringCheck = "nomeactividade";
 				if (strpos($key, $nomeActividadeStringCheck) !== false) {
 
+                    $idActividade = preg_replace("/[^0-9]/","",$key);
 					$newNomeActividade = $value;
 					//echo "<b>O novo nome da actividade é:</b> ".$newNomeActividade."<br>";
 					$actividadeArray[0] = $newNomeActividade;
@@ -177,12 +181,21 @@ else{
 					echo "posicao 5 do actividadearray: ".$actividadeArray[5]."<br>";
 					echo "posicao 6 do actividadearray: ".$actividadeArray[6]."<br>";
 
+
+
+//                    $updateSubProcesso = "UPDATE tbl_sub_processos SET nome_sub_processo = '$nomeSubProcesso' WHERE id_sub_processo = '$idSubProcesso'";
+
+                    // query to update the activity
+                    $queryUpdateActividade = "UPDATE tbl_actividades SET nome_actividade = '$actividadeArray[0]', descricao_actividade = '$actividadeArray[1]', observacao_actividade = '$actividadeArray[2]', c9001_2008 = '$actividadeArray[3]', c9001_2015 = '$actividadeArray[4]',
+                                                fsc = '$actividadeArray[5]', pefc = '$actividadeArray[6]', tbl_sub_processos_id_sub_processo = '$idSubProcesso' WHERE id_actividade = '$idActividade'";
+
+                    $resultUpdateActividade = mysqli_query($link,$queryUpdateActividade);
 					// query para inserir nova actividade com os dados recolhidos
-					$queryInsertActividade = "INSERT INTO tbl_actividades (nome_actividade, descricao_actividade, observacao_actividade, c9001_2008, c9001_2015, fsc, pefc, tbl_sub_processos_id_sub_processo)
-                                  VALUES ('$actividadeArray[0]', '$actividadeArray[1]', '$actividadeArray[2]', '$actividadeArray[3]', '$actividadeArray[4]', '$actividadeArray[5]','$actividadeArray[6]', '$lastIdSubProcesso')";
+					//$queryInsertActividade = "INSERT INTO tbl_actividades (nome_actividade, descricao_actividade, observacao_actividade, c9001_2008, c9001_2015, fsc, pefc, tbl_sub_processos_id_sub_processo)
+                      //            VALUES ('$actividadeArray[0]', '$actividadeArray[1]', '$actividadeArray[2]', '$actividadeArray[3]', '$actividadeArray[4]', '$actividadeArray[5]','$actividadeArray[6]', '$lastIdSubProcesso')";
 
 					//echo $queryInsertActividade;
-					$resultInsertActividade = mysqli_query($link,$queryInsertActividade);
+					//$resultInsertActividade = mysqli_query($link,$queryInsertActividade);
 
 					$actividadeArray=[];
 
