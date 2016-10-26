@@ -172,7 +172,7 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
   $acompanhamento = utf8_encode($rowrosto->acompanhamento);
   $avaliacao_e_medicao = utf8_encode($rowrosto->avaliacao_e_medicao);
   $responsavel_procedimento = utf8_encode($rowrosto->responsavel_procedimento);
-  $metodo = $rowrosto->metodo;
+  //$metodo = $rowrosto->metodo;
 }
 
 
@@ -241,31 +241,31 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
 
     <dl class="dl-horizontal">
       <dt>Objectivo procedimento</dt>
-      <dd><?php echo $objectivo; ?></dt><br><br>
+      <dd><?php echo utf8_decode($objectivo); ?></dt><br><br>
         <dt>Âmbito de Procedimento</dt>
-        <dd><?php echo $ambito; ?></dd> <br><br>
+        <dd><?php echo utf8_decode($ambito); ?></dd> <br><br>
         <dt>Entradas</dt>
-        <dd><?php echo $entradas; ?></dd> <br><br>
+        <dd><?php echo utf8_decode($entradas); ?></dd> <br><br>
         <dt>Saídas</dt>
-        <dd><?php echo $saidas; ?></dd> <br><br>
+        <dd><?php echo utf8_decode($saidas); ?></dd> <br><br>
       </dl>
 
       <div class="col-md-2">
         <b>Indicadores</b> <br>
         <br>
-        <?php echo $indicadores; ?>
+        <?php echo utf8_decode($indicadores); ?>
         <br>      
       </div>
       <div class="col-md-2">
         <b>Acompanhamento</b> <br>
         <br>
-        <?php echo $acompanhamento; ?>
+        <?php echo utf8_decode($acompanhamento); ?>
         <br>      
       </div>
       <div class="col-md-2">
         <b>Avaliação e medição</b> <br>
         <br>
-        <?php echo $avaliacao_e_medicao; ?>
+        <?php echo utf8_decode($avaliacao_e_medicao); ?>
         <br>      
       </div>
 
@@ -331,7 +331,7 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
       while ($rowSubProcessos = mysqli_fetch_object($resultSubProcessos)) {
 
         $idsubprocesso = $rowSubProcessos->id_sub_processo;
-        $nomeSubProcesso = utf8_encode($rowSubProcessos->nome_sub_processo);
+        $nomeSubProcesso = html_entity_decode($rowSubProcessos->nome_sub_processo);
         ?>
 
 
@@ -356,13 +356,13 @@ while ($rowrosto = mysqli_fetch_object($resultrosto)) {
             while ($rowActividade = mysqli_fetch_object($resultActividade)) {
 
               $idActividade = $rowActividade->id_actividade;
-              $nomeActividade = utf8_encode($rowActividade->nome_actividade);
-              $descricaoActividade = utf8_encode($rowActividade->descricao_actividade);
-              $observacaoActividade = utf8_encode($rowActividade->observacao_actividade);
-              $c90012008 = utf8_encode($rowActividade->c9001_2008);
-              $c90012015 = utf8_encode($rowActividade->c9001_2015);
-              $fsc = utf8_encode($rowActividade->fsc);
-              $pefc = utf8_encode($rowActividade->pefc);
+              $nomeActividade = html_entity_decode($rowActividade->nome_actividade);
+              $descricaoActividade = html_entity_decode($rowActividade->descricao_actividade);
+              $observacaoActividade = html_entity_decode($rowActividade->observacao_actividade);
+              $c90012008 = html_entity_decode($rowActividade->c9001_2008);
+              $c90012015 = html_entity_decode($rowActividade->c9001_2015);
+              $fsc = html_entity_decode($rowActividade->fsc);
+              $pefc = html_entity_decode($rowActividade->pefc);
 
 
               ?>

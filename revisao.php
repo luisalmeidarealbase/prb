@@ -341,7 +341,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <td><a href="controlodocumental.php"><?php echo $rowQueryAprovacoesRostos->nome_procedimento; ?></a></td>
                 <td><?php echo $rowQueryAprovacoesRostos->data_versao_rosto; ?></td>
                 <td><span class="label label-danger">Aguarda envio para Publicação</span></td>
-                <td><a href='viewpublicacaorosto.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Editar</span></a> <a href='preview-procedimento-validacao.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Visualizar</span></a></td>
+                <td><a href='viewpublicacaorosto.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info"><!--Editar--></span></a> <a href='preview-procedimento-validacao.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Visualizar</span></a></td>
               </tr>
               <?php
                 }

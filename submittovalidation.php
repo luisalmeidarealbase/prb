@@ -9,13 +9,13 @@ session_start();
 $idrostoedicao = $_GET['id'];
 $values = array_values($_POST);
 
-$objectivoprocedimento = $_POST['objectivoprocedimento'];
-$ambitoprocedimento = $_POST['ambitoprocedimento'];
-$entradas = $_POST['entradas'];
-$saidas = $_POST['saidas'];
-$indicadores = $_POST['indicadores'];
-$acompanhamento = $_POST['acompanhamento'];
-$avaliacaomedicao = $_POST['avaliacaomedicao'];
+$objectivoprocedimento = htmlentities($_POST['objectivoprocedimento']);
+$ambitoprocedimento = htmlentities($_POST['ambitoprocedimento']);
+$entradas = htmlentities($_POST['entradas']);
+$saidas = htmlentities($_POST['saidas']);
+$indicadores = htmlentities($_POST['indicadores']);
+$acompanhamento = htmlentities($_POST['acompanhamento']);
+$avaliacaomedicao = htmlentities($_POST['avaliacaomedicao']);
 
 // new code using ckeditor
 //$metodo = $_POST['control-doc-metodo-matriz'];
@@ -111,7 +111,7 @@ if ($_POST['action'] == "toSave") {
 				// extract the numbers where is the sub process id - using preg_replace
 				$idSubProcesso = preg_replace("/[^0-9]/","",$key);
 				//echo "<b>o meu sub processo tem o seguinte id:</b>". $idSubProcesso;
-				$nomeSubProcesso = $_POST[$key];
+				$nomeSubProcesso = htmlentities($_POST[$key]);
 
 				//echo "o novo nome do subprocesso é: " . $nomeSubProcesso . " ------------------------------------------------------------------------- <br>";
 
@@ -134,7 +134,7 @@ if ($_POST['action'] == "toSave") {
 				$idActividade = preg_replace("/[^0-9]/","",$key);
 				$newNomeActividade = $value;
 				//echo "<b>O novo nome da actividade é:</b> ".$newNomeActividade."<br>";
-				$actividadeArray[0] = $newNomeActividade;
+				$actividadeArray[0] = htmlentities($newNomeActividade);
 //                        array_push($actividadeArray, $newNomeActividade);
 				//echo "o meu array : ". print_r($actividadeArray);
 			}
@@ -144,7 +144,7 @@ if ($_POST['action'] == "toSave") {
 			if (strpos($key, $descricaoActividadeStringCheck) !== false) {
 				$newDescricaoActividade = $value;
 				//echo "<b>A nova descrição da actividade é: </b>".$newDescricaoActividade . "<br>";
-				$actividadeArray[1] = $newDescricaoActividade;
+				$actividadeArray[1] = htmlentities($newDescricaoActividade);
 				//array_push($actividadeArray, $newDescricaoActividade);
 			}
 
@@ -152,7 +152,7 @@ if ($_POST['action'] == "toSave") {
 			if (strpos($key, $observacaoActividadeStringCheck) !== false) {
 				$newObservacaoActividade = $_POST[$key];
 				//echo "<b>A nova observacao é: </b> ".$newObservacaoActividade . "<br>";
-				$actividadeArray[2] = $newObservacaoActividade;
+				$actividadeArray[2] = htmlentities($newObservacaoActividade);
 				array_push($actividadeArray, $newObservacaoActividade);
 			}
 
@@ -160,7 +160,7 @@ if ($_POST['action'] == "toSave") {
 			if (strpos($key, $c90012008IdActActividadeStringCheck) !== false) {
 				$newc90012008IdActActividade = $_POST[$key];
 				//echo "<b>valor da 9001:2008 é: </b>".$newc90012008IdActActividade . "<br>";
-				$actividadeArray[3] = $newc90012008IdActActividade;
+				$actividadeArray[3] = htmlentities($newc90012008IdActActividade);
 				//array_push($actividadeArray, $newc90012008IdActActividade);
 			}
 
@@ -168,7 +168,7 @@ if ($_POST['action'] == "toSave") {
 			if (strpos($key, $c90012015IdActActividadeStringCheck) !== false) {
 				$newc90012015IdActActividade = $_POST[$key];
 				//echo "<b>O vlaor da 9001:2015 é: </b>".$newc90012015IdActActividade . "<br>";
-				$actividadeArray[4] = $newc90012015IdActActividade;
+				$actividadeArray[4] = htmlentities($newc90012015IdActActividade);
 				//array_push($actividadeArray, $newc90012015IdActActividade);
 			}
 
@@ -177,7 +177,7 @@ if ($_POST['action'] == "toSave") {
 			if (strpos($key, $fscIdActActividadeStringCheck) !== false) {
 				$newfscIdActActividade = $_POST[$key];
 				//echo "<b>O valor da fsc é: </b>".$newfscIdActActividade . "<br>";
-				$actividadeArray[5] = $newfscIdActActividade;
+				$actividadeArray[5] = htmlentities($newfscIdActActividade);
 				//array_push($actividadeArray, $newfscIdActActividade);
 			}
 
@@ -185,7 +185,7 @@ if ($_POST['action'] == "toSave") {
 			if (strpos($key, $pefcIdActActividadeStringCheck) !== false) {
 				$newpefcIdActActividade = $_POST[$key];
 				//echo "<b>O valor da pefc é: </b>".$newpefcIdActActividade . "<br>";
-				$actividadeArray[6] = $newpefcIdActActividade;
+				$actividadeArray[6] = htmlentities($newpefcIdActActividade);
 				// array_push($actividadeArray, $newpefcIdActActividade);
 			}
 
