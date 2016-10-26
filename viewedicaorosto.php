@@ -41,6 +41,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           apply the skin class to the body tag so the changes take effect.
       -->
     <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/personalcss.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -351,7 +352,7 @@ desired effect
                     while ($rowSubProcessos = mysqli_fetch_object($resultSubProcessos)) {
 
                         $idsubprocesso = $rowSubProcessos->id_sub_processo;
-                        $nomeSubProcesso = utf8_encode($rowSubProcessos->nome_sub_processo);
+                        $nomeSubProcesso = html_entity_decode($rowSubProcessos->nome_sub_processo);
                         ?>
 
 
@@ -376,13 +377,13 @@ desired effect
                                 while ($rowActividade = mysqli_fetch_object($resultActividade)) {
 
                                     $idActividade = $rowActividade->id_actividade;
-                                    $nomeActividade = utf8_encode($rowActividade->nome_actividade);
-                                    $descricaoActividade = utf8_encode($rowActividade->descricao_actividade);
-                                    $observacaoActividade = utf8_encode($rowActividade->observacao_actividade);
-                                    $c90012008 = utf8_encode($rowActividade->c9001_2008);
-                                    $c90012015 = utf8_encode($rowActividade->c9001_2015);
-                                    $fsc = utf8_encode($rowActividade->fsc);
-                                    $pefc = utf8_encode($rowActividade->pefc);
+                                    $nomeActividade = html_entity_decode($rowActividade->nome_actividade);
+                                    $descricaoActividade = html_entity_decode($rowActividade->descricao_actividade);
+                                    $observacaoActividade = html_entity_decode($rowActividade->observacao_actividade);
+                                    $c90012008 = html_entity_decode($rowActividade->c9001_2008);
+                                    $c90012015 = html_entity_decode($rowActividade->c9001_2015);
+                                    $fsc = html_entity_decode($rowActividade->fsc);
+                                    $pefc = html_entity_decode($rowActividade->pefc);
 
 
                                     ?>
