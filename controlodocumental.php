@@ -172,7 +172,7 @@ desired effect
 
             <div class="box box-info collapsed-box">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Rosto</h3>
+                    <h3 class="box-title">Rosto e Fluxograma</h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
                     </div>
@@ -204,6 +204,7 @@ desired effect
                     }
                     ?>
 
+                    <div class="col-md-6">
 
                     <dl class="dl-horizontal">
                         <dt>Procedimento:</dt>
@@ -232,26 +233,31 @@ desired effect
                         <br><br>
                     </dl>
 
-                    <div class="col-md-2">
+                    <div class="col-md-4">
                         <b>Indicadores</b> <br>
                         <br>
                         <?php echo $indicadores; ?>
                         <br>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-4">
                         <b>Acompanhamento</b> <br>
                         <br>
                         <?php echo $acompanhamento; ?>
                         <br>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-4">
                         <b>Avaliação e medição</b> <br>
                         <br>
                         <?php echo $avaliacao_e_medicao; ?>
                         <br>
                     </div>
 
-
+                    </div>
+                    <div class="col-md-6">
+                        <!-- code to embed a pdf file -->
+                        <embed src="teste2.pdf" style="min-width: 100%;  min-height: 800px;" class="img-responsive"
+                               type='application/pdf'>
+                    </div>
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix" style="display: none;">
                     <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
@@ -265,27 +271,27 @@ desired effect
 
             <!-- ------------------------------- BEGIN - LISTA DE FLUXOGRAMA PROCEDIMENTO  ------------------------------- -->
 
-            <div class="box box-info collapsed-box">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Fluxograma</h3>
-                    <div class="box-tools pull-right">
-                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
-                    </div>
-                </div><!-- /.box-header -->
-                <div class="box-body" style="display: none;">
-
-                    <!--     <img class="img-responsive" src="http://placehold.it/2560x1440" alt="fluxo-controlo-documental"> -->
-
-                    <!-- code to embed a pdf file -->
-                    <embed src="teste2.pdf" style="min-width: 100%;  min-height: 800px;" class="img-responsive"
-                           type='application/pdf'>
-
-                </div><!-- /.box-body -->
-                <div class="box-footer clearfix" style="display: none;">
-                    <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-                    <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
-                </div><!-- /.box-footer -->
-            </div>
+<!--            <div class="box box-info collapsed-box">-->
+<!--                <div class="box-header with-border">-->
+<!--                    <h3 class="box-title">Fluxograma</h3>-->
+<!--                    <div class="box-tools pull-right">-->
+<!--                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>-->
+<!--                    </div>-->
+<!--                </div><!-- /.box-header -->
+<!--                <div class="box-body" style="display: none;">-->
+<!---->
+<!--                    <!--     <img class="img-responsive" src="http://placehold.it/2560x1440" alt="fluxo-controlo-documental"> -->
+<!---->
+<!--                    <!-- code to embed a pdf file -->
+<!--                    <embed src="teste2.pdf" style="min-width: 100%;  min-height: 800px;" class="img-responsive"-->
+<!--                           type='application/pdf'>-->
+<!---->
+<!--                </div><!-- /.box-body -->
+<!--                <div class="box-footer clearfix" style="display: none;">-->
+<!--                    <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>-->
+<!--                    <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
+<!--                </div><!-- /.box-footer -->
+<!--            </div>-->
 
 
             <!-- ------------------------------- END - LISTA DE FLUXOGRAMA PROCEDIMENTO ------------------------------- -->
