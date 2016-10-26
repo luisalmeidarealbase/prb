@@ -350,7 +350,7 @@ desired effect
 
                         <!-- information goes here -->
 
-                        <div class="box box-default collapsed-box">
+                        <div class="box box-default">
                             <div class="box-header with-border">
                                 <h3 class="box-title sub-titulo-1"><?php echo $nomeSubProcesso; ?></h3>
                                 <div class="box-tools pull-right">
@@ -358,7 +358,7 @@ desired effect
                                     </button>
                                 </div><!-- /.box-tools -->
                             </div><!-- /.box-header -->
-                            <div class="box-body" style="display: none;">
+                            <div class="box-body" style="display: block;">
 
                                 <?php
 
