@@ -148,7 +148,7 @@ desired effect
                     <button type="button" class="btn btn-info">Editar Procedimento</button>
                 </a>
                 <a href="procedimento-historico.php?id=2">
-                    <button type="button" class="btn btn-info">Histórico</button>
+                    <button type="button" class="btn btn-info">Histórico Obsoletos</button>
                 </a>
 
 
@@ -170,14 +170,14 @@ desired effect
 
             <!-- ------------------------------- BEGIN - LISTA DE ROSTO  ------------------------------- -->
 
-            <div class="box box-info collapsed-box">
+            <div class="box box-info">
                 <div class="box-header with-border">
                     <h3 class="box-title">Rosto e Fluxograma</h3>
                     <div class="box-tools pull-right">
-                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                        <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>-->
                     </div>
                 </div><!-- /.box-header -->
-                <div class="box-body" style="display: none;">
+                <div class="box-body" style="display: block;">
                     <?php
 
                     $queryrosto = "SELECT * FROM tbl_procedimentos INNER JOIN tbl_rostos ON id_procedimento = tbl_procedimentos_id_procedimento INNER JOIN tbl_versoes_rostos ON id_rosto = tbl_rostos_id_rosto  WHERE tbl_versoes_rostos.publicado_versao_rosto = 1 AND id_procedimento = 2";
@@ -255,7 +255,7 @@ desired effect
                     </div>
                     <div class="col-md-6">
                         <!-- code to embed a pdf file -->
-                        <embed src="teste2.pdf" style="min-width: 100%;  min-height: 800px;" class="img-responsive"
+                        <embed src="teste2.pdf" style="min-width: 100%;  min-height: 500px;" class="img-responsive"
                                type='application/pdf'>
                     </div>
                 </div><!-- /.box-body -->
@@ -321,14 +321,14 @@ desired effect
 
             <!-- ------------------------------- BEGIN - NOVO METODO FRONT END BUILDING  ------------------------------- -->
 
-            <div class="box box-info collapsed-box">
+            <div class="box box-info">
                 <div class="box-header with-border">
                     <h3 class="box-title">Método | Matriz RH</h3>
                     <div class="box-tools pull-right">
-                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     </div>
                 </div><!-- /.box-header -->
-                <div class="box-body" style="display: none;">
+                <div class="box-body" style="display: block;">
 
 
                     <!-- information goes here -->
@@ -394,7 +394,7 @@ desired effect
 
                                         <div class="box-body" style="display: none;">
                                             <br>
-                                            <div class="col-md-7">
+                                            <div class="col-md-6">
                                                 <dl>
                                                     <dt>Descrição</dt>
                                                     <dd><?php echo $descricaoActividade; ?></dd>
@@ -413,7 +413,7 @@ desired effect
 
                                                 </dl>
                                             </div>
-                                            <div class="col-md-5">
+                                            <div class="col-md-6">
                                                 <br>
                                                 <table class="table table-bordered center">
                                                     <tbody>
@@ -440,12 +440,17 @@ desired effect
                                                 </table>
 
                                             </div>
+
                                             <br>
 
                                             <table class="table table-bordered center">
+<br>
+                                                <b>Cumprimento Normativo</b> <br><br>
                                                 <tbody>
 
                                                 <tr>
+                                                    <th>Nome do documento</th>
+                                                    <th>Codificação</th>
                                                     <th>9001:2008</th>
                                                     <th>9001:2015</th>
                                                     <th>FSC</th>
