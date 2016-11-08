@@ -344,7 +344,7 @@ desired effect
                     while ($rowSubProcessos = mysqli_fetch_object($resultSubProcessos)) {
 
                         $idsubprocesso = $rowSubProcessos->id_sub_processo;
-                        $nomeSubProcesso = utf8_encode($rowSubProcessos->nome_sub_processo);
+                        $nomeSubProcesso = $rowSubProcessos->nome_sub_processo;
                         ?>
 
 
@@ -353,10 +353,10 @@ desired effect
                         <div class="box box-default">
                             <div class="box-header with-border">
                                 <h3 class="box-title sub-titulo-1"><?php echo $nomeSubProcesso; ?></h3>
-                                <div class="box-tools pull-right">
+                                <!--<div class="box-tools pull-right">
                                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                                     </button>
-                                </div><!-- /.box-tools -->
+                                </div>--><!-- /.box-tools -->
                             </div><!-- /.box-header -->
                             <div class="box-body" style="display: block;">
 
@@ -369,22 +369,22 @@ desired effect
                                 while ($rowActividade = mysqli_fetch_object($resultActividade)) {
 
                                     $idActividade = $rowActividade->id_actividade;
-                                    $nomeActividade = utf8_encode($rowActividade->nome_actividade);
-                                    $descricaoActividade = utf8_encode($rowActividade->descricao_actividade);
-                                    $observacaoActividade = utf8_encode($rowActividade->observacao_actividade);
-                                    $c90012008 = utf8_encode($rowActividade->c9001_2008);
-                                    $c90012015 = utf8_encode($rowActividade->c9001_2015);
-                                    $fsc = utf8_encode($rowActividade->fsc);
-                                    $pefc = utf8_encode($rowActividade->pefc);
+                                    $nomeActividade = $rowActividade->nome_actividade;
+                                    $descricaoActividade = $rowActividade->descricao_actividade;
+                                    $observacaoActividade = $rowActividade->observacao_actividade;
+                                    $c90012008 = $rowActividade->c9001_2008;
+                                    $c90012015 = $rowActividade->c9001_2015;
+                                    $fsc = $rowActividade->fsc;
+                                    $pefc = $rowActividade->pefc;
 
 
                                     ?>
                                     <!-- information goes here -->
 
 
-                                    <div class="box box-default collapsed-box">
-                                        <div class="box-header with-border">
-                                            <h3 class="box-title sub-titulo-2"><?php echo $nomeActividade;?></h3>
+                                    <div class="box box-default collapsed-box own-border-top">
+                                        <div class="box-header own-activity-style">
+                                          <h3 class="box-title sub-titulo-2" data-widget="collapse"><?php echo $nomeActividade;?></h3>
                                             <div class="box-tools pull-right">
                                                 <button class="btn btn-box-tool" data-widget="collapse"><i
                                                         class="fa fa-plus"></i></button>
@@ -393,6 +393,7 @@ desired effect
 
 
                                         <div class="box-body" style="display: none;">
+                                            <br>
                                             <div class="col-md-7">
                                                 <dl>
                                                     <dt>Descrição</dt>

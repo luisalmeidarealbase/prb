@@ -5,5 +5,31 @@
 
 .sub-titulo-2{
   font-size:14px!important;
-  font-weight: 600!important;
+  font-weight: 500!important;
+  cursor: pointer;
+}
+
+.sub-titulo-2:hover{
+  font-size:14px!important;
+  font-weight: 500!important;
+  cursor: pointer;
+  color: #3c8dbc;
+}
+
+
+.opacity-45 {
+  opacity: .45;
+  filter: alpha(opacity=65);
+}
+
+.own-activity-style{
+  margin-bottom:-18px;
+  border: none!important;
+  border-bottom: 1px solid #ededed;
+  background: #fafafa;
+}
+
+.own-border-top{
+  border-top: 1px solid #ededed;
+  box-shadow: none;
 }
