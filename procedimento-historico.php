@@ -40,6 +40,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           apply the skin class to the body tag so the changes take effect.
         -->
     <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/personalcss.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -167,7 +168,8 @@ desired effect
                             <tr>
 
                                 <th>Procedimento</th>
-                                <th>Data de última Edição</th>
+                                <th>Código</th>
+                                <th>Data Publicação</th>
                                 <th>Status</th>
                                 <th>Acções</th>
 
@@ -197,8 +199,9 @@ desired effect
 
                                 <tr>
                                     <td><a href="controlodocumental.php"><?php echo $rowQueryHistorico->nome_procedimento; ?></a></td>
+                                    <td>xx.xx.xx</td>
                                     <td><?php echo $rowQueryHistorico->data_versao_rosto; ?></td>
-                                    <td><span class="label label-success">Historico</span></td>
+                                    <td><span class="label label-obsoleto">Obsoletogit </span></td>
                                     <!-- todo -> criar pagina de visualização de procedimento em status historico -->
                                     <td><a href='viewedicaorosto.php?idrosto=<?php echo $rowQueryHistorico->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><a href='preview-procedimento-edicao.php?idrosto=<?php echo $rowQueryHistorico->id_rosto;?>&idprocedimento=<?php echo $rowQueryHistorico->id_procedimento; ?>'><span class="label label-info">Visualizar</span></a></td>
                                 </tr>
