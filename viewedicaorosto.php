@@ -234,11 +234,8 @@ desired effect
                     </div>
                 </div><!-- /.box-header -->
 
-                <div class="box box-solid">
-                    <div class="box-header with-border">
-
-
-                        <br>
+                <div class="box-body" style="display: block;">
+                    <div class="col-md-6">
 
 
                         <dl class="dl-horizontal">
@@ -251,8 +248,7 @@ desired effect
                             <dt>Responsável</dt>
                             <dd><?php echo $responsavel_procedimento; ?></dd>
                         </dl>
-                    </div><!-- /.box-header -->
-                    <div class="box-body">
+                  
                         <br>
 
                         <dl class="dl-horizontal">
@@ -304,43 +300,33 @@ desired effect
                         <br><br><br><br>
                     </div>
 
-                    </div>
+                <div class="col-md-6">
+                    <!-- code to embed a pdf file -->
+                    <embed src="teste2.pdf" style="min-width: 100%;  min-height: 500px;" class="img-responsive"
+                           type='application/pdf'>
+                </div>
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix" style="display: none;">
+                <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
+                <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
+            </div><!-- /.box-footer -->
+
+    
                 </div>
 
-            <!-- ------------------------------- BEGIN - LISTA DE METODO  ------------------------------- -->
-
-            <div class="box box-info collapsed-box">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Fluxograma</h3>
-                    <div class="box-tools pull-right">
-                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
-                    </div>
-                </div><!-- /.box-header -->
-                <div class="box-body" style="display: none;">
-
-                    <img class="img-responsive" src="http://placehold.it/2560x1440" alt="fluxo-controlo-documental">
-
-
-                </div><!-- /.box-body -->
-                <div class="box-footer clearfix" style="display: none;">
-                    <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-                    <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
-                </div><!-- /.box-footer -->
-            </div>
-
-            <!-- ------------------------------- END - LISTA DE METODO ------------------------------- -->
+        
 
 
             <!-- ------------------------------- BEGIN - LISTA DE METODO  ------------------------------- -->
 
-            <div class="box box-info collapsed-box">
+            <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Método e Matriz RH</h3>
+                    <h3 class="box-title">Método | Matriz RH</h3>
                     <div class="box-tools pull-right">
-                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     </div>
                 </div><!-- /.box-header -->
-                <div class="box-body" style="display: none;">
+                <div class="box-body" style="display: block;">
 
                     <?php
 
@@ -358,7 +344,7 @@ desired effect
 
                         <!-- information goes here -->
 
-                        <div class="box box-default collapsed-box">
+                        <div class="box box-default">
                             <div class="box-header with-border">
                                 <h3 class="box-title sub-titulo-1"><input type="text" style="min-width:100%; padding: 5px;" name="subprocesso<?php echo $idsubprocesso; ?>" value="<?php echo $nomeSubProcesso; ?>"></h3>
                                 <div class="box-tools pull-right">
@@ -366,7 +352,7 @@ desired effect
                                     </button>
                                 </div><!-- /.box-tools -->
                             </div><!-- /.box-header -->
-                            <div class="box-body" style="display: none;">
+                            <div class="box-body" style="display: block;">
 
                                 <?php
 
@@ -390,9 +376,9 @@ desired effect
                                     <!-- information goes here -->
 
 
-                                    <div class="box box-default collapsed-box">
-                                        <div class="box-header with-border">
-                                            <h3 class="box-title sub-titulo-2"><input type="text" style="min-width:100%; padding: 5px;" name="nomeactividade<?php echo $idActividade; ?>" value="<?php echo $nomeActividade; ?>"></h3>
+                                    <div class="box box-default collapsed-box own-border-top">
+                                        <div class="box-header own-activity-style">
+                                            <h3 class="box-title sub-titulo-2" data-widget="collapse"><input type="text" style="min-width:100%; padding: 5px;" name="nomeactividade<?php echo $idActividade; ?>" value="<?php echo $nomeActividade; ?>"></h3>
                                             <div class="box-tools pull-right">
                                                 <button class="btn btn-box-tool" data-widget="collapse"><i
                                                         class="fa fa-plus"></i></button>
