@@ -387,7 +387,7 @@ desired effect
 
 
                                         <div class="box-body" style="display: none;">
-                                            <div class="col-md-7">
+                                            <div class="col-md-6">
                                                 <dl>
                                                     <dt>Descrição</dt>
                                                     <dd><textarea style="padding: 5px; width: 100%; height: auto;" rows="10" name="descricaoactividade<?php echo $idActividade;?>"><?php echo $descricaoActividade; ?></textarea></dd>
@@ -399,7 +399,7 @@ desired effect
 
                                                 </dl>
                                             </div>
-                                            <div class="col-md-5">
+                                            <div class="col-md-6">
                                                 <br>
                                                 <table class="table table-bordered center">
                                                     <tbody>
