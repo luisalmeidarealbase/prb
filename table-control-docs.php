@@ -14,59 +14,6 @@ if (!isset($_SESSION['fullname'])) {
 
 
 
-function checkEditMode()
-{
-
-    global $link;
-    global $erroModoEdicao;
-    //modo de edicao
-    /* "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto
-    INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento
-    WHERE id_procedimento = 2 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 0 AND historico_versao_rosto != 1 ";
-
-    */
-    $query1 = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto
-    INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento
-    WHERE id_procedimento = 2 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 0 AND historico_versao_rosto != 1";
-
-    $resultQuery1 = mysqli_query($link, $query1);
-
-    $firstResult = mysqli_num_rows($resultQuery1);
-
-    $query2 = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto
-    INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento
-    WHERE id_procedimento = 2 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 1 AND validado_versao_rosto = 0 AND historico_versao_rosto != 1";
-
-    $resultQuery2 = mysqli_query($link, $query2);
-
-    $secondResult = mysqli_num_rows($resultQuery2);
-
-    $query3 = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto
-    INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento
-    WHERE id_procedimento = 2 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 1 AND validado_versao_rosto = 1 AND historico_versao_rosto != 1";
-
-    $resultQuery3 = mysqli_query($link, $query3);
-
-    $thirdResult = mysqli_num_rows($resultQuery3);
-
-    $countEdit = $firstResult + $secondResult + $thirdResult;
-
-    if ($countEdit > 0) {
-        $erroModoEdicao = true;
-    }
-
-    else {
-        header('location: edicao-controlodocumental.php');
-    }
-
-
-}
-
-
-if (isset($_GET["edit"]) == "true") {
-    checkEditMode();
-}
-
 
 ?>
 
@@ -199,11 +146,11 @@ desired effect
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Controlo Documental <br>
+                Controlo de Documentos <br>
                 <small>Recreating DNA</small>
             </h1>
-            <br>
-            <div class="btn-group">
+
+<!--            <div class="btn-group">
                 <a href="controlodocumental.php?edit=true">
                     <button type="button" class="btn btn-info">Editar Procedimento</button>
 
@@ -213,29 +160,7 @@ desired effect
                 </a>
 
 
-            </div>
-            <br>
-            <?php
-
-            if (isset($erroModoEdicao) == true) {
-
-                ?>
-
-                <div class="alert alert-danger alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h4><i class="icon fa fa-ban"></i> Erro!</h4>
-                    Já existe uma versão em revisão do procedimento Controlo de Documentos e Registos.
-                </div>
-
-
-                <?php
-
-            }
-
-            ?>
-
-
-
+            </div>-->
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                 <br>
@@ -248,159 +173,11 @@ desired effect
 
         <!-- Main content -->
         <section class="content">
-            <br><br><br>
+           <br>
 
 
-            <!-- ------------------------------- BEGIN - LISTA DE ROSTO  ------------------------------- -->
-
-            <div class="box box-info">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Rosto e Fluxograma</h3>
-                    <div class="box-tools pull-right">
-                        <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>-->
-                    </div>
-                </div><!-- /.box-header -->
-                <div class="box-body" style="display: block;">
-                    <?php
-
-                    $queryrosto = "SELECT * FROM tbl_procedimentos INNER JOIN tbl_rostos ON id_procedimento = tbl_procedimentos_id_procedimento INNER JOIN tbl_versoes_rostos ON id_rosto = tbl_rostos_id_rosto  WHERE tbl_versoes_rostos.publicado_versao_rosto = 1 AND id_procedimento = 2";
-
-                    $resultrosto = mysqli_query($link, $queryrosto);
-
-                    while ($rowrosto = mysqli_fetch_object($resultrosto)) {
-                        //save data to variables from the previous query
-                        $objectivo = $rowrosto->objectivo_procedimento;
-                        $ambito = $rowrosto->ambito_procedimento;
-                        $entradas = $rowrosto->entradas;
-                        $saidas = $rowrosto->saidas;
-                        $definicaoAbreviatura = $rowrosto->indicadores;
-                        $pontosnorma = $rowrosto->norma_pontos_norma;
-                        $nomeprocedimento = $rowrosto->nome_procedimento;
-                        $indicadores = $rowrosto->indicadores;
-                        $acompanhamento = $rowrosto->acompanhamento;
-                        $avaliacao_e_medicao = $rowrosto->avaliacao_e_medicao;
-                        $responsavel_procedimento = $rowrosto->responsavel_procedimento;
-                        $metodo = $rowrosto->metodo;
-                        $idrosto = $rowrosto->id_rosto;
 
 
-                    }
-                    ?>
-
-                    <div class="col-md-6">
-
-                        <dl class="dl-horizontal">
-                            <dt>Procedimento:</dt>
-                            <dd><?php echo $nomeprocedimento; ?></dd>
-                            <dt>Ref. Doc Versão em vigor</dt>
-                            <dd>XXX.01-04</dd>
-                            <dt>Data de Aprovação.</dt>
-                            <dd>24 de Agosto 2015</dd>
-                            <dt>Responsável</dt>
-                            <dd><?php echo $responsavel_procedimento; ?></dd>
-                        </dl>
-                        <br>
-
-                        <dl class="dl-horizontal">
-                            <dt>Objectivo procedimento</dt>
-                            <dd>
-                            <?php echo $objectivo; ?></dt><br><br>
-                            <dt>Âmbito de Procedimento</dt>
-                            <dd><?php echo $ambito; ?></dd>
-                            <br><br>
-                            <dt>Entradas</dt>
-                            <dd><?php echo $entradas; ?></dd>
-                            <br><br>
-                            <dt>Saídas</dt>
-                            <dd><?php echo $saidas; ?></dd>
-                            <br><br>
-                        </dl>
-
-                        <div class="col-md-4">
-                            <b>Indicadores</b> <br>
-                            <br>
-                            <?php echo $indicadores; ?>
-                            <br>
-                        </div>
-                        <div class="col-md-4">
-                            <b>Acompanhamento</b> <br>
-                            <br>
-                            <?php echo $acompanhamento; ?>
-                            <br>
-                        </div>
-                        <div class="col-md-4">
-                            <b>Avaliação e medição</b> <br>
-                            <br>
-                            <?php echo $avaliacao_e_medicao; ?>
-                            <br>
-                        </div>
-
-                    </div>
-                    <div class="col-md-6">
-                        <!-- code to embed a pdf file -->
-                        <embed src="teste2.pdf" style="min-width: 100%;  min-height: 500px;" class="img-responsive"
-                               type='application/pdf'>
-                    </div>
-                </div><!-- /.box-body -->
-                <div class="box-footer clearfix" style="display: none;">
-                    <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-                    <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
-                </div><!-- /.box-footer -->
-            </div>
-
-
-            <!-- ------------------------------- END - LISTA DE ROSTO ------------------------------- -->
-
-
-            <!-- ------------------------------- BEGIN - LISTA DE FLUXOGRAMA PROCEDIMENTO  ------------------------------- -->
-
-            <!--            <div class="box box-info collapsed-box">-->
-            <!--                <div class="box-header with-border">-->
-            <!--                    <h3 class="box-title">Fluxograma</h3>-->
-            <!--                    <div class="box-tools pull-right">-->
-            <!--                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>-->
-            <!--                    </div>-->
-            <!--                </div><!-- /.box-header -->
-            <!--                <div class="box-body" style="display: none;">-->
-            <!---->
-            <!--                    <!--     <img class="img-responsive" src="http://placehold.it/2560x1440" alt="fluxo-controlo-documental"> -->
-            <!---->
-            <!--                    <!-- code to embed a pdf file -->
-            <!--                    <embed src="teste2.pdf" style="min-width: 100%;  min-height: 800px;" class="img-responsive"-->
-            <!--                           type='application/pdf'>-->
-            <!---->
-            <!--                </div><!-- /.box-body -->
-            <!--                <div class="box-footer clearfix" style="display: none;">-->
-            <!--                    <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>-->
-            <!--                    <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
-            <!--                </div><!-- /.box-footer -->
-            <!--            </div>-->
-
-
-            <!-- ------------------------------- END - LISTA DE FLUXOGRAMA PROCEDIMENTO ------------------------------- -->
-
-
-            <!-- ------------------------------- BEGIN - LISTA DE METODO  ------------------------------- -->
-
-            <!--<div class="box box-info collapsed-box">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Método e Matriz RH</h3>
-                    <div class="box-tools pull-right">
-                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
-                    </div>
-                </div><!-- /.box-header -->
-            <!--  <div class="box-body" style="display: none;">-->
-
-            <?php /*echo $metodo; */ ?>
-
-            <!--    </div><!-- /.box-body -->
-            <!--<div class="box-footer clearfix" style="display: none;">
-                <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-                <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
-            <!--  </div><!-- /.box-footer -->
-            <!-- </div>-->
-
-            <!-- ------------------------------- END - LISTA DE METODO ------------------------------- -->
 
             <!-- ------------------------------- BEGIN - NOVO METODO FRONT END BUILDING  ------------------------------- -->
 
@@ -415,6 +192,46 @@ desired effect
 
 
                     <!-- information goes here -->
+
+                    <?php
+
+                    // function to get data from tbl_control_docs
+
+                    $queryControlDocs = "SELECT * FROM tbl_control_docs ORDER BY procedimento";
+                    $resultQueryControlDocs = mysqli_query($link,$queryControlDocs);
+
+                    while ($rowControlDocs = mysqli_fetch_object($resultQueryControlDocs)){
+
+                        //save the data to variables
+                        $idControlDoc = $rowControlDocs->id_control_doc;
+                        $procedimentoControlDoc = $rowControlDocs->procedimento;
+                        $tipoDocumento = $rowControlDocs->tipo_documento;
+                        $nomeDescricaoDocumento = $rowControlDocs->nome_descricao_documento;
+                        $responsavel = $rowControlDocs->responsavel;
+                        $codigoControlDoc = $rowControlDocs->codigo;
+                        $versaoControlDoc = $rowControlDocs->versao;
+                        $dataAtualizacaoControlDoc = $rowControlDocs->data_atualizacao;
+                        $suporteOriginal = $rowControlDocs->suporte_original;
+                        $suportePreenchimento = $rowControlDocs->suporte_preenchimento;
+                        $copiaNaoControladaPosPrint = $rowControlDocs->copia_nao_controlada_pos_print;
+                        $synologyRB = $rowControlDocs->synology_rb;
+                        $site = $rowControlDocs->site;
+                        $portal = $rowControlDocs->portal;
+                        $outro_local = $rowControlDocs->outro_local;
+                        $formaRecuperacao = $rowControlDocs->forma_recuperacao;
+                        $periodoArquivoDinamico = $rowControlDocs->periodo_arquivo_dinamico;
+                        $periodoArquivoMorto = $rowControlDocs->periodo_arquivo_morto;
+                        $controlDoc9001 = $rowControlDocs->control_doc_9001_2008;
+                        $controlDoc2015 = $rowControlDocs->control_doc_9001_2015;
+                        $controlDocFSC = $rowControlDocs->control_doc_fsc;
+                        $controlDocPEFC = $rowControlDocs->control_doc_pefc;
+
+                        echo $procedimentoControlDoc;
+                        // information goes here
+
+                    }
+
+                    ?>
 
 
                     <?php
