@@ -668,7 +668,7 @@ desired effect
                         </div>
                     </a>
                 </li>
-            </ul><!-- /.control-sidebar-menu -->
+            </ul><!-- /.control-sidebar-mdgdsenu -->
 
         </div><!-- /.tab-pane -->
         <!-- Stats tab content -->
