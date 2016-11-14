@@ -29,7 +29,7 @@ if (isset($_POST['username'])) {
     while ($row = mysqli_fetch_object($result)) {
         
         //save data in sessions variables
-        $_SESSION['firstname'] = utf8_decode($row->first_name);
+        $_SESSION['firstname'] = $row->first_name;
         
         $_SESSION['lastname'] = utf8_decode($row->last_name);
         

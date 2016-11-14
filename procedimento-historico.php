@@ -201,7 +201,7 @@ desired effect
                                     <td><a href="controlodocumental.php"><?php echo $rowQueryHistorico->nome_procedimento; ?></a></td>
                                     <td>xx.xx.xx</td>
                                     <td><?php echo $rowQueryHistorico->data_versao_rosto; ?></td>
-                                    <td><span class="label label-obsoleto">Obsoletogit </span></td>
+                                    <td><span class="label label-obsoleto">Obsoleto</span></td>
                                     <!-- todo -> criar pagina de visualização de procedimento em status historico -->
                                     <td><a href='viewedicaorosto.php?idrosto=<?php echo $rowQueryHistorico->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><a href='preview-procedimento-edicao.php?idrosto=<?php echo $rowQueryHistorico->id_rosto;?>&idprocedimento=<?php echo $rowQueryHistorico->id_procedimento; ?>'><span class="label label-info">Visualizar</span></a></td>
                                 </tr>
