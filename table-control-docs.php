@@ -176,14 +176,75 @@ desired effect
            <br>
 
 
+            <!-- information goes here -->
 
+            <?php
+
+            // function to get data from tbl_control_docs
+
+            $queryControlDocs = "SELECT * FROM tbl_control_docs ORDER BY procedimento";
+            $resultQueryControlDocs = mysqli_query($link,$queryControlDocs);
+
+            $firstComVendas = true;
+            $firstComIT = true;
+            $firstGestao = true;
+            $firstProducao = true;
+            $firstRecPatrimoniais = true;
+            $firstRecHumanos = true;
+            $firstAuditorias = true;
+            $firstOcorrencaisTratamento = true;
+
+            while ($rowControlDocs = mysqli_fetch_object($resultQueryControlDocs)){
+
+                //save the data to variables
+                $idControlDoc = $rowControlDocs->id_control_doc;
+                $procedimentoControlDoc = utf8_encode($rowControlDocs->procedimento);
+                $tipoDocumento = $rowControlDocs->tipo_documento;
+                $nomeDescricaoDocumento = $rowControlDocs->nome_descricao_documento;
+                $responsavel = $rowControlDocs->responsavel;
+                $codigoControlDoc = $rowControlDocs->codigo;
+                $versaoControlDoc = $rowControlDocs->versao;
+                $dataAtualizacaoControlDoc = $rowControlDocs->data_atualizacao;
+                $suporteOriginal = $rowControlDocs->suporte_original;
+                $suportePreenchimento = $rowControlDocs->suporte_preenchimento;
+                $copiaNaoControladaPosPrint = $rowControlDocs->copia_nao_controlada_pos_print;
+                $synologyRB = $rowControlDocs->synology_rb;
+                $site = $rowControlDocs->site;
+                $portal = $rowControlDocs->portal;
+                $outro_local = $rowControlDocs->outro_local;
+                $formaRecuperacao = $rowControlDocs->forma_recuperacao;
+                $periodoArquivoDinamico = $rowControlDocs->periodo_arquivo_dinamico;
+                $periodoArquivoMorto = $rowControlDocs->periodo_arquivo_morto;
+                $controlDoc9001 = $rowControlDocs->control_doc_9001_2008;
+                $controlDoc2015 = $rowControlDocs->control_doc_9001_2015;
+                $controlDocFSC = $rowControlDocs->control_doc_fsc;
+                $controlDocPEFC = $rowControlDocs->control_doc_pefc;
+
+
+                echo $procedimentoControlDoc;
+
+                if ($procedimentoControlDoc == "Produção"){
+                    if ($firstProducao){
+                    //escreve abertura de secção
+
+                    }
+                    if ($tipoDocumento == "Instrução de trabalho"){
+
+                    }
+                }
+
+                
+
+            }
+
+            ?>
 
 
             <!-- ------------------------------- BEGIN - NOVO METODO FRONT END BUILDING  ------------------------------- -->
 
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Método | Matriz RH</h3>
+                    <h3 class="box-title">Controlo de Documentos</h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     </div>
@@ -191,47 +252,7 @@ desired effect
                 <div class="box-body" style="display: block;">
 
 
-                    <!-- information goes here -->
 
-                    <?php
-
-                    // function to get data from tbl_control_docs
-
-                    $queryControlDocs = "SELECT * FROM tbl_control_docs ORDER BY procedimento";
-                    $resultQueryControlDocs = mysqli_query($link,$queryControlDocs);
-
-                    while ($rowControlDocs = mysqli_fetch_object($resultQueryControlDocs)){
-
-                        //save the data to variables
-                        $idControlDoc = $rowControlDocs->id_control_doc;
-                        $procedimentoControlDoc = $rowControlDocs->procedimento;
-                        $tipoDocumento = $rowControlDocs->tipo_documento;
-                        $nomeDescricaoDocumento = $rowControlDocs->nome_descricao_documento;
-                        $responsavel = $rowControlDocs->responsavel;
-                        $codigoControlDoc = $rowControlDocs->codigo;
-                        $versaoControlDoc = $rowControlDocs->versao;
-                        $dataAtualizacaoControlDoc = $rowControlDocs->data_atualizacao;
-                        $suporteOriginal = $rowControlDocs->suporte_original;
-                        $suportePreenchimento = $rowControlDocs->suporte_preenchimento;
-                        $copiaNaoControladaPosPrint = $rowControlDocs->copia_nao_controlada_pos_print;
-                        $synologyRB = $rowControlDocs->synology_rb;
-                        $site = $rowControlDocs->site;
-                        $portal = $rowControlDocs->portal;
-                        $outro_local = $rowControlDocs->outro_local;
-                        $formaRecuperacao = $rowControlDocs->forma_recuperacao;
-                        $periodoArquivoDinamico = $rowControlDocs->periodo_arquivo_dinamico;
-                        $periodoArquivoMorto = $rowControlDocs->periodo_arquivo_morto;
-                        $controlDoc9001 = $rowControlDocs->control_doc_9001_2008;
-                        $controlDoc2015 = $rowControlDocs->control_doc_9001_2015;
-                        $controlDocFSC = $rowControlDocs->control_doc_fsc;
-                        $controlDocPEFC = $rowControlDocs->control_doc_pefc;
-
-                        echo $procedimentoControlDoc;
-                        // information goes here
-
-                    }
-
-                    ?>
 
 
                     <?php
