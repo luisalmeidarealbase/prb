@@ -250,7 +250,7 @@ desired effect
                                 $idControlDoc = $rowTableProd->id_control_doc;
                                 $tipoDocumento = $rowTableProd->tipo_documento;
                                 $nomeDescricaoDocumento = utf8_encode($rowTableProd->nome_descricao_documento);
-                                $responsavel = $rowTableProd->responsavel;
+                                $responsavel = utf8_encode($rowTableProd->responsavel);
                                 $codigoControlDoc = utf8_encode($rowTableProd->codigo);
                                 $versaoControlDoc = utf8_encode($rowTableProd->versao);
                                 $dataAtualizacaoControlDoc = utf8_encode($rowTableProd->data_atualizacao);
@@ -282,11 +282,15 @@ desired effect
                                     </div><!-- /.box-header -->
                                     <div class="box-body" style="display: none;">
                                         <br>
+                                        <div class="col-md-12"
+                                        <dl>
+                                            <dt>Responsável</dt>
+                                            <dd><?php echo $responsavel; ?></dd>
+                                        </dl>
+                                        <br>
+                                        </div>
                                         <div class="col-md-6">
-                                            <dl>
-                                                <dt>Responsável</dt>
-                                                <dd>Nome do responsável here</dd>
-                                            </dl>
+
 
                                             <table class="table table-bordered center">
                                                 <tbody>
@@ -333,11 +337,6 @@ desired effect
                                             </table>
                                         </div>
                                         <div class="col-md-6">
-
-                                            <dl>
-                                                <dt>Responsável</dt>
-                                                <dd>Nome do responsável here</dd>
-                                            </dl>
 
                                             <table class="table table-bordered center">
                                                 <tbody>
@@ -386,6 +385,33 @@ desired effect
                                                 </tbody>
                                             </table>
 
+                                        </div>
+                                        <div class="col-md-12">
+
+                                            <table class="table table-bordered center">
+                                                <tbody>
+                                                <tr>
+                                                    <th colspan="4" class="text-center"
+                                                        style="background-color: #ededed;">Cumprimento Normativo
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>9001:2008</th>
+                                                    <th>9001:2015</th>
+                                                    <th>FSC 2013</th>
+                                                    <th>PEFC 2013</th>
+                                                </tr>
+
+                                                <tr class="text-left">
+                                                    <td><?php if ($controlDoc9001 == ""){echo "--";} else {echo $controlDoc9001;} ?></td>
+                                                    <td><?php if ($controlDoc2015 == ""){echo "--";} else {echo $controlDoc2015;} ?></td>
+                                                    <td><?php if ($controlDocFSC == ""){echo "--";} else {echo $controlDocFSC;} ?></td>
+                                                    <td><?php if ($controlDocPEFC == ""){echo "--";} else {echo $controlDocPEFC;} ?></td>
+
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
 
 
                                         </div>
