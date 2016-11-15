@@ -12,9 +12,6 @@ if (!isset($_SESSION['fullname'])) {
 }
 
 
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +49,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <![endif]-->
 
     <script src="plugins/ckeditor/ckeditor.js"></script>
-
 
 
 </head>
@@ -150,17 +146,17 @@ desired effect
                 <small>Recreating DNA</small>
             </h1>
 
-<!--            <div class="btn-group">
-                <a href="controlodocumental.php?edit=true">
-                    <button type="button" class="btn btn-info">Editar Procedimento</button>
+            <!--            <div class="btn-group">
+                            <a href="controlodocumental.php?edit=true">
+                                <button type="button" class="btn btn-info">Editar Procedimento</button>
 
-                </a>
-                <a href="procedimento-historico.php?id=2">
-                    <button type="button" class="btn btn-info">Histórico Obsoletos</button>
-                </a>
+                            </a>
+                            <a href="procedimento-historico.php?id=2">
+                                <button type="button" class="btn btn-info">Histórico Obsoletos</button>
+                            </a>
 
 
-            </div>-->
+                        </div>-->
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                 <br>
@@ -173,7 +169,7 @@ desired effect
 
         <!-- Main content -->
         <section class="content">
-           <br>
+            <br>
 
 
             <!-- information goes here -->
@@ -183,7 +179,7 @@ desired effect
             // function to get data from tbl_control_docs
 
             $queryControlDocs = "SELECT * FROM tbl_control_docs ORDER BY procedimento";
-            $resultQueryControlDocs = mysqli_query($link,$queryControlDocs);
+            $resultQueryControlDocs = mysqli_query($link, $queryControlDocs);
 
             $firstComVendas = true;
             $firstComIT = true;
@@ -194,7 +190,7 @@ desired effect
             $firstAuditorias = true;
             $firstOcorrencaisTratamento = true;
 
-            while ($rowControlDocs = mysqli_fetch_object($resultQueryControlDocs)){
+            while ($rowControlDocs = mysqli_fetch_object($resultQueryControlDocs)) {
 
                 //save the data to variables
                 $idControlDoc = $rowControlDocs->id_control_doc;
@@ -220,235 +216,444 @@ desired effect
                 $controlDocFSC = $rowControlDocs->control_doc_fsc;
                 $controlDocPEFC = $rowControlDocs->control_doc_pefc;
 
-
-                echo $procedimentoControlDoc;
-
-                if ($procedimentoControlDoc == "Produção"){
-                    if ($firstProducao){
-                    //escreve abertura de secção
-
-                    }
-                    if ($tipoDocumento == "Instrução de trabalho"){
-
-                    }
-                }
-
-                
-
             }
 
             ?>
-
-
-            <!-- ------------------------------- BEGIN - NOVO METODO FRONT END BUILDING  ------------------------------- -->
+            <!-- START HERE -->
 
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Controlo de Documentos</h3>
+                    <h3 class="box-title">Produção</h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     </div>
                 </div><!-- /.box-header -->
                 <div class="box-body" style="display: block;">
 
+                    <!-- Intrucoes de trabalho -->
+                    <div class="box box-default table-control-docs-style collapsed-box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title sub-titulo-1">Instruções de trabalho</h3>
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                                </button>
+                            </div><!-- /.box-tools -->
+                        </div><!-- /.box-header -->
+                        <div class="box-body" style="display: none;">
+                            <?php
+
+                            $queryTableProd = "SELECT * FROM tbl_control_docs WHERE procedimento = 'producao' AND  tipo_documento = 'instrucao trabalho'";
+                            $resultQueryTableProd = mysqli_query($link, $queryTableProd);
+
+                            while ($rowTableProd = mysqli_fetch_object($resultQueryTableProd)) {
+                                $procedimento = "Produção";
+                                $idControlDoc = $rowTableProd->id_control_doc;
+                                $tipoDocumento = $rowTableProd->tipo_documento;
+                                $nomeDescricaoDocumento = utf8_encode($rowTableProd->nome_descricao_documento);
+                                $responsavel = $rowTableProd->responsavel;
+                                $codigoControlDoc = utf8_encode($rowTableProd->codigo);
+                                $versaoControlDoc = utf8_encode($rowTableProd->versao);
+                                $dataAtualizacaoControlDoc = utf8_encode($rowTableProd->data_atualizacao);
+                                $suporteOriginal = utf8_encode($rowTableProd->suporte_original);
+                                $suportePreenchimento = utf8_encode($rowTableProd->suporte_preenchimento);
+                                $copiaNaoControladaPosPrint = utf8_encode($rowTableProd->copia_nao_controlada_pos_print);
+                                $synologyRB = utf8_encode($rowTableProd->synology_rb);
+                                $site = utf8_encode($rowTableProd->site);
+                                $portal = utf8_encode($rowTableProd->portal);
+                                $outro_local = utf8_encode($rowTableProd->outro_local);
+                                $formaRecuperacao = utf8_encode($rowTableProd->forma_recuperacao);
+                                $periodoArquivoDinamico = utf8_encode($rowTableProd->periodo_arquivo_dinamico);
+                                $periodoArquivoMorto = utf8_encode($rowTableProd->periodo_arquivo_morto);
+                                $controlDoc9001 = utf8_encode($rowTableProd->control_doc_9001_2008);
+                                $controlDoc2015 = utf8_encode($rowTableProd->control_doc_9001_2015);
+                                $controlDocFSC = utf8_encode($rowTableProd->control_doc_fsc);
+                                $controlDocPEFC = utf8_encode($rowTableProd->control_doc_pefc);
 
 
-
-
-                    <?php
-
-                    //query to show dub processos
-                    $querySubProcessos = "SELECT * FROM tbl_sub_processos WHERE tbl_rostos_id_rosto = '$idrosto'";
-
-                    $resultSubProcessos = mysqli_query($link, $querySubProcessos);
-
-                    while ($rowSubProcessos = mysqli_fetch_object($resultSubProcessos)) {
-
-                        $idsubprocesso = $rowSubProcessos->id_sub_processo;
-                        $nomeSubProcesso = $rowSubProcessos->nome_sub_processo;
-                        ?>
-
-
-                        <!-- information goes here -->
-
-                        <div class="box box-default">
-                            <div class="box-header with-border">
-                                <h3 class="box-title sub-titulo-1"><?php echo $nomeSubProcesso; ?></h3>
-                                <!--<div class="box-tools pull-right">
-                                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
-                                    </button>
-                                </div>--><!-- /.box-tools -->
-                            </div><!-- /.box-header -->
-                            <div class="box-body" style="display: block;">
-
-                                <?php
-
-                                //query to show actividades
-                                $queryActividade = "SELECT * FROM tbl_actividades WHERE tbl_sub_processos_id_sub_processo = '$idsubprocesso'";
-                                $resultActividade = mysqli_query($link, $queryActividade);
-
-                                while ($rowActividade = mysqli_fetch_object($resultActividade)) {
-
-                                    $idActividade = $rowActividade->id_actividade;
-                                    $nomeActividade = $rowActividade->nome_actividade;
-                                    $descricaoActividade = $rowActividade->descricao_actividade;
-                                    $observacaoActividade = $rowActividade->observacao_actividade;
-                                    $c90012008 = $rowActividade->c9001_2008;
-                                    $c90012015 = $rowActividade->c9001_2015;
-                                    $fsc = $rowActividade->fsc;
-                                    $pefc = $rowActividade->pefc;
-
-
-                                    ?>
-                                    <!-- information goes here -->
-
-
-                                    <div class="box box-default collapsed-box own-border-top">
-                                        <div class="box-header own-activity-style">
-                                            <h3 class="box-title sub-titulo-2"
-                                                data-widget="collapse"><?php echo $nomeActividade; ?></h3>
-                                            <div class="box-tools pull-right">
-                                                <button class="btn btn-box-tool" data-widget="collapse"><i
-                                                        class="fa fa-plus"></i></button>
-                                            </div><!-- /.box-tools -->
-                                        </div><!-- /.box-header -->
-
-
-                                        <div class="box-body" style="display: none;">
-                                            <br>
-                                            <div class="col-md-6">
-                                                <dl>
-                                                    <dt>Descrição</dt>
-                                                    <dd><?php echo $descricaoActividade; ?></dd>
-                                                    <br>
-                                                    <dt>Observações</dt>
-                                                    <dd>
-                                                        <?php
-                                                        if ($observacaoActividade == "") {
-                                                            echo "Não existem observações.";
-                                                        } else {
-                                                            echo $observacaoActividade;
-                                                        }
-                                                        ?>
-                                                    </dd>
-
-                                                </dl>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <br>
-                                                <table class="table table-bordered center">
-                                                    <tbody>
-                                                    <tr>
-                                                        <th colspan="4" class="text-center"
-                                                            style="background-color: #ededed;">Matriz RH
-                                                        </th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Responsável</th>
-                                                        <th>Subs. Resp.</th>
-                                                        <th>Executante</th>
-                                                        <th>Subs. Exec.</th>
-                                                    </tr>
-
-                                                    <tr class="text-left">
-                                                        <td>Designer</td>
-                                                        <td>Responsável Qualidade</td>
-                                                        <td>Operador Guilhotina</td>
-                                                        <td>Designer</td>
-                                                    </tr>
-
-                                                    </tbody>
-                                                </table>
-
-                                            </div>
-
-                                            <br>
+                                ?>
+                                <div class="box box-default collapsed-box own-border-top">
+                                    <div class="box-header own-activity-style">
+                                        <h3 class="box-title sub-titulo-2"
+                                            data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                                        <div class="box-tools pull-right">
+                                            <button class="btn btn-box-tool" data-widget="collapse"><i
+                                                    class="fa fa-plus"></i></button>
+                                        </div><!-- /.box-tools -->
+                                    </div><!-- /.box-header -->
+                                    <div class="box-body" style="display: none;">
+                                        <br>
+                                        <div class="col-md-6">
+                                            <dl>
+                                                <dt>Responsável</dt>
+                                                <dd>Nome do responsável here</dd>
+                                            </dl>
 
                                             <table class="table table-bordered center">
-                                                <br>
-                                                <b>Cumprimento Normativo</b> <br><br>
                                                 <tbody>
-
                                                 <tr>
-                                                    <th>Nome do documento</th>
-                                                    <th>Codificação</th>
-                                                    <th>9001:2008</th>
-                                                    <th>9001:2015</th>
-                                                    <th>FSC</th>
-                                                    <th>PEFC</th>
+                                                    <th colspan="3" class="text-center"
+                                                        style="background-color: #ededed;">Documento em vigor
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Código</th>
+                                                    <th>Versão</th>
+                                                    <th>Data Actualização</th>
                                                 </tr>
 
-                                                <tr>
-
-                                                    <td>
-                                                        <?php
-                                                        if ($c90012008 == "") {
-                                                            echo "--";
-                                                        } else {
-                                                            echo $c90012008;
-                                                        }
-                                                        ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php
-                                                        if ($c90012015 == "") {
-                                                            echo "--";
-                                                        } else {
-                                                            echo $c90012015;
-                                                        }
-                                                        ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php
-                                                        if ($fsc == "") {
-                                                            echo "--";
-                                                        } else {
-                                                            echo $fsc;
-                                                        } ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php
-                                                        if ($pefc == "") {
-                                                            echo "--";
-                                                        } else {
-                                                            echo $pefc;
-                                                        }
-                                                        ?>
-                                                    </td>
+                                                <tr class="text-left">
+                                                    <td><?php echo $codigoControlDoc; ?></td>
+                                                    <td><?php echo $versaoControlDoc; ?></td>
+                                                    <td><?php echo $dataAtualizacaoControlDoc; ?></td>
                                                 </tr>
 
                                                 </tbody>
                                             </table>
 
-                                        </div><!-- /.box-body -->
+                                            <table class="table table-bordered center">
+                                                <tbody>
+                                                <tr>
+                                                    <th colspan="3" class="text-center"
+                                                        style="background-color: #ededed;">Suporte
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Suporte original</th>
+                                                    <th>Suporte de Preenchimento</th>
+                                                    <th>Cópia não controlada após impressão</th>
+                                                </tr>
+
+                                                <tr class="text-left">
+                                                    <td><?php echo $suporteOriginal; ?></td>
+                                                    <td><?php echo $suportePreenchimento; ?></td>
+                                                    <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <dl>
+                                                <dt>Responsável</dt>
+                                                <dd>Nome do responsável here</dd>
+                                            </dl>
+
+                                            <table class="table table-bordered center">
+                                                <tbody>
+                                                <tr>
+                                                    <th colspan="4" class="text-center"
+                                                        style="background-color: #ededed;">Detentores
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Synology>RB</th>
+                                                    <th>Site</th>
+                                                    <th>Portal</th>
+                                                    <th>Outro local</th>
+                                                </tr>
+
+                                                <tr class="text-left">
+                                                    <td><?php echo $synologyRB; ?></td>
+                                                    <td><?php echo $site; ?></td>
+                                                    <td><?php echo $portal; ?></td>
+                                                    <td><?php echo $outro_local; ?></td>
+
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                            <table class="table table-bordered center">
+                                                <tbody>
+                                                <tr>
+                                                    <th colspan="3" class="text-center"
+                                                        style="background-color: #ededed;">Arquivo
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th>Forma de recuperação</th>
+                                                    <th>Período de Arquivo dinâmico</th>
+                                                    <th>Período mínimo de arquivo morto</th>
+                                                </tr>
+
+                                                <tr class="text-left">
+                                                    <td><?php echo $formaRecuperacao; ?></td>
+                                                    <td><?php echo $periodoArquivoDinamico; ?></td>
+                                                    <td><?php echo $periodoArquivoMorto; ?></td>
+                                                </tr>
+
+                                                </tbody>
+                                            </table>
+
+
+
+                                        </div>
                                     </div>
-
-                                    <?php
-
-                                }
-
-                                ?>
-
-
-                            </div><!-- /.box-body -->
+                                </div>
+                            <?php } ?>
                         </div>
+
+
+                    </div>
+
+                    <!-- Modelos -->
+                    <div class="box box-default table-control-docs-style collapsed-box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title sub-titulo-1">Modelos</h3>
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                                </button>
+                            </div><!-- /.box-tools -->
+                        </div><!-- /.box-header -->
+                        <div class="box-body" style="display: none;">
+                            something here models
+                        </div>
+
+                    </div>
+
+                    <!-- Procedimento -->
+                    <div class="box box-default table-control-docs-style collapsed-box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title sub-titulo-1">Procedimento</h3>
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                                </button>
+                            </div><!-- /.box-tools -->
+                        </div><!-- /.box-header -->
+                        <div class="box-body" style="display: none;">
+                            something here procedimento
+                        </div>
+
+                    </div>
+
+
+                    <!-- Outros -->
+                    <div class="box box-default table-control-docs-style collapsed-box">
+                        <div class="box-header with-border">
+                            <h3 class="box-title sub-titulo-1">Outros</h3>
+                            <div class="box-tools pull-right">
+                                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                                </button>
+                            </div><!-- /.box-tools -->
+                        </div><!-- /.box-header -->
+                        <div class="box-body" style="display: none;">
+                            something here outros
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+    </div>
+    <!-- ------------------------------- BEGIN - NOVO METODO FRONT END BUILDING  ------------------------------- -->
+
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Controlo de Documentos</h3>
+            <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            </div>
+        </div><!-- /.box-header -->
+        <div class="box-body" style="display: block;">
+
+
+            <?php
+
+            //query to show dub processos
+            $querySubProcessos = "SELECT * FROM tbl_sub_processos WHERE tbl_rostos_id_rosto = '$idrosto'";
+
+            $resultSubProcessos = mysqli_query($link, $querySubProcessos);
+
+            while ($rowSubProcessos = mysqli_fetch_object($resultSubProcessos)) {
+
+                $idsubprocesso = $rowSubProcessos->id_sub_processo;
+                $nomeSubProcesso = $rowSubProcessos->nome_sub_processo;
+                ?>
+
+
+                <!-- information goes here -->
+
+                <div class="box box-default">
+                    <div class="box-header with-border">
+                        <h3 class="box-title sub-titulo-1"><?php echo $nomeSubProcesso; ?></h3>
+                        <!--<div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                            </button>
+                        </div>--><!-- /.box-tools -->
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
 
                         <?php
 
-                    }
+                        //query to show actividades
+                        $queryActividade = "SELECT * FROM tbl_actividades WHERE tbl_sub_processos_id_sub_processo = '$idsubprocesso'";
+                        $resultActividade = mysqli_query($link, $queryActividade);
 
-                    ?>
+                        while ($rowActividade = mysqli_fetch_object($resultActividade)) {
+
+                            $idActividade = $rowActividade->id_actividade;
+                            $nomeActividade = $rowActividade->nome_actividade;
+                            $descricaoActividade = $rowActividade->descricao_actividade;
+                            $observacaoActividade = $rowActividade->observacao_actividade;
+                            $c90012008 = $rowActividade->c9001_2008;
+                            $c90012015 = $rowActividade->c9001_2015;
+                            $fsc = $rowActividade->fsc;
+                            $pefc = $rowActividade->pefc;
 
 
-                </div><!-- /.box-body -->
-            </div>
+                            ?>
+                            <!-- information goes here -->
 
-    </div><!-- /.box-body -->
-    <div class="box-footer clearfix" style="display: none;">
-        A good place to put some useful information. Just a simple footer code.
-        <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-        <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
-    </div><!-- /.box-footer -->
+
+                            <div class="box box-default collapsed-box own-border-top">
+                                <div class="box-header own-activity-style">
+                                    <h3 class="box-title sub-titulo-2"
+                                        data-widget="collapse"><?php echo $nomeActividade; ?></h3>
+                                    <div class="box-tools pull-right">
+                                        <button class="btn btn-box-tool" data-widget="collapse"><i
+                                                class="fa fa-plus"></i></button>
+                                    </div><!-- /.box-tools -->
+                                </div><!-- /.box-header -->
+
+
+                                <div class="box-body" style="display: none;">
+                                    <br>
+                                    <div class="col-md-6">
+                                        <dl>
+                                            <dt>Descrição</dt>
+                                            <dd><?php echo $descricaoActividade; ?></dd>
+                                            <br>
+                                            <dt>Observações</dt>
+                                            <dd>
+                                                <?php
+                                                if ($observacaoActividade == "") {
+                                                    echo "Não existem observações.";
+                                                } else {
+                                                    echo $observacaoActividade;
+                                                }
+                                                ?>
+                                            </dd>
+
+                                        </dl>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <br>
+                                        <table class="table table-bordered center">
+                                            <tbody>
+                                            <tr>
+                                                <th colspan="4" class="text-center"
+                                                    style="background-color: #ededed;">Matriz RH
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>Responsável</th>
+                                                <th>Subs. Resp.</th>
+                                                <th>Executante</th>
+                                                <th>Subs. Exec.</th>
+                                            </tr>
+
+                                            <tr class="text-left">
+                                                <td>Designer</td>
+                                                <td>Responsável Qualidade</td>
+                                                <td>Operador Guilhotina</td>
+                                                <td>Designer</td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                    <br>
+
+                                    <table class="table table-bordered center">
+                                        <br>
+                                        <b>Cumprimento Normativo</b> <br><br>
+                                        <tbody>
+
+                                        <tr>
+                                            <th>Nome do documento</th>
+                                            <th>Codificação</th>
+                                            <th>9001:2008</th>
+                                            <th>9001:2015</th>
+                                            <th>FSC</th>
+                                            <th>PEFC</th>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td>
+                                                <?php
+                                                if ($c90012008 == "") {
+                                                    echo "--";
+                                                } else {
+                                                    echo $c90012008;
+                                                }
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                if ($c90012015 == "") {
+                                                    echo "--";
+                                                } else {
+                                                    echo $c90012015;
+                                                }
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                if ($fsc == "") {
+                                                    echo "--";
+                                                } else {
+                                                    echo $fsc;
+                                                } ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                if ($pefc == "") {
+                                                    echo "--";
+                                                } else {
+                                                    echo $pefc;
+                                                }
+                                                ?>
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                </div><!-- /.box-body -->
+                            </div>
+
+                            <?php
+
+                        }
+
+                        ?>
+
+
+                    </div><!-- /.box-body -->
+                </div>
+
+                <?php
+
+            }
+
+            ?>
+
+
+        </div><!-- /.box-body -->
+    </div>
+
+</div><!-- /.box-body -->
+<div class="box-footer clearfix" style="display: none;">
+    A good place to put some useful information. Just a simple footer code.
+    <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
+    <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
+</div><!-- /.box-footer -->
 </div>
 
 <!-- ------------------------------- END - NOVO METODO FRONT END BUILDING ------------------------------- -->

@@ -37,3 +37,9 @@
 .label-obsoleto{
   background-color: #d8d8d8;
 }
+
+.table-control-docs-style{
+  border-top: 1px solid #d2d6de!important;
+  margin-bottom: 10px!important;
+
+}
