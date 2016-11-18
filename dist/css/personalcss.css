@@ -16,6 +16,15 @@
   color: #3c8dbc;
 }
 
+.sub-titulo-tipos{
+  color: #444444;
+}
+
+.sub-titulo-tipos:hover{
+  color: #3c8dbc;
+  cursor: pointer;
+}
+
 
 .opacity-45 {
   opacity: .45;

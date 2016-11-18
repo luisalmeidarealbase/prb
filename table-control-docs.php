@@ -189,7 +189,7 @@ desired effect
                     <!-- Intrucoes de trabalho -->
                     <div class="box box-default table-control-docs-style collapsed-box">
                         <div class="box-header with-border">
-                            <h3 class="box-title sub-titulo-1">Instruções de trabalho</h3>
+                            <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Instruções de trabalho</h3>
                             <div class="box-tools pull-right">
                                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                                 </button>
@@ -396,7 +396,7 @@ desired effect
                 <!-- Modelos -->
                 <div class="box box-default table-control-docs-style collapsed-box">
                     <div class="box-header with-border">
-                        <h3 class="box-title sub-titulo-1">Modelos</h3>
+                        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Modelos</h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                             </button>
@@ -606,7 +606,7 @@ desired effect
             <!-- Procedimento -->
             <div class="box box-default table-control-docs-style collapsed-box">
                 <div class="box-header with-border">
-                    <h3 class="box-title sub-titulo-1">Procedimento</h3>
+                    <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Procedimento</h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                         </button>
@@ -816,7 +816,7 @@ desired effect
     <!-- Outros -->
     <div class="box box-default table-control-docs-style collapsed-box">
         <div class="box-header with-border">
-            <h3 class="box-title sub-titulo-1">Outros</h3>
+            <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Outros</h3>
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                 </button>
@@ -1039,7 +1039,7 @@ desired effect
         <!-- Intrucoes de trabalho -->
         <div class="box box-default table-control-docs-style collapsed-box">
             <div class="box-header with-border">
-                <h3 class="box-title sub-titulo-1">Instruções de trabalho</h3>
+                <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Instruções de trabalho</h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                     </button>
@@ -1246,7 +1246,7 @@ desired effect
     <!-- Modelos -->
     <div class="box box-default table-control-docs-style collapsed-box">
         <div class="box-header with-border">
-            <h3 class="box-title sub-titulo-1">Modelos</h3>
+            <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Modelos</h3>
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                 </button>
@@ -1456,7 +1456,7 @@ desired effect
 <!-- Procedimento -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Procedimento</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Procedimento</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -1666,7 +1666,7 @@ desired effect
 <!-- Outros -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Outros</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Outros</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -1887,7 +1887,7 @@ desired effect
         <!-- Intrucoes de trabalho -->
         <div class="box box-default table-control-docs-style collapsed-box">
             <div class="box-header with-border">
-                <h3 class="box-title sub-titulo-1">Instruções de trabalho</h3>
+                <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Instruções de trabalho</h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                     </button>
@@ -2094,7 +2094,7 @@ desired effect
     <!-- Modelos -->
     <div class="box box-default table-control-docs-style collapsed-box">
         <div class="box-header with-border">
-            <h3 class="box-title sub-titulo-1">Modelos</h3>
+            <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Modelos</h3>
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                 </button>
@@ -2304,7 +2304,7 @@ desired effect
 <!-- Procedimento -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Procedimento</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Procedimento</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -2514,7 +2514,7 @@ desired effect
 <!-- Outros -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Outros</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Outros</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -2736,7 +2736,7 @@ desired effect
         <!-- Intrucoes de trabalho -->
         <div class="box box-default table-control-docs-style collapsed-box">
             <div class="box-header with-border">
-                <h3 class="box-title sub-titulo-1">Instruções de trabalho</h3>
+                <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Instruções de trabalho</h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                     </button>
@@ -2943,7 +2943,7 @@ desired effect
     <!-- Modelos -->
     <div class="box box-default table-control-docs-style collapsed-box">
         <div class="box-header with-border">
-            <h3 class="box-title sub-titulo-1">Modelos</h3>
+            <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Modelos</h3>
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                 </button>
@@ -3153,7 +3153,7 @@ desired effect
 <!-- Procedimento -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Procedimento</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Procedimento</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -3363,7 +3363,7 @@ desired effect
 <!-- Outros -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Outros</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Outros</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -3587,7 +3587,7 @@ desired effect
         <!-- Intrucoes de trabalho -->
         <div class="box box-default table-control-docs-style collapsed-box">
             <div class="box-header with-border">
-                <h3 class="box-title sub-titulo-1">Instruções de trabalho</h3>
+                <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Instruções de trabalho</h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                     </button>
@@ -3794,7 +3794,7 @@ desired effect
     <!-- Modelos -->
     <div class="box box-default table-control-docs-style collapsed-box">
         <div class="box-header with-border">
-            <h3 class="box-title sub-titulo-1">Modelos</h3>
+            <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Modelos</h3>
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                 </button>
@@ -4004,7 +4004,7 @@ desired effect
 <!-- Procedimento -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Procedimento</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Procedimento</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -4214,7 +4214,7 @@ desired effect
 <!-- Outros -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Outros</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Outros</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -4438,7 +4438,7 @@ desired effect
         <!-- Intrucoes de trabalho -->
         <div class="box box-default table-control-docs-style collapsed-box">
             <div class="box-header with-border">
-                <h3 class="box-title sub-titulo-1">Instruções de trabalho</h3>
+                <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Instruções de trabalho</h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                     </button>
@@ -4645,7 +4645,7 @@ desired effect
     <!-- Modelos -->
     <div class="box box-default table-control-docs-style collapsed-box">
         <div class="box-header with-border">
-            <h3 class="box-title sub-titulo-1">Modelos</h3>
+            <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Modelos</h3>
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                 </button>
@@ -4855,7 +4855,7 @@ desired effect
 <!-- Procedimento -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Procedimento</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Procedimento</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -5065,7 +5065,7 @@ desired effect
 <!-- Outros -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Outros</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Outros</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -5287,7 +5287,7 @@ desired effect
         <!-- Intrucoes de trabalho -->
         <div class="box box-default table-control-docs-style collapsed-box">
             <div class="box-header with-border">
-                <h3 class="box-title sub-titulo-1">Instruções de trabalho</h3>
+                <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Instruções de trabalho</h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                     </button>
@@ -5494,7 +5494,7 @@ desired effect
     <!-- Modelos -->
     <div class="box box-default table-control-docs-style collapsed-box">
         <div class="box-header with-border">
-            <h3 class="box-title sub-titulo-1">Modelos</h3>
+            <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Modelos</h3>
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                 </button>
@@ -5704,7 +5704,7 @@ desired effect
 <!-- Procedimento -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Procedimento</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Procedimento</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -5914,7 +5914,7 @@ desired effect
 <!-- Outros -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Outros</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Outros</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -6137,7 +6137,7 @@ desired effect
         <!-- Intrucoes de trabalho -->
         <div class="box box-default table-control-docs-style collapsed-box">
             <div class="box-header with-border">
-                <h3 class="box-title sub-titulo-1">Instruções de trabalho</h3>
+                <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Instruções de trabalho</h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                     </button>
@@ -6344,7 +6344,7 @@ desired effect
     <!-- Modelos -->
     <div class="box box-default table-control-docs-style collapsed-box">
         <div class="box-header with-border">
-            <h3 class="box-title sub-titulo-1">Modelos</h3>
+            <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Modelos</h3>
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                 </button>
@@ -6554,7 +6554,7 @@ desired effect
 <!-- Procedimento -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Procedimento</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Procedimento</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -6764,7 +6764,7 @@ desired effect
 <!-- Outros -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Outros</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Outros</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -6973,6 +6973,856 @@ desired effect
 </div>
 <!-- END HERE AUDITORIAS -->
 
+<!-- START HERE CONTROLO DOCS -->
+
+<div class="box box-info"       >
+    <div class="box-header with-border">
+        <h3 class="box-title">Controlo Documental</h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        </div>
+    </div><!-- /.box-header -->
+    <div class="box-body" style="display: block;">
+
+        <!-- Intrucoes de trabalho -->
+        <div class="box box-default table-control-docs-style collapsed-box">
+            <div class="box-header with-border">
+                <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Instruções de trabalho</h3>
+                <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                    </button>
+                </div><!-- /.box-tools -->
+            </div><!-- /.box-header -->
+            <div class="box-body" style="display: none;">
+                <?php
+
+                $queryTableProd = "SELECT * FROM tbl_control_docs WHERE procedimento = 'controldoc' AND  tipo_documento = 'instrucao trabalho'";
+                $resultQueryTableProd = mysqli_query($link, $queryTableProd);
+
+                while ($rowTableProd = mysqli_fetch_object($resultQueryTableProd)) {
+                $procedimento = "Produção";
+                $idControlDoc = $rowTableProd->id_control_doc;
+                $tipoDocumento = $rowTableProd->tipo_documento;
+                $nomeDescricaoDocumento = utf8_encode($rowTableProd->nome_descricao_documento);
+                $responsavel = utf8_encode($rowTableProd->responsavel);
+                $codigoControlDoc = utf8_encode($rowTableProd->codigo);
+                $versaoControlDoc = utf8_encode($rowTableProd->versao);
+                $dataAtualizacaoControlDoc = utf8_encode($rowTableProd->data_atualizacao);
+                $suporteOriginal = utf8_encode($rowTableProd->suporte_original);
+                $suportePreenchimento = utf8_encode($rowTableProd->suporte_preenchimento);
+                $copiaNaoControladaPosPrint = utf8_encode($rowTableProd->copia_nao_controlada_pos_print);
+                $synologyRB = utf8_encode($rowTableProd->synology_rb);
+                $site = utf8_encode($rowTableProd->site);
+                $portal = utf8_encode($rowTableProd->portal);
+                $outro_local = utf8_encode($rowTableProd->outro_local);
+                $formaRecuperacao = utf8_encode($rowTableProd->forma_recuperacao);
+                $periodoArquivoDinamico = utf8_encode($rowTableProd->periodo_arquivo_dinamico);
+                $periodoArquivoMorto = utf8_encode($rowTableProd->periodo_arquivo_morto);
+                $controlDoc9001 = utf8_encode($rowTableProd->control_doc_9001_2008);
+                $controlDoc2015 = utf8_encode($rowTableProd->control_doc_9001_2015);
+                $controlDocFSC = utf8_encode($rowTableProd->control_doc_fsc);
+                $controlDocPEFC = utf8_encode($rowTableProd->control_doc_pefc);
+
+
+                ?>
+                <div class="box box-default collapsed-box own-border-top">
+                    <div class="box-header own-activity-style">
+                        <h3 class="box-title sub-titulo-2"
+                            data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-plus"></i></button>
+                        </div><!-- /.box-tools -->
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: none;">
+                        <br>
+                        <div class="col-md-12"
+                        <dl>
+                            <dt>Responsável</dt>
+                            <dd><?php echo $responsavel; ?></dd>
+                        </dl>
+                        <br>
+                    </div>
+                    <div class="col-md-6">
+
+
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="3" class="text-center"
+                                    style="background-color: #ededed;">Documento em vigor
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Código</th>
+                                <th>Versão</th>
+                                <th>Data Actualização</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td><?php echo $codigoControlDoc; ?></td>
+                                <td><?php echo $versaoControlDoc; ?></td>
+                                <td><?php echo $dataAtualizacaoControlDoc; ?></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="3" class="text-center"
+                                    style="background-color: #ededed;">Suporte
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Suporte original</th>
+                                <th>Suporte de Preenchimento</th>
+                                <th>Cópia não controlada após impressão</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td><?php echo $suporteOriginal; ?></td>
+                                <td><?php echo $suportePreenchimento; ?></td>
+                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="4" class="text-center"
+                                    style="background-color: #ededed;">Detentores
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Synology>RB</th>
+                                <th>Site</th>
+                                <th>Portal</th>
+                                <th>Outro local</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td><?php echo $synologyRB; ?></td>
+                                <td><?php echo $site; ?></td>
+                                <td><?php echo $portal; ?></td>
+                                <td><?php echo $outro_local; ?></td>
+
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="3" class="text-center"
+                                    style="background-color: #ededed;">Arquivo
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Forma de recuperação</th>
+                                <th>Período de Arquivo dinâmico</th>
+                                <th>Período mínimo de arquivo morto</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td><?php echo $formaRecuperacao; ?></td>
+                                <td><?php echo $periodoArquivoDinamico; ?></td>
+                                <td><?php echo $periodoArquivoMorto; ?></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="col-md-12">
+
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="4" class="text-center"
+                                    style="background-color: #ededed;">Cumprimento Normativo
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>9001:2008</th>
+                                <th>9001:2015</th>
+                                <th>FSC 2013</th>
+                                <th>PEFC 2013</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td><?php if ($controlDoc9001 == "") {
+                                        echo "--";
+                                    } else {
+                                        echo $controlDoc9001;
+                                    } ?></td>
+                                <td><?php if ($controlDoc2015 == "") {
+                                        echo "--";
+                                    } else {
+                                        echo $controlDoc2015;
+                                    } ?></td>
+                                <td><?php if ($controlDocFSC == "") {
+                                        echo "--";
+                                    } else {
+                                        echo $controlDocFSC;
+                                    } ?></td>
+                                <td><?php if ($controlDocPEFC == "") {
+                                        echo "--";
+                                    } else {
+                                        echo $controlDocPEFC;
+                                    } ?></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
+        </div>
+
+
+    </div>
+
+    <!-- Modelos -->
+    <div class="box box-default table-control-docs-style collapsed-box">
+        <div class="box-header with-border">
+            <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Modelos</h3>
+            <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                </button>
+            </div><!-- /.box-tools -->
+        </div><!-- /.box-header -->
+        <div class="box-body" style="display: none;">
+
+
+            <?php
+
+            $queryTableProd = "SELECT * FROM tbl_control_docs WHERE procedimento = 'controldoc' AND  tipo_documento = 'Modelo'";
+            $resultQueryTableProd = mysqli_query($link, $queryTableProd);
+
+            while ($rowTableProd = mysqli_fetch_object($resultQueryTableProd)) {
+            $procedimento = "Produção";
+            $idControlDoc = $rowTableProd->id_control_doc;
+            $tipoDocumento = $rowTableProd->tipo_documento;
+            $nomeDescricaoDocumento = utf8_encode($rowTableProd->nome_descricao_documento);
+            $responsavel = utf8_encode($rowTableProd->responsavel);
+            $codigoControlDoc = utf8_encode($rowTableProd->codigo);
+            $versaoControlDoc = utf8_encode($rowTableProd->versao);
+            $dataAtualizacaoControlDoc = utf8_encode($rowTableProd->data_atualizacao);
+            $suporteOriginal = utf8_encode($rowTableProd->suporte_original);
+            $suportePreenchimento = utf8_encode($rowTableProd->suporte_preenchimento);
+            $copiaNaoControladaPosPrint = utf8_encode($rowTableProd->copia_nao_controlada_pos_print);
+            $synologyRB = utf8_encode($rowTableProd->synology_rb);
+            $site = utf8_encode($rowTableProd->site);
+            $portal = utf8_encode($rowTableProd->portal);
+            $outro_local = utf8_encode($rowTableProd->outro_local);
+            $formaRecuperacao = utf8_encode($rowTableProd->forma_recuperacao);
+            $periodoArquivoDinamico = utf8_encode($rowTableProd->periodo_arquivo_dinamico);
+            $periodoArquivoMorto = utf8_encode($rowTableProd->periodo_arquivo_morto);
+            $controlDoc9001 = utf8_encode($rowTableProd->control_doc_9001_2008);
+            $controlDoc2015 = utf8_encode($rowTableProd->control_doc_9001_2015);
+            $controlDocFSC = utf8_encode($rowTableProd->control_doc_fsc);
+            $controlDocPEFC = utf8_encode($rowTableProd->control_doc_pefc);
+
+
+            ?>
+            <div class="box box-default collapsed-box own-border-top">
+                <div class="box-header own-activity-style">
+                    <h3 class="box-title sub-titulo-2"
+                        data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-plus"></i></button>
+                    </div><!-- /.box-tools -->
+                </div><!-- /.box-header -->
+                <div class="box-body" style="display: none;">
+                    <br>
+                    <div class="col-md-12"
+                    <dl>
+                        <dt>Responsável</dt>
+                        <dd><?php echo $responsavel; ?></dd>
+                    </dl>
+                    <br>
+                </div>
+                <div class="col-md-6">
+
+
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="3" class="text-center"
+                                style="background-color: #ededed;">Documento em vigor
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Código</th>
+                            <th>Versão</th>
+                            <th>Data Actualização</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php echo $codigoControlDoc; ?></td>
+                            <td><?php echo $versaoControlDoc; ?></td>
+                            <td><?php echo $dataAtualizacaoControlDoc; ?></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="3" class="text-center"
+                                style="background-color: #ededed;">Suporte
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Suporte original</th>
+                            <th>Suporte de Preenchimento</th>
+                            <th>Cópia não controlada após impressão</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php echo $suporteOriginal; ?></td>
+                            <td><?php echo $suportePreenchimento; ?></td>
+                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="4" class="text-center"
+                                style="background-color: #ededed;">Detentores
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Synology>RB</th>
+                            <th>Site</th>
+                            <th>Portal</th>
+                            <th>Outro local</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php echo $synologyRB; ?></td>
+                            <td><?php echo $site; ?></td>
+                            <td><?php echo $portal; ?></td>
+                            <td><?php echo $outro_local; ?></td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="3" class="text-center"
+                                style="background-color: #ededed;">Arquivo
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Forma de recuperação</th>
+                            <th>Período de Arquivo dinâmico</th>
+                            <th>Período mínimo de arquivo morto</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php echo $formaRecuperacao; ?></td>
+                            <td><?php echo $periodoArquivoDinamico; ?></td>
+                            <td><?php echo $periodoArquivoMorto; ?></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="col-md-12">
+
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="4" class="text-center"
+                                style="background-color: #ededed;">Cumprimento Normativo
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>9001:2008</th>
+                            <th>9001:2015</th>
+                            <th>FSC 2013</th>
+                            <th>PEFC 2013</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php if ($controlDoc9001 == "") {
+                                    echo "--";
+                                } else {
+                                    echo $controlDoc9001;
+                                } ?></td>
+                            <td><?php if ($controlDoc2015 == "") {
+                                    echo "--";
+                                } else {
+                                    echo $controlDoc2015;
+                                } ?></td>
+                            <td><?php if ($controlDocFSC == "") {
+                                    echo "--";
+                                } else {
+                                    echo $controlDocFSC;
+                                } ?></td>
+                            <td><?php if ($controlDocPEFC == "") {
+                                    echo "--";
+                                } else {
+                                    echo $controlDocPEFC;
+                                } ?></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+
+
+    </div>
+
+</div>
+
+<!-- Procedimento -->
+<div class="box box-default table-control-docs-style collapsed-box">
+    <div class="box-header with-border">
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Procedimento</h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+            </button>
+        </div><!-- /.box-tools -->
+    </div><!-- /.box-header -->
+    <div class="box-body" style="display: none;">
+
+        <?php
+
+        $queryTableProd = "SELECT * FROM tbl_control_docs WHERE procedimento = 'controldoc' AND  tipo_documento = 'Procedimento'";
+        $resultQueryTableProd = mysqli_query($link, $queryTableProd);
+
+        while ($rowTableProd = mysqli_fetch_object($resultQueryTableProd)) {
+        $procedimento = "Produção";
+        $idControlDoc = $rowTableProd->id_control_doc;
+        $tipoDocumento = $rowTableProd->tipo_documento;
+        $nomeDescricaoDocumento = utf8_encode($rowTableProd->nome_descricao_documento);
+        $responsavel = utf8_encode($rowTableProd->responsavel);
+        $codigoControlDoc = utf8_encode($rowTableProd->codigo);
+        $versaoControlDoc = utf8_encode($rowTableProd->versao);
+        $dataAtualizacaoControlDoc = utf8_encode($rowTableProd->data_atualizacao);
+        $suporteOriginal = utf8_encode($rowTableProd->suporte_original);
+        $suportePreenchimento = utf8_encode($rowTableProd->suporte_preenchimento);
+        $copiaNaoControladaPosPrint = utf8_encode($rowTableProd->copia_nao_controlada_pos_print);
+        $synologyRB = utf8_encode($rowTableProd->synology_rb);
+        $site = utf8_encode($rowTableProd->site);
+        $portal = utf8_encode($rowTableProd->portal);
+        $outro_local = utf8_encode($rowTableProd->outro_local);
+        $formaRecuperacao = utf8_encode($rowTableProd->forma_recuperacao);
+        $periodoArquivoDinamico = utf8_encode($rowTableProd->periodo_arquivo_dinamico);
+        $periodoArquivoMorto = utf8_encode($rowTableProd->periodo_arquivo_morto);
+        $controlDoc9001 = utf8_encode($rowTableProd->control_doc_9001_2008);
+        $controlDoc2015 = utf8_encode($rowTableProd->control_doc_9001_2015);
+        $controlDocFSC = utf8_encode($rowTableProd->control_doc_fsc);
+        $controlDocPEFC = utf8_encode($rowTableProd->control_doc_pefc);
+
+
+        ?>
+        <div class="box box-default collapsed-box own-border-top">
+            <div class="box-header own-activity-style">
+                <h3 class="box-title sub-titulo-2"
+                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-plus"></i></button>
+                </div><!-- /.box-tools -->
+            </div><!-- /.box-header -->
+            <div class="box-body" style="display: none;">
+                <br>
+                <div class="col-md-12"
+                <dl>
+                    <dt>Responsável</dt>
+                    <dd><?php echo $responsavel; ?></dd>
+                </dl>
+                <br>
+            </div>
+            <div class="col-md-6">
+
+
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #ededed;">Documento em vigor
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Código</th>
+                        <th>Versão</th>
+                        <th>Data Actualização</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $codigoControlDoc; ?></td>
+                        <td><?php echo $versaoControlDoc; ?></td>
+                        <td><?php echo $dataAtualizacaoControlDoc; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #ededed;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #ededed;">Detentores
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Synology>RB</th>
+                        <th>Site</th>
+                        <th>Portal</th>
+                        <th>Outro local</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $synologyRB; ?></td>
+                        <td><?php echo $site; ?></td>
+                        <td><?php echo $portal; ?></td>
+                        <td><?php echo $outro_local; ?></td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #ededed;">Arquivo
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Forma de recuperação</th>
+                        <th>Período de Arquivo dinâmico</th>
+                        <th>Período mínimo de arquivo morto</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $formaRecuperacao; ?></td>
+                        <td><?php echo $periodoArquivoDinamico; ?></td>
+                        <td><?php echo $periodoArquivoMorto; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="col-md-12">
+
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #ededed;">Cumprimento Normativo
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>9001:2008</th>
+                        <th>9001:2015</th>
+                        <th>FSC 2013</th>
+                        <th>PEFC 2013</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php if ($controlDoc9001 == "") {
+                                echo "--";
+                            } else {
+                                echo $controlDoc9001;
+                            } ?></td>
+                        <td><?php if ($controlDoc2015 == "") {
+                                echo "--";
+                            } else {
+                                echo $controlDoc2015;
+                            } ?></td>
+                        <td><?php if ($controlDocFSC == "") {
+                                echo "--";
+                            } else {
+                                echo $controlDocFSC;
+                            } ?></td>
+                        <td><?php if ($controlDocPEFC == "") {
+                                echo "--";
+                            } else {
+                                echo $controlDocPEFC;
+                            } ?></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+    <?php } ?>
+
+
+</div>
+
+</div>
+
+
+<!-- Outros -->
+<div class="box box-default table-control-docs-style collapsed-box">
+    <div class="box-header with-border">
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Outros</h3>
+        <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+            </button>
+        </div><!-- /.box-tools -->
+    </div><!-- /.box-header -->
+    <div class="box-body" style="display: none;">
+        <?php
+
+        $queryTableProd = "SELECT * FROM tbl_control_docs WHERE procedimento = 'controldoc' AND  tipo_documento = 'Outros'";
+        $resultQueryTableProd = mysqli_query($link, $queryTableProd);
+
+        while ($rowTableProd = mysqli_fetch_object($resultQueryTableProd)) {
+        $procedimento = "Produção";
+        $idControlDoc = $rowTableProd->id_control_doc;
+        $tipoDocumento = $rowTableProd->tipo_documento;
+        $nomeDescricaoDocumento = utf8_encode($rowTableProd->nome_descricao_documento);
+        $responsavel = utf8_encode($rowTableProd->responsavel);
+        $codigoControlDoc = utf8_encode($rowTableProd->codigo);
+        $versaoControlDoc = utf8_encode($rowTableProd->versao);
+        $dataAtualizacaoControlDoc = utf8_encode($rowTableProd->data_atualizacao);
+        $suporteOriginal = utf8_encode($rowTableProd->suporte_original);
+        $suportePreenchimento = utf8_encode($rowTableProd->suporte_preenchimento);
+        $copiaNaoControladaPosPrint = utf8_encode($rowTableProd->copia_nao_controlada_pos_print);
+        $synologyRB = utf8_encode($rowTableProd->synology_rb);
+        $site = utf8_encode($rowTableProd->site);
+        $portal = utf8_encode($rowTableProd->portal);
+        $outro_local = utf8_encode($rowTableProd->outro_local);
+        $formaRecuperacao = utf8_encode($rowTableProd->forma_recuperacao);
+        $periodoArquivoDinamico = utf8_encode($rowTableProd->periodo_arquivo_dinamico);
+        $periodoArquivoMorto = utf8_encode($rowTableProd->periodo_arquivo_morto);
+        $controlDoc9001 = utf8_encode($rowTableProd->control_doc_9001_2008);
+        $controlDoc2015 = utf8_encode($rowTableProd->control_doc_9001_2015);
+        $controlDocFSC = utf8_encode($rowTableProd->control_doc_fsc);
+        $controlDocPEFC = utf8_encode($rowTableProd->control_doc_pefc);
+
+
+        ?>
+        <div class="box box-default collapsed-box own-border-top">
+            <div class="box-header own-activity-style">
+                <h3 class="box-title sub-titulo-2"
+                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-plus"></i></button>
+                </div><!-- /.box-tools -->
+            </div><!-- /.box-header -->
+            <div class="box-body" style="display: none;">
+                <br>
+                <div class="col-md-12"
+                <dl>
+                    <dt>Responsável</dt>
+                    <dd><?php echo $responsavel; ?></dd>
+                </dl>
+                <br>
+            </div>
+            <div class="col-md-6">
+
+
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #ededed;">Documento em vigor
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Código</th>
+                        <th>Versão</th>
+                        <th>Data Actualização</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $codigoControlDoc; ?></td>
+                        <td><?php echo $versaoControlDoc; ?></td>
+                        <td><?php echo $dataAtualizacaoControlDoc; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #ededed;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6">
+
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #ededed;">Detentores
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Synology>RB</th>
+                        <th>Site</th>
+                        <th>Portal</th>
+                        <th>Outro local</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $synologyRB; ?></td>
+                        <td><?php echo $site; ?></td>
+                        <td><?php echo $portal; ?></td>
+                        <td><?php echo $outro_local; ?></td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #ededed;">Arquivo
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Forma de recuperação</th>
+                        <th>Período de Arquivo dinâmico</th>
+                        <th>Período mínimo de arquivo morto</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $formaRecuperacao; ?></td>
+                        <td><?php echo $periodoArquivoDinamico; ?></td>
+                        <td><?php echo $periodoArquivoMorto; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="col-md-12">
+
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #ededed;">Cumprimento Normativo
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>9001:2008</th>
+                        <th>9001:2015</th>
+                        <th>FSC 2013</th>
+                        <th>PEFC 2013</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php if ($controlDoc9001 == "") {
+                                echo "--";
+                            } else {
+                                echo $controlDoc9001;
+                            } ?></td>
+                        <td><?php if ($controlDoc2015 == "") {
+                                echo "--";
+                            } else {
+                                echo $controlDoc2015;
+                            } ?></td>
+                        <td><?php if ($controlDocFSC == "") {
+                                echo "--";
+                            } else {
+                                echo $controlDocFSC;
+                            } ?></td>
+                        <td><?php if ($controlDocPEFC == "") {
+                                echo "--";
+                            } else {
+                                echo $controlDocPEFC;
+                            } ?></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+    <?php } ?>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+<!-- END HERE CONTROLO DOCS -->
+
 <!-- START HERE OCORRENCIAS E TRATAMENTOS -->
 
 <div class="box box-info"       >
@@ -6987,7 +7837,7 @@ desired effect
         <!-- Intrucoes de trabalho -->
         <div class="box box-default table-control-docs-style collapsed-box">
             <div class="box-header with-border">
-                <h3 class="box-title sub-titulo-1">Instruções de trabalho</h3>
+                <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Instruções de trabalho</h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                     </button>
@@ -7194,7 +8044,7 @@ desired effect
     <!-- Modelos -->
     <div class="box box-default table-control-docs-style collapsed-box">
         <div class="box-header with-border">
-            <h3 class="box-title sub-titulo-1">Modelos</h3>
+            <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Modelos</h3>
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                 </button>
@@ -7404,7 +8254,7 @@ desired effect
 <!-- Procedimento -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Procedimento</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Procedimento</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
@@ -7614,7 +8464,7 @@ desired effect
 <!-- Outros -->
 <div class="box box-default table-control-docs-style collapsed-box">
     <div class="box-header with-border">
-        <h3 class="box-title sub-titulo-1">Outros</h3>
+        <h3 class="box-title sub-titulo-1 sub-titulo-tipos" data-widget="collapse">Outros</h3>
         <div class="box-tools pull-right">
             <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
             </button>
