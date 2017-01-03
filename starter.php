@@ -226,7 +226,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <div class="col-md-4 col-sm-6 col-xs-12">
       <div class="info-box">
-      <a href="http://localhost:8888/prb/manutencoes.php" target="_blank">
+      <a href="http://localhost:8888/prbnov/manutencoes.php" target="_blank">
         <span class="info-box-icon bg-aqua"><i class="fa fa-shopping-cart"></i></span>
         <div class="info-box-content">
           <span class="info-box-text"></span>

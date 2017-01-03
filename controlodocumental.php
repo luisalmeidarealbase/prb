@@ -282,6 +282,7 @@ desired effect
                         $responsavel_procedimento = $rowrosto->responsavel_procedimento;
                         $metodo = $rowrosto->metodo;
                         $idrosto = $rowrosto->id_rosto;
+                        $versao_vigor = $rowrosto->versao_vigor;
 
 
                     }
@@ -293,7 +294,7 @@ desired effect
                             <dt>Procedimento:</dt>
                             <dd><?php echo $nomeprocedimento; ?></dd>
                             <dt>Ref. Doc Versão em vigor</dt>
-                            <dd>XXX.01-04</dd>
+                            <dd><?php echo $versao_vigor; ?></dd>
                             <dt>Data de Aprovação.</dt>
                             <dd>24 de Agosto 2015</dd>
                             <dt>Responsável</dt>

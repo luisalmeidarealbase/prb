@@ -110,6 +110,37 @@ while ($rowGetIdPublished = mysqli_fetch_object($resultGetIdPublished)) {
 
 	$idToChange = $rowGetIdPublished->id_versao_rosto;
 
+
+	// BEGIN - NOVO CODIGO DE ATUALIZAÇÃO DE VERSOES
+
+	$getCodeProc = "SELECT codigo FROM tbl_control_docs WHERE tipo_documento = 'Procedimento' AND procedimento = 'controlodoc'";
+
+	$resultCodeProc = mysqli_query($link,$getCodeProc);
+
+	while ($rowNewCode = mysqli_fetch_object($resultCodeProc)) {
+		$codigo = $rowNewCode->codigo;
+	}
+
+	$versao = substr($codigo,-2);
+
+	$novaVersao = (int)$versao + 1;
+
+	$novaVersao = "0".$novaVersao;
+
+
+	$novoCodigo = str_replace($versao, $novaVersao, $codigo);
+
+	$updateProcTableControlDoc = "UPDATE tbl_control_docs SET codigo = '$novoCodigo' WHERE procedimento = 'controlodoc' AND tipo_documento = 'Procedimento'";
+
+	$resultUpdateProcTableControlDoc = mysqli_query($link,$updateProcTableControlDoc);
+
+	$updateTableProc = "UPDATE tbl_procedimentos SET versao_vigor = '$novoCodigo' WHERE id_procedimento = '$idprocedimento'";
+
+	$resultUpdateTableProc = mysqli_query($link,$updateTableProc);
+	// END - NOVO CODIGO DE ATUALIZAÇÃO DE VERSOES
+
+
+
 }
 
 // remove published status of old rosto

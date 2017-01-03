@@ -230,7 +230,7 @@ desired effect
                             <div class="box box-default collapsed-box own-border-top">
                                 <div class="box-header own-activity-style">
                                     <h3 class="box-title sub-titulo-2"
-                                        data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                                        data-widget="collapse"><?php echo $codigoControlDoc. " - ". $nomeDescricaoDocumento; ?></h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-box-tool" data-widget="collapse"><i
                                                 class="fa fa-plus"></i></button>
@@ -238,7 +238,8 @@ desired effect
                                 </div><!-- /.box-header -->
                                 <div class="box-body" style="display: none;">
                                     <br>
-                                    <div class="col-md-12"
+                                    <a href="edicao-table-control-docs.php?id=<?php echo $idControlDoc;?>"><button class="btn btn-block btn-warning" style="max-width:300px;">Editar</button></a><br>
+                                    <div class="col-md-12">
                                     <dl>
                                         <dt>Responsável</dt>
                                         <dd><?php echo $responsavel; ?></dd>
@@ -252,7 +253,7 @@ desired effect
                                         <tbody>
                                         <tr>
                                             <th colspan="3" class="text-center"
-                                                style="background-color: #ededed;">Documento em vigor
+                                                style="background-color: #9dacb5; color: white;">Documento em vigor
                                             </th>
                                         </tr>
                                         <tr>
@@ -273,32 +274,8 @@ desired effect
                                     <table class="table table-bordered center">
                                         <tbody>
                                         <tr>
-                                            <th colspan="3" class="text-center"
-                                                style="background-color: #ededed;">Suporte
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th>Suporte original</th>
-                                            <th>Suporte de Preenchimento</th>
-                                            <th>Cópia não controlada após impressão</th>
-                                        </tr>
-
-                                        <tr class="text-left">
-                                            <td><?php echo $suporteOriginal; ?></td>
-                                            <td><?php echo $suportePreenchimento; ?></td>
-                                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                                        </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-md-6">
-
-                                    <table class="table table-bordered center">
-                                        <tbody>
-                                        <tr>
                                             <th colspan="4" class="text-center"
-                                                style="background-color: #ededed;">Detentores
+                                                style="background-color: #9dacb5; color: white;">Detentores
                                             </th>
                                         </tr>
                                         <tr>
@@ -321,9 +298,31 @@ desired effect
 
                                     <table class="table table-bordered center">
                                         <tbody>
+                                        <trw>
+                                            <th colspan="3" class="text-center"
+                                                style="background-color: #9dacb5; color: white;">Suporte
+                                            </th>
+                                        </trw>
+                                        <tr>
+                                            <th>Suporte original</th>
+                                            <th>Suporte de Preenchimento</th>
+                                            <th>Cópia não controlada após impressão</th>
+                                        </tr>
+
+                                        <tr class="text-left">
+                                            <td><?php echo $suporteOriginal; ?></td>
+                                            <td><?php echo $suportePreenchimento; ?></td>
+                                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                    <table class="table table-bordered center">
+                                        <tbody>
                                         <tr>
                                             <th colspan="3" class="text-center"
-                                                style="background-color: #ededed;">Arquivo
+                                                style="background-color: #9dacb5; color: white;">Arquivo
                                             </th>
                                         </tr>
                                         <tr>
@@ -342,13 +341,13 @@ desired effect
                                     </table>
 
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-6">
 
                                     <table class="table table-bordered center">
                                         <tbody>
                                         <tr>
                                             <th colspan="4" class="text-center"
-                                                style="background-color: #ededed;">Cumprimento Normativo
+                                                style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                                             </th>
                                         </tr>
                                         <tr>
@@ -382,6 +381,32 @@ desired effect
                                         </tr>
                                         </tbody>
                                     </table>
+
+                                    <table class="table table-bordered center">
+                                        <tbody>
+                                        <tr>
+                                            <th colspan="4" class="text-center"
+                                                style="background-color: #9dacb5; color: white;">Obsoletos
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Ficheiros</th>
+                                            <th>Acções</th>
+                                        </tr>
+
+                                        <tr class="text-left">
+                                            <td>Lista de ficheiros aqui</td>
+                                            <td>Ver</td>
+
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <div class="col-md-12">
+
+
 
 
                                 </div>
@@ -439,7 +464,7 @@ desired effect
                         <div class="box box-default collapsed-box own-border-top">
                             <div class="box-header own-activity-style">
                                 <h3 class="box-title sub-titulo-2"
-                                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                                    data-widget="collapse"><?php echo $codigoControlDoc. " - ". $nomeDescricaoDocumento; ?></h3>
                                 <div class="box-tools pull-right">
                                     <button class="btn btn-box-tool" data-widget="collapse"><i
                                             class="fa fa-plus"></i></button>
@@ -461,7 +486,7 @@ desired effect
                                     <tbody>
                                     <tr>
                                         <th colspan="3" class="text-center"
-                                            style="background-color: #ededed;">Documento em vigor
+                                            style="background-color: #9dacb5; color: white;">Documento em vigor
                                         </th>
                                     </tr>
                                     <tr>
@@ -482,32 +507,8 @@ desired effect
                                 <table class="table table-bordered center">
                                     <tbody>
                                     <tr>
-                                        <th colspan="3" class="text-center"
-                                            style="background-color: #ededed;">Suporte
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th>Suporte original</th>
-                                        <th>Suporte de Preenchimento</th>
-                                        <th>Cópia não controlada após impressão</th>
-                                    </tr>
-
-                                    <tr class="text-left">
-                                        <td><?php echo $suporteOriginal; ?></td>
-                                        <td><?php echo $suportePreenchimento; ?></td>
-                                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                                    </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="col-md-6">
-
-                                <table class="table table-bordered center">
-                                    <tbody>
-                                    <tr>
                                         <th colspan="4" class="text-center"
-                                            style="background-color: #ededed;">Detentores
+                                            style="background-color: #9dacb5; color: white;">Detentores
                                         </th>
                                     </tr>
                                     <tr>
@@ -532,7 +533,29 @@ desired effect
                                     <tbody>
                                     <tr>
                                         <th colspan="3" class="text-center"
-                                            style="background-color: #ededed;">Arquivo
+                                            style="background-color: #9dacb5; color: white;">Suporte
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>Suporte original</th>
+                                        <th>Suporte de Preenchimento</th>
+                                        <th>Cópia não controlada após impressão</th>
+                                    </tr>
+
+                                    <tr class="text-left">
+                                        <td><?php echo $suporteOriginal; ?></td>
+                                        <td><?php echo $suportePreenchimento; ?></td>
+                                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+
+                                <table class="table table-bordered center">
+                                    <tbody>
+                                    <tr>
+                                        <th colspan="3" class="text-center"
+                                            style="background-color: #9dacb5; color: white;">Arquivo
                                         </th>
                                     </tr>
                                     <tr>
@@ -549,15 +572,15 @@ desired effect
 
                                     </tbody>
                                 </table>
-
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
+
 
                                 <table class="table table-bordered center">
                                     <tbody>
                                     <tr>
                                         <th colspan="4" class="text-center"
-                                            style="background-color: #ededed;">Cumprimento Normativo
+                                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                                         </th>
                                     </tr>
                                     <tr>
@@ -592,8 +615,29 @@ desired effect
                                     </tbody>
                                 </table>
 
+                                <table class="table table-bordered center">
+                                    <tbody>
+                                    <tr>
+                                        <th colspan="4" class="text-center"
+                                            style="background-color: #9dacb5; color: white;">Obsoletos
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>Ficheiros</th>
+                                        <th>Acções</th>
+                                    </tr>
+
+                                    <tr class="text-left">
+                                        <td>Lista de ficheiros aqui</td>
+                                        <td>Ver</td>
+
+
+                                    </tr>
+                                    </tbody>
+                                </table>
 
                             </div>
+
                         </div>
                     </div>
                     <?php } ?>
@@ -648,7 +692,7 @@ desired effect
                     <div class="box box-default collapsed-box own-border-top">
                         <div class="box-header own-activity-style">
                             <h3 class="box-title sub-titulo-2"
-                                data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                                data-widget="collapse"><?php echo $codigoControlDoc. " - ". $nomeDescricaoDocumento; ?></h3>
                             <div class="box-tools pull-right">
                                 <button class="btn btn-box-tool" data-widget="collapse"><i
                                         class="fa fa-plus"></i></button>
@@ -670,7 +714,7 @@ desired effect
                                 <tbody>
                                 <tr>
                                     <th colspan="3" class="text-center"
-                                        style="background-color: #ededed;">Documento em vigor
+                                        style="background-color: #9dacb5; color: white;">Documento em vigor
                                     </th>
                                 </tr>
                                 <tr>
@@ -687,36 +731,11 @@ desired effect
 
                                 </tbody>
                             </table>
-
-                            <table class="table table-bordered center">
-                                <tbody>
-                                <tr>
-                                    <th colspan="3" class="text-center"
-                                        style="background-color: #ededed;">Suporte
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th>Suporte original</th>
-                                    <th>Suporte de Preenchimento</th>
-                                    <th>Cópia não controlada após impressão</th>
-                                </tr>
-
-                                <tr class="text-left">
-                                    <td><?php echo $suporteOriginal; ?></td>
-                                    <td><?php echo $suportePreenchimento; ?></td>
-                                    <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                                </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="col-md-6">
-
                             <table class="table table-bordered center">
                                 <tbody>
                                 <tr>
                                     <th colspan="4" class="text-center"
-                                        style="background-color: #ededed;">Detentores
+                                        style="background-color: #9dacb5; color: white;">Detentores
                                     </th>
                                 </tr>
                                 <tr>
@@ -736,12 +755,33 @@ desired effect
 
                                 </tbody>
                             </table>
+                            <table class="table table-bordered center">
+                                <tbody>
+                                <tr>
+                                    <th colspan="3" class="text-center"
+                                        style="background-color: #9dacb5; color: white;">Suporte
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Suporte original</th>
+                                    <th>Suporte de Preenchimento</th>
+                                    <th>Cópia não controlada após impressão</th>
+                                </tr>
+
+                                <tr class="text-left">
+                                    <td><?php echo $suporteOriginal; ?></td>
+                                    <td><?php echo $suportePreenchimento; ?></td>
+                                    <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                                </tr>
+
+                                </tbody>
+                            </table>
 
                             <table class="table table-bordered center">
                                 <tbody>
                                 <tr>
                                     <th colspan="3" class="text-center"
-                                        style="background-color: #ededed;">Arquivo
+                                        style="background-color: #9dacb5; color: white;">Arquivo
                                     </th>
                                 </tr>
                                 <tr>
@@ -758,15 +798,14 @@ desired effect
 
                                 </tbody>
                             </table>
-
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-6">
 
                             <table class="table table-bordered center">
                                 <tbody>
                                 <tr>
                                     <th colspan="4" class="text-center"
-                                        style="background-color: #ededed;">Cumprimento Normativo
+                                        style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                                     </th>
                                 </tr>
                                 <tr>
@@ -801,8 +840,31 @@ desired effect
                                 </tbody>
                             </table>
 
+                            <table class="table table-bordered center">
+                                <tbody>
+                                <tr>
+                                    <th colspan="4" class="text-center"
+                                        style="background-color: #9dacb5; color: white;">Obsoletos
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Ficheiros</th>
+                                    <th>Acções</th>
+                                </tr>
+
+                                <tr class="text-left">
+                                    <td>Lista de ficheiros aqui</td>
+                                    <td>Ver</td>
+
+
+                                </tr>
+                                </tbody>
+                            </table>
+
+
 
                         </div>
+
                     </div>
                 </div>
                 <?php } ?>
@@ -857,7 +919,7 @@ desired effect
             <div class="box box-default collapsed-box own-border-top">
                 <div class="box-header own-activity-style">
                     <h3 class="box-title sub-titulo-2"
-                        data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                        data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i
                                 class="fa fa-plus"></i></button>
@@ -865,7 +927,8 @@ desired effect
                 </div><!-- /.box-header -->
                 <div class="box-body" style="display: none;">
                     <br>
-                    <div class="col-md-12"
+                    <div class="col-md-12">
+
                     <dl>
                         <dt>Responsável</dt>
                         <dd><?php echo $responsavel; ?></dd>
@@ -879,7 +942,7 @@ desired effect
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Documento em vigor
+                                style="background-color: #9dacb5; color: white;">Documento em vigor
                             </th>
                         </tr>
                         <tr>
@@ -896,36 +959,11 @@ desired effect
 
                         </tbody>
                     </table>
-
-                    <table class="table table-bordered center">
-                        <tbody>
-                        <tr>
-                            <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Suporte
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Suporte original</th>
-                            <th>Suporte de Preenchimento</th>
-                            <th>Cópia não controlada após impressão</th>
-                        </tr>
-
-                        <tr class="text-left">
-                            <td><?php echo $suporteOriginal; ?></td>
-                            <td><?php echo $suportePreenchimento; ?></td>
-                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-6">
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Detentores
+                                style="background-color: #9dacb5; color: white;">Detentores
                             </th>
                         </tr>
                         <tr>
@@ -945,12 +983,33 @@ desired effect
 
                         </tbody>
                     </table>
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="3" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Suporte
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Suporte original</th>
+                            <th>Suporte de Preenchimento</th>
+                            <th>Cópia não controlada após impressão</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php echo $suporteOriginal; ?></td>
+                            <td><?php echo $suportePreenchimento; ?></td>
+                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
 
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Arquivo
+                                style="background-color: #9dacb5; color: white;">Arquivo
                             </th>
                         </tr>
                         <tr>
@@ -967,15 +1026,15 @@ desired effect
 
                         </tbody>
                     </table>
-
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
+
 
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Cumprimento Normativo
+                                style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                             </th>
                         </tr>
                         <tr>
@@ -1010,8 +1069,30 @@ desired effect
                         </tbody>
                     </table>
 
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="4" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Obsoletos
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Ficheiros</th>
+                            <th>Acções</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td>Lista de ficheiros aqui</td>
+                            <td>Ver</td>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
+
 
                 </div>
+
             </div>
         </div>
         <?php } ?>
@@ -1080,7 +1161,7 @@ desired effect
                 <div class="box box-default collapsed-box own-border-top">
                     <div class="box-header own-activity-style">
                         <h3 class="box-title sub-titulo-2"
-                            data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                            data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i
                                     class="fa fa-plus"></i></button>
@@ -1102,7 +1183,7 @@ desired effect
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Documento em vigor
+                                    style="background-color: #9dacb5; color: white;">Documento em vigor
                                 </th>
                             </tr>
                             <tr>
@@ -1119,36 +1200,11 @@ desired effect
 
                             </tbody>
                         </table>
-
-                        <table class="table table-bordered center">
-                            <tbody>
-                            <tr>
-                                <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Suporte
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>Suporte original</th>
-                                <th>Suporte de Preenchimento</th>
-                                <th>Cópia não controlada após impressão</th>
-                            </tr>
-
-                            <tr class="text-left">
-                                <td><?php echo $suporteOriginal; ?></td>
-                                <td><?php echo $suportePreenchimento; ?></td>
-                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Detentores
+                                    style="background-color: #9dacb5; color: white;">Detentores
                                 </th>
                             </tr>
                             <tr>
@@ -1168,12 +1224,32 @@ desired effect
 
                             </tbody>
                         </table>
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Arquivo
+                                    style="background-color: #9dacb5; color: white;">Suporte
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Suporte original</th>
+                                <th>Suporte de Preenchimento</th>
+                                <th>Cópia não controlada após impressão</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td><?php echo $suporteOriginal; ?></td>
+                                <td><?php echo $suportePreenchimento; ?></td>
+                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="3" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Arquivo
                                 </th>
                             </tr>
                             <tr>
@@ -1190,15 +1266,16 @@ desired effect
 
                             </tbody>
                         </table>
-
                     </div>
-                    <div class="col-md-12">
+
+
+                    <div class="col-md-6">
 
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Cumprimento Normativo
+                                    style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                                 </th>
                             </tr>
                             <tr>
@@ -1232,6 +1309,33 @@ desired effect
                             </tr>
                             </tbody>
                         </table>
+
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="4" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Obsoletos
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Ficheiros</th>
+                                <th>Acções</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td>Lista de ficheiros aqui</td>
+                                <td>Ver</td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+                    <div class="col-md-12">
+
 
 
                     </div>
@@ -1289,7 +1393,7 @@ desired effect
             <div class="box box-default collapsed-box own-border-top">
                 <div class="box-header own-activity-style">
                     <h3 class="box-title sub-titulo-2"
-                        data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                        data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i
                                 class="fa fa-plus"></i></button>
@@ -1311,7 +1415,7 @@ desired effect
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Documento em vigor
+                                style="background-color: #9dacb5; color: white;">Documento em vigor
                             </th>
                         </tr>
                         <tr>
@@ -1328,36 +1432,11 @@ desired effect
 
                         </tbody>
                     </table>
-
-                    <table class="table table-bordered center">
-                        <tbody>
-                        <tr>
-                            <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Suporte
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Suporte original</th>
-                            <th>Suporte de Preenchimento</th>
-                            <th>Cópia não controlada após impressão</th>
-                        </tr>
-
-                        <tr class="text-left">
-                            <td><?php echo $suporteOriginal; ?></td>
-                            <td><?php echo $suportePreenchimento; ?></td>
-                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-6">
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Detentores
+                                style="background-color: #9dacb5; color: white;">Detentores
                             </th>
                         </tr>
                         <tr>
@@ -1377,12 +1456,33 @@ desired effect
 
                         </tbody>
                     </table>
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="3" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Suporte
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Suporte original</th>
+                            <th>Suporte de Preenchimento</th>
+                            <th>Cópia não controlada após impressão</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php echo $suporteOriginal; ?></td>
+                            <td><?php echo $suportePreenchimento; ?></td>
+                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
 
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Arquivo
+                                style="background-color: #9dacb5; color: white;">Arquivo
                             </th>
                         </tr>
                         <tr>
@@ -1401,13 +1501,14 @@ desired effect
                     </table>
 
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
+
 
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Cumprimento Normativo
+                                style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                             </th>
                         </tr>
                         <tr>
@@ -1438,6 +1539,27 @@ desired effect
                                 } else {
                                     echo $controlDocPEFC;
                                 } ?></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="4" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Obsoletos
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Ficheiros</th>
+                            <th>Acções</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td>Lista de ficheiros aqui</td>
+                            <td>Ver</td>
+
+
                         </tr>
                         </tbody>
                     </table>
@@ -1498,7 +1620,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -1520,7 +1642,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -1537,36 +1659,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -1586,12 +1683,33 @@ desired effect
 
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -1608,15 +1726,14 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -1647,6 +1764,27 @@ desired effect
                             } else {
                                 echo $controlDocPEFC;
                             } ?></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
                     </tr>
                     </tbody>
                 </table>
@@ -1707,7 +1845,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -1729,7 +1867,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -1746,36 +1884,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -1795,12 +1908,32 @@ desired effect
 
                     </tbody>
                 </table>
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -1819,13 +1952,13 @@ desired effect
                 </table>
 
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -1859,7 +1992,26 @@ desired effect
                     </tr>
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -1928,7 +2080,7 @@ desired effect
                 <div class="box box-default collapsed-box own-border-top">
                     <div class="box-header own-activity-style">
                         <h3 class="box-title sub-titulo-2"
-                            data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                            data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i
                                     class="fa fa-plus"></i></button>
@@ -1950,7 +2102,7 @@ desired effect
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Documento em vigor
+                                    style="background-color: #9dacb5; color: white;">Documento em vigor
                                 </th>
                             </tr>
                             <tr>
@@ -1967,36 +2119,11 @@ desired effect
 
                             </tbody>
                         </table>
-
-                        <table class="table table-bordered center">
-                            <tbody>
-                            <tr>
-                                <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Suporte
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>Suporte original</th>
-                                <th>Suporte de Preenchimento</th>
-                                <th>Cópia não controlada após impressão</th>
-                            </tr>
-
-                            <tr class="text-left">
-                                <td><?php echo $suporteOriginal; ?></td>
-                                <td><?php echo $suportePreenchimento; ?></td>
-                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Detentores
+                                    style="background-color: #9dacb5; color: white;">Detentores
                                 </th>
                             </tr>
                             <tr>
@@ -2016,12 +2143,34 @@ desired effect
 
                             </tbody>
                         </table>
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="3" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Suporte
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Suporte original</th>
+                                <th>Suporte de Preenchimento</th>
+                                <th>Cópia não controlada após impressão</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td><?php echo $suporteOriginal; ?></td>
+                                <td><?php echo $suportePreenchimento; ?></td>
+                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
 
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Arquivo
+                                    style="background-color: #9dacb5; color: white;">Arquivo
                                 </th>
                             </tr>
                             <tr>
@@ -2038,15 +2187,15 @@ desired effect
 
                             </tbody>
                         </table>
-
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
+
 
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Cumprimento Normativo
+                                    style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                                 </th>
                             </tr>
                             <tr>
@@ -2080,7 +2229,26 @@ desired effect
                             </tr>
                             </tbody>
                         </table>
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="4" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Obsoletos
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Ficheiros</th>
+                                <th>Acções</th>
+                            </tr>
 
+                            <tr class="text-left">
+                                <td>Lista de ficheiros aqui</td>
+                                <td>Ver</td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
 
                     </div>
                 </div>
@@ -2137,7 +2305,7 @@ desired effect
             <div class="box box-default collapsed-box own-border-top">
                 <div class="box-header own-activity-style">
                     <h3 class="box-title sub-titulo-2"
-                        data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                        data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i
                                 class="fa fa-plus"></i></button>
@@ -2159,7 +2327,7 @@ desired effect
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Documento em vigor
+                                style="background-color: #9dacb5; color: white;">Documento em vigor
                             </th>
                         </tr>
                         <tr>
@@ -2176,36 +2344,11 @@ desired effect
 
                         </tbody>
                     </table>
-
-                    <table class="table table-bordered center">
-                        <tbody>
-                        <tr>
-                            <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Suporte
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Suporte original</th>
-                            <th>Suporte de Preenchimento</th>
-                            <th>Cópia não controlada após impressão</th>
-                        </tr>
-
-                        <tr class="text-left">
-                            <td><?php echo $suporteOriginal; ?></td>
-                            <td><?php echo $suportePreenchimento; ?></td>
-                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-6">
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Detentores
+                                style="background-color: #9dacb5; color: white;">Detentores
                             </th>
                         </tr>
                         <tr>
@@ -2225,12 +2368,32 @@ desired effect
 
                         </tbody>
                     </table>
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Arquivo
+                                style="background-color: #9dacb5; color: white;">Suporte
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Suporte original</th>
+                            <th>Suporte de Preenchimento</th>
+                            <th>Cópia não controlada após impressão</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php echo $suporteOriginal; ?></td>
+                            <td><?php echo $suportePreenchimento; ?></td>
+                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="3" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Arquivo
                             </th>
                         </tr>
                         <tr>
@@ -2247,15 +2410,14 @@ desired effect
 
                         </tbody>
                     </table>
-
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
 
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Cumprimento Normativo
+                                style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                             </th>
                         </tr>
                         <tr>
@@ -2290,6 +2452,26 @@ desired effect
                         </tbody>
                     </table>
 
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="4" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Obsoletos
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Ficheiros</th>
+                            <th>Acções</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td>Lista de ficheiros aqui</td>
+                            <td>Ver</td>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
@@ -2346,7 +2528,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -2368,7 +2550,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -2385,36 +2567,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -2434,12 +2591,33 @@ desired effect
 
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -2456,15 +2634,13 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
-
+            <div class="col-md-6">
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -2499,7 +2675,26 @@ desired effect
                     </tbody>
                 </table>
 
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -2555,7 +2750,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -2577,7 +2772,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -2594,36 +2789,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -2648,7 +2818,28 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -2665,15 +2856,13 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
-
+            <div class="col-md-6">
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -2707,7 +2896,26 @@ desired effect
                     </tr>
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -2777,7 +2985,7 @@ desired effect
                 <div class="box box-default collapsed-box own-border-top">
                     <div class="box-header own-activity-style">
                         <h3 class="box-title sub-titulo-2"
-                            data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                            data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i
                                     class="fa fa-plus"></i></button>
@@ -2799,7 +3007,7 @@ desired effect
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Documento em vigor
+                                    style="background-color: #9dacb5; color: white;">Documento em vigor
                                 </th>
                             </tr>
                             <tr>
@@ -2816,36 +3024,11 @@ desired effect
 
                             </tbody>
                         </table>
-
-                        <table class="table table-bordered center">
-                            <tbody>
-                            <tr>
-                                <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Suporte
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>Suporte original</th>
-                                <th>Suporte de Preenchimento</th>
-                                <th>Cópia não controlada após impressão</th>
-                            </tr>
-
-                            <tr class="text-left">
-                                <td><?php echo $suporteOriginal; ?></td>
-                                <td><?php echo $suportePreenchimento; ?></td>
-                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Detentores
+                                    style="background-color: #9dacb5; color: white;">Detentores
                                 </th>
                             </tr>
                             <tr>
@@ -2865,12 +3048,32 @@ desired effect
 
                             </tbody>
                         </table>
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Arquivo
+                                    style="background-color: #9dacb5; color: white;">Suporte
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Suporte original</th>
+                                <th>Suporte de Preenchimento</th>
+                                <th>Cópia não controlada após impressão</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td><?php echo $suporteOriginal; ?></td>
+                                <td><?php echo $suportePreenchimento; ?></td>
+                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="3" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Arquivo
                                 </th>
                             </tr>
                             <tr>
@@ -2889,13 +3092,13 @@ desired effect
                         </table>
 
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
 
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Cumprimento Normativo
+                                    style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                                 </th>
                             </tr>
                             <tr>
@@ -2926,6 +3129,26 @@ desired effect
                                     } else {
                                         echo $controlDocPEFC;
                                     } ?></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="4" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Obsoletos
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Ficheiros</th>
+                                <th>Acções</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td>Lista de ficheiros aqui</td>
+                                <td>Ver</td>
+
+
                             </tr>
                             </tbody>
                         </table>
@@ -2986,7 +3209,7 @@ desired effect
             <div class="box box-default collapsed-box own-border-top">
                 <div class="box-header own-activity-style">
                     <h3 class="box-title sub-titulo-2"
-                        data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                        data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i
                                 class="fa fa-plus"></i></button>
@@ -3008,7 +3231,7 @@ desired effect
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Documento em vigor
+                                style="background-color: #9dacb5; color: white;">Documento em vigor
                             </th>
                         </tr>
                         <tr>
@@ -3025,36 +3248,11 @@ desired effect
 
                         </tbody>
                     </table>
-
-                    <table class="table table-bordered center">
-                        <tbody>
-                        <tr>
-                            <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Suporte
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Suporte original</th>
-                            <th>Suporte de Preenchimento</th>
-                            <th>Cópia não controlada após impressão</th>
-                        </tr>
-
-                        <tr class="text-left">
-                            <td><?php echo $suporteOriginal; ?></td>
-                            <td><?php echo $suportePreenchimento; ?></td>
-                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-6">
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Detentores
+                                style="background-color: #9dacb5; color: white;">Detentores
                             </th>
                         </tr>
                         <tr>
@@ -3074,12 +3272,32 @@ desired effect
 
                         </tbody>
                     </table>
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Arquivo
+                                style="background-color: #9dacb5; color: white;">Suporte
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Suporte original</th>
+                            <th>Suporte de Preenchimento</th>
+                            <th>Cópia não controlada após impressão</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php echo $suporteOriginal; ?></td>
+                            <td><?php echo $suportePreenchimento; ?></td>
+                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="3" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Arquivo
                             </th>
                         </tr>
                         <tr>
@@ -3096,15 +3314,14 @@ desired effect
 
                         </tbody>
                     </table>
-
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
 
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Cumprimento Normativo
+                                style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                             </th>
                         </tr>
                         <tr>
@@ -3139,7 +3356,26 @@ desired effect
                         </tbody>
                     </table>
 
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="4" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Obsoletos
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Ficheiros</th>
+                            <th>Acções</th>
+                        </tr>
 
+                        <tr class="text-left">
+                            <td>Lista de ficheiros aqui</td>
+                            <td>Ver</td>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -3195,7 +3431,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -3217,7 +3453,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -3234,36 +3470,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -3283,12 +3494,33 @@ desired effect
 
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -3305,15 +3537,15 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
+
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -3347,7 +3579,26 @@ desired effect
                     </tr>
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -3404,7 +3655,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -3426,7 +3677,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -3443,36 +3694,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -3492,12 +3718,33 @@ desired effect
 
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -3516,13 +3763,14 @@ desired effect
                 </table>
 
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
+
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -3556,7 +3804,26 @@ desired effect
                     </tr>
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -3628,7 +3895,7 @@ desired effect
                 <div class="box box-default collapsed-box own-border-top">
                     <div class="box-header own-activity-style">
                         <h3 class="box-title sub-titulo-2"
-                            data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                            data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i
                                     class="fa fa-plus"></i></button>
@@ -3650,7 +3917,7 @@ desired effect
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Documento em vigor
+                                    style="background-color: #9dacb5; color: white;">Documento em vigor
                                 </th>
                             </tr>
                             <tr>
@@ -3667,36 +3934,11 @@ desired effect
 
                             </tbody>
                         </table>
-
-                        <table class="table table-bordered center">
-                            <tbody>
-                            <tr>
-                                <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Suporte
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>Suporte original</th>
-                                <th>Suporte de Preenchimento</th>
-                                <th>Cópia não controlada após impressão</th>
-                            </tr>
-
-                            <tr class="text-left">
-                                <td><?php echo $suporteOriginal; ?></td>
-                                <td><?php echo $suportePreenchimento; ?></td>
-                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Detentores
+                                    style="background-color: #9dacb5; color: white;">Detentores
                                 </th>
                             </tr>
                             <tr>
@@ -3721,7 +3963,29 @@ desired effect
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Arquivo
+                                    style="background-color: #9dacb5; color: white;">Suporte
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Suporte original</th>
+                                <th>Suporte de Preenchimento</th>
+                                <th>Cópia não controlada após impressão</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td><?php echo $suporteOriginal; ?></td>
+                                <td><?php echo $suportePreenchimento; ?></td>
+                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="3" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Arquivo
                                 </th>
                             </tr>
                             <tr>
@@ -3740,13 +4004,13 @@ desired effect
                         </table>
 
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
 
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Cumprimento Normativo
+                                    style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                                 </th>
                             </tr>
                             <tr>
@@ -3780,7 +4044,26 @@ desired effect
                             </tr>
                             </tbody>
                         </table>
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="4" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Obsoletos
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Ficheiros</th>
+                                <th>Acções</th>
+                            </tr>
 
+                            <tr class="text-left">
+                                <td>Lista de ficheiros aqui</td>
+                                <td>Ver</td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
 
                     </div>
                 </div>
@@ -3837,7 +4120,7 @@ desired effect
             <div class="box box-default collapsed-box own-border-top">
                 <div class="box-header own-activity-style">
                     <h3 class="box-title sub-titulo-2"
-                        data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                        data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i
                                 class="fa fa-plus"></i></button>
@@ -3859,7 +4142,7 @@ desired effect
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Documento em vigor
+                                style="background-color: #9dacb5; color: white;">Documento em vigor
                             </th>
                         </tr>
                         <tr>
@@ -3876,36 +4159,11 @@ desired effect
 
                         </tbody>
                     </table>
-
-                    <table class="table table-bordered center">
-                        <tbody>
-                        <tr>
-                            <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Suporte
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Suporte original</th>
-                            <th>Suporte de Preenchimento</th>
-                            <th>Cópia não controlada após impressão</th>
-                        </tr>
-
-                        <tr class="text-left">
-                            <td><?php echo $suporteOriginal; ?></td>
-                            <td><?php echo $suportePreenchimento; ?></td>
-                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-6">
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Detentores
+                                style="background-color: #9dacb5; color: white;">Detentores
                             </th>
                         </tr>
                         <tr>
@@ -3925,12 +4183,32 @@ desired effect
 
                         </tbody>
                     </table>
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Arquivo
+                                style="background-color: #9dacb5; color: white;">Suporte
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Suporte original</th>
+                            <th>Suporte de Preenchimento</th>
+                            <th>Cópia não controlada após impressão</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php echo $suporteOriginal; ?></td>
+                            <td><?php echo $suportePreenchimento; ?></td>
+                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="3" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Arquivo
                             </th>
                         </tr>
                         <tr>
@@ -3947,15 +4225,15 @@ desired effect
 
                         </tbody>
                     </table>
-
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
+
 
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Cumprimento Normativo
+                                style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                             </th>
                         </tr>
                         <tr>
@@ -3989,7 +4267,26 @@ desired effect
                         </tr>
                         </tbody>
                     </table>
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="4" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Obsoletos
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Ficheiros</th>
+                            <th>Acções</th>
+                        </tr>
 
+                        <tr class="text-left">
+                            <td>Lista de ficheiros aqui</td>
+                            <td>Ver</td>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
@@ -4046,7 +4343,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -4068,7 +4365,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -4085,36 +4382,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -4134,12 +4406,33 @@ desired effect
 
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -4156,15 +4449,13 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
-
+            <div class="col-md-6">
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -4198,7 +4489,26 @@ desired effect
                     </tr>
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -4255,7 +4565,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -4277,7 +4587,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -4294,36 +4604,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -4343,12 +4628,32 @@ desired effect
 
                     </tbody>
                 </table>
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -4365,15 +4670,16 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
+
+
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -4407,7 +4713,26 @@ desired effect
                     </tr>
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -4479,7 +4804,7 @@ desired effect
                 <div class="box box-default collapsed-box own-border-top">
                     <div class="box-header own-activity-style">
                         <h3 class="box-title sub-titulo-2"
-                            data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                            data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i
                                     class="fa fa-plus"></i></button>
@@ -4501,7 +4826,7 @@ desired effect
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Documento em vigor
+                                    style="background-color: #9dacb5; color: white;">Documento em vigor
                                 </th>
                             </tr>
                             <tr>
@@ -4518,36 +4843,11 @@ desired effect
 
                             </tbody>
                         </table>
-
-                        <table class="table table-bordered center">
-                            <tbody>
-                            <tr>
-                                <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Suporte
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>Suporte original</th>
-                                <th>Suporte de Preenchimento</th>
-                                <th>Cópia não controlada após impressão</th>
-                            </tr>
-
-                            <tr class="text-left">
-                                <td><?php echo $suporteOriginal; ?></td>
-                                <td><?php echo $suportePreenchimento; ?></td>
-                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Detentores
+                                    style="background-color: #9dacb5; color: white;">Detentores
                                 </th>
                             </tr>
                             <tr>
@@ -4567,12 +4867,32 @@ desired effect
 
                             </tbody>
                         </table>
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Arquivo
+                                    style="background-color: #9dacb5; color: white;">Suporte
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Suporte original</th>
+                                <th>Suporte de Preenchimento</th>
+                                <th>Cópia não controlada após impressão</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td><?php echo $suporteOriginal; ?></td>
+                                <td><?php echo $suportePreenchimento; ?></td>
+                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="3" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Arquivo
                                 </th>
                             </tr>
                             <tr>
@@ -4591,13 +4911,12 @@ desired effect
                         </table>
 
                     </div>
-                    <div class="col-md-12">
-
+                    <div class="col-md-6">
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Cumprimento Normativo
+                                    style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                                 </th>
                             </tr>
                             <tr>
@@ -4631,7 +4950,26 @@ desired effect
                             </tr>
                             </tbody>
                         </table>
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="4" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Obsoletos
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Ficheiros</th>
+                                <th>Acções</th>
+                            </tr>
 
+                            <tr class="text-left">
+                                <td>Lista de ficheiros aqui</td>
+                                <td>Ver</td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
 
                     </div>
                 </div>
@@ -4688,7 +5026,7 @@ desired effect
             <div class="box box-default collapsed-box own-border-top">
                 <div class="box-header own-activity-style">
                     <h3 class="box-title sub-titulo-2"
-                        data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                        data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i
                                 class="fa fa-plus"></i></button>
@@ -4710,7 +5048,7 @@ desired effect
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Documento em vigor
+                                style="background-color: #9dacb5; color: white;">Documento em vigor
                             </th>
                         </tr>
                         <tr>
@@ -4727,36 +5065,11 @@ desired effect
 
                         </tbody>
                     </table>
-
-                    <table class="table table-bordered center">
-                        <tbody>
-                        <tr>
-                            <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Suporte
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Suporte original</th>
-                            <th>Suporte de Preenchimento</th>
-                            <th>Cópia não controlada após impressão</th>
-                        </tr>
-
-                        <tr class="text-left">
-                            <td><?php echo $suporteOriginal; ?></td>
-                            <td><?php echo $suportePreenchimento; ?></td>
-                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-6">
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Detentores
+                                style="background-color: #9dacb5; color: white;">Detentores
                             </th>
                         </tr>
                         <tr>
@@ -4776,12 +5089,33 @@ desired effect
 
                         </tbody>
                     </table>
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="3" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Suporte
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Suporte original</th>
+                            <th>Suporte de Preenchimento</th>
+                            <th>Cópia não controlada após impressão</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php echo $suporteOriginal; ?></td>
+                            <td><?php echo $suportePreenchimento; ?></td>
+                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
 
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Arquivo
+                                style="background-color: #9dacb5; color: white;">Arquivo
                             </th>
                         </tr>
                         <tr>
@@ -4798,15 +5132,13 @@ desired effect
 
                         </tbody>
                     </table>
-
                 </div>
-                <div class="col-md-12">
-
-                    <table class="table table-bordered center">
+                <div class="col-md-6">
+                       <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Cumprimento Normativo
+                                style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                             </th>
                         </tr>
                         <tr>
@@ -4840,7 +5172,26 @@ desired effect
                         </tr>
                         </tbody>
                     </table>
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="4" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Obsoletos
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Ficheiros</th>
+                            <th>Acções</th>
+                        </tr>
 
+                        <tr class="text-left">
+                            <td>Lista de ficheiros aqui</td>
+                            <td>Ver</td>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
@@ -4897,7 +5248,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -4919,7 +5270,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -4936,36 +5287,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -4985,12 +5311,33 @@ desired effect
 
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -5007,15 +5354,13 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
-
+            <div class="col-md-6">
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -5049,7 +5394,26 @@ desired effect
                     </tr>
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -5106,7 +5470,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -5128,7 +5492,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -5145,36 +5509,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -5199,7 +5538,29 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -5216,15 +5577,13 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
-
+            <div class="col-md-6">
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -5255,6 +5614,27 @@ desired effect
                             } else {
                                 echo $controlDocPEFC;
                             } ?></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
                     </tr>
                     </tbody>
                 </table>
@@ -5328,7 +5708,7 @@ desired effect
                 <div class="box box-default collapsed-box own-border-top">
                     <div class="box-header own-activity-style">
                         <h3 class="box-title sub-titulo-2"
-                            data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                            data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i
                                     class="fa fa-plus"></i></button>
@@ -5350,7 +5730,7 @@ desired effect
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Documento em vigor
+                                    style="background-color: #9dacb5; color: white;">Documento em vigor
                                 </th>
                             </tr>
                             <tr>
@@ -5367,36 +5747,11 @@ desired effect
 
                             </tbody>
                         </table>
-
-                        <table class="table table-bordered center">
-                            <tbody>
-                            <tr>
-                                <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Suporte
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>Suporte original</th>
-                                <th>Suporte de Preenchimento</th>
-                                <th>Cópia não controlada após impressão</th>
-                            </tr>
-
-                            <tr class="text-left">
-                                <td><?php echo $suporteOriginal; ?></td>
-                                <td><?php echo $suportePreenchimento; ?></td>
-                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Detentores
+                                    style="background-color: #9dacb5; color: white;">Detentores
                                 </th>
                             </tr>
                             <tr>
@@ -5416,12 +5771,32 @@ desired effect
 
                             </tbody>
                         </table>
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Arquivo
+                                    style="background-color: #9dacb5; color: white;">Suporte
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Suporte original</th>
+                                <th>Suporte de Preenchimento</th>
+                                <th>Cópia não controlada após impressão</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td><?php echo $suporteOriginal; ?></td>
+                                <td><?php echo $suportePreenchimento; ?></td>
+                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="3" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Arquivo
                                 </th>
                             </tr>
                             <tr>
@@ -5440,13 +5815,16 @@ desired effect
                         </table>
 
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
+
+
+
 
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Cumprimento Normativo
+                                    style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                                 </th>
                             </tr>
                             <tr>
@@ -5481,7 +5859,26 @@ desired effect
                             </tbody>
                         </table>
 
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="4" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Obsoletos
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Ficheiros</th>
+                                <th>Acções</th>
+                            </tr>
 
+                            <tr class="text-left">
+                                <td>Lista de ficheiros aqui</td>
+                                <td>Ver</td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -5537,7 +5934,7 @@ desired effect
             <div class="box box-default collapsed-box own-border-top">
                 <div class="box-header own-activity-style">
                     <h3 class="box-title sub-titulo-2"
-                        data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                        data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i
                                 class="fa fa-plus"></i></button>
@@ -5559,7 +5956,7 @@ desired effect
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Documento em vigor
+                                style="background-color: #9dacb5; color: white;">Documento em vigor
                             </th>
                         </tr>
                         <tr>
@@ -5576,36 +5973,11 @@ desired effect
 
                         </tbody>
                     </table>
-
-                    <table class="table table-bordered center">
-                        <tbody>
-                        <tr>
-                            <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Suporte
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Suporte original</th>
-                            <th>Suporte de Preenchimento</th>
-                            <th>Cópia não controlada após impressão</th>
-                        </tr>
-
-                        <tr class="text-left">
-                            <td><?php echo $suporteOriginal; ?></td>
-                            <td><?php echo $suportePreenchimento; ?></td>
-                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-6">
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Detentores
+                                style="background-color: #9dacb5; color: white;">Detentores
                             </th>
                         </tr>
                         <tr>
@@ -5625,12 +5997,33 @@ desired effect
 
                         </tbody>
                     </table>
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="3" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Suporte
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Suporte original</th>
+                            <th>Suporte de Preenchimento</th>
+                            <th>Cópia não controlada após impressão</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php echo $suporteOriginal; ?></td>
+                            <td><?php echo $suportePreenchimento; ?></td>
+                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
 
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Arquivo
+                                style="background-color: #9dacb5; color: white;">Arquivo
                             </th>
                         </tr>
                         <tr>
@@ -5649,13 +6042,14 @@ desired effect
                     </table>
 
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
+
 
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Cumprimento Normativo
+                                style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                             </th>
                         </tr>
                         <tr>
@@ -5690,7 +6084,26 @@ desired effect
                         </tbody>
                     </table>
 
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="4" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Obsoletos
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Ficheiros</th>
+                            <th>Acções</th>
+                        </tr>
 
+                        <tr class="text-left">
+                            <td>Lista de ficheiros aqui</td>
+                            <td>Ver</td>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -5746,7 +6159,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -5768,7 +6181,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -5785,36 +6198,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -5834,12 +6222,32 @@ desired effect
 
                     </tbody>
                 </table>
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -5856,15 +6264,15 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
+
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -5898,7 +6306,26 @@ desired effect
                     </tr>
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -5955,7 +6382,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -5977,7 +6404,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -5994,36 +6421,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -6043,12 +6445,32 @@ desired effect
 
                     </tbody>
                 </table>
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -6065,15 +6487,15 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
+
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -6107,7 +6529,26 @@ desired effect
                     </tr>
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -6178,7 +6619,7 @@ desired effect
                 <div class="box box-default collapsed-box own-border-top">
                     <div class="box-header own-activity-style">
                         <h3 class="box-title sub-titulo-2"
-                            data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                            data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i
                                     class="fa fa-plus"></i></button>
@@ -6200,7 +6641,7 @@ desired effect
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Documento em vigor
+                                    style="background-color: #9dacb5; color: white;">Documento em vigor
                                 </th>
                             </tr>
                             <tr>
@@ -6217,36 +6658,11 @@ desired effect
 
                             </tbody>
                         </table>
-
-                        <table class="table table-bordered center">
-                            <tbody>
-                            <tr>
-                                <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Suporte
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>Suporte original</th>
-                                <th>Suporte de Preenchimento</th>
-                                <th>Cópia não controlada após impressão</th>
-                            </tr>
-
-                            <tr class="text-left">
-                                <td><?php echo $suporteOriginal; ?></td>
-                                <td><?php echo $suportePreenchimento; ?></td>
-                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Detentores
+                                    style="background-color: #9dacb5; color: white;">Detentores
                                 </th>
                             </tr>
                             <tr>
@@ -6266,12 +6682,32 @@ desired effect
 
                             </tbody>
                         </table>
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Arquivo
+                                    style="background-color: #9dacb5; color: white;">Suporte
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Suporte original</th>
+                                <th>Suporte de Preenchimento</th>
+                                <th>Cópia não controlada após impressão</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td><?php echo $suporteOriginal; ?></td>
+                                <td><?php echo $suportePreenchimento; ?></td>
+                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="3" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Arquivo
                                 </th>
                             </tr>
                             <tr>
@@ -6290,13 +6726,14 @@ desired effect
                         </table>
 
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
+
 
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Cumprimento Normativo
+                                    style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                                 </th>
                             </tr>
                             <tr>
@@ -6330,7 +6767,26 @@ desired effect
                             </tr>
                             </tbody>
                         </table>
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="4" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Obsoletos
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Ficheiros</th>
+                                <th>Acções</th>
+                            </tr>
 
+                            <tr class="text-left">
+                                <td>Lista de ficheiros aqui</td>
+                                <td>Ver</td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
 
                     </div>
                 </div>
@@ -6387,7 +6843,7 @@ desired effect
             <div class="box box-default collapsed-box own-border-top">
                 <div class="box-header own-activity-style">
                     <h3 class="box-title sub-titulo-2"
-                        data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                        data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i
                                 class="fa fa-plus"></i></button>
@@ -6409,7 +6865,7 @@ desired effect
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Documento em vigor
+                                style="background-color: #9dacb5; color: white;">Documento em vigor
                             </th>
                         </tr>
                         <tr>
@@ -6426,36 +6882,11 @@ desired effect
 
                         </tbody>
                     </table>
-
-                    <table class="table table-bordered center">
-                        <tbody>
-                        <tr>
-                            <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Suporte
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Suporte original</th>
-                            <th>Suporte de Preenchimento</th>
-                            <th>Cópia não controlada após impressão</th>
-                        </tr>
-
-                        <tr class="text-left">
-                            <td><?php echo $suporteOriginal; ?></td>
-                            <td><?php echo $suportePreenchimento; ?></td>
-                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-6">
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Detentores
+                                style="background-color: #9dacb5; color: white;">Detentores
                             </th>
                         </tr>
                         <tr>
@@ -6475,12 +6906,32 @@ desired effect
 
                         </tbody>
                     </table>
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Arquivo
+                                style="background-color: #9dacb5; color: white;">Suporte
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Suporte original</th>
+                            <th>Suporte de Preenchimento</th>
+                            <th>Cópia não controlada após impressão</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php echo $suporteOriginal; ?></td>
+                            <td><?php echo $suportePreenchimento; ?></td>
+                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="3" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Arquivo
                             </th>
                         </tr>
                         <tr>
@@ -6497,15 +6948,14 @@ desired effect
 
                         </tbody>
                     </table>
-
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
 
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Cumprimento Normativo
+                                style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                             </th>
                         </tr>
                         <tr>
@@ -6540,7 +6990,26 @@ desired effect
                         </tbody>
                     </table>
 
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="4" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Obsoletos
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Ficheiros</th>
+                            <th>Acções</th>
+                        </tr>
 
+                        <tr class="text-left">
+                            <td>Lista de ficheiros aqui</td>
+                            <td>Ver</td>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -6596,7 +7065,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -6618,7 +7087,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -6635,36 +7104,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -6684,12 +7128,32 @@ desired effect
 
                     </tbody>
                 </table>
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -6706,15 +7170,13 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
-
+            <div class="col-md-6">
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -6748,7 +7210,26 @@ desired effect
                     </tr>
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -6805,7 +7286,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -6827,7 +7308,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -6844,36 +7325,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -6893,12 +7349,32 @@ desired effect
 
                     </tbody>
                 </table>
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -6917,13 +7393,13 @@ desired effect
                 </table>
 
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -6957,7 +7433,26 @@ desired effect
                     </tr>
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -6996,7 +7491,7 @@ desired effect
             <div class="box-body" style="display: none;">
                 <?php
 
-                $queryTableProd = "SELECT * FROM tbl_control_docs WHERE procedimento = 'controldoc' AND  tipo_documento = 'instrucao trabalho'";
+                $queryTableProd = "SELECT * FROM tbl_control_docs WHERE procedimento = 'controlodoc' AND  tipo_documento = 'instrucao trabalho'";
                 $resultQueryTableProd = mysqli_query($link, $queryTableProd);
 
                 while ($rowTableProd = mysqli_fetch_object($resultQueryTableProd)) {
@@ -7028,7 +7523,7 @@ desired effect
                 <div class="box box-default collapsed-box own-border-top">
                     <div class="box-header own-activity-style">
                         <h3 class="box-title sub-titulo-2"
-                            data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                            data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i
                                     class="fa fa-plus"></i></button>
@@ -7050,7 +7545,7 @@ desired effect
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Documento em vigor
+                                    style="background-color: #9dacb5; color: white;">Documento em vigor
                                 </th>
                             </tr>
                             <tr>
@@ -7067,36 +7562,11 @@ desired effect
 
                             </tbody>
                         </table>
-
-                        <table class="table table-bordered center">
-                            <tbody>
-                            <tr>
-                                <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Suporte
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>Suporte original</th>
-                                <th>Suporte de Preenchimento</th>
-                                <th>Cópia não controlada após impressão</th>
-                            </tr>
-
-                            <tr class="text-left">
-                                <td><?php echo $suporteOriginal; ?></td>
-                                <td><?php echo $suportePreenchimento; ?></td>
-                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Detentores
+                                    style="background-color: #9dacb5; color: white;">Detentores
                                 </th>
                             </tr>
                             <tr>
@@ -7116,12 +7586,32 @@ desired effect
 
                             </tbody>
                         </table>
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Arquivo
+                                    style="background-color: #9dacb5; color: white;">Suporte
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Suporte original</th>
+                                <th>Suporte de Preenchimento</th>
+                                <th>Cópia não controlada após impressão</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td><?php echo $suporteOriginal; ?></td>
+                                <td><?php echo $suportePreenchimento; ?></td>
+                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="3" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Arquivo
                                 </th>
                             </tr>
                             <tr>
@@ -7138,15 +7628,14 @@ desired effect
 
                             </tbody>
                         </table>
-
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
 
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Cumprimento Normativo
+                                    style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                                 </th>
                             </tr>
                             <tr>
@@ -7180,7 +7669,26 @@ desired effect
                             </tr>
                             </tbody>
                         </table>
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="4" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Obsoletos
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Ficheiros</th>
+                                <th>Acções</th>
+                            </tr>
 
+                            <tr class="text-left">
+                                <td>Lista de ficheiros aqui</td>
+                                <td>Ver</td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
 
                     </div>
                 </div>
@@ -7205,7 +7713,7 @@ desired effect
 
             <?php
 
-            $queryTableProd = "SELECT * FROM tbl_control_docs WHERE procedimento = 'controldoc' AND  tipo_documento = 'Modelo'";
+            $queryTableProd = "SELECT * FROM tbl_control_docs WHERE procedimento = 'controlodoc' AND  tipo_documento = 'Modelo'";
             $resultQueryTableProd = mysqli_query($link, $queryTableProd);
 
             while ($rowTableProd = mysqli_fetch_object($resultQueryTableProd)) {
@@ -7237,7 +7745,7 @@ desired effect
             <div class="box box-default collapsed-box own-border-top">
                 <div class="box-header own-activity-style">
                     <h3 class="box-title sub-titulo-2"
-                        data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                        data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i
                                 class="fa fa-plus"></i></button>
@@ -7259,7 +7767,7 @@ desired effect
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Documento em vigor
+                                style="background-color: #9dacb5; color: white;">Documento em vigor
                             </th>
                         </tr>
                         <tr>
@@ -7276,36 +7784,11 @@ desired effect
 
                         </tbody>
                     </table>
-
-                    <table class="table table-bordered center">
-                        <tbody>
-                        <tr>
-                            <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Suporte
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Suporte original</th>
-                            <th>Suporte de Preenchimento</th>
-                            <th>Cópia não controlada após impressão</th>
-                        </tr>
-
-                        <tr class="text-left">
-                            <td><?php echo $suporteOriginal; ?></td>
-                            <td><?php echo $suportePreenchimento; ?></td>
-                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-6">
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Detentores
+                                style="background-color: #9dacb5; color: white;">Detentores
                             </th>
                         </tr>
                         <tr>
@@ -7325,12 +7808,32 @@ desired effect
 
                         </tbody>
                     </table>
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Arquivo
+                                style="background-color: #9dacb5; color: white;">Suporte
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Suporte original</th>
+                            <th>Suporte de Preenchimento</th>
+                            <th>Cópia não controlada após impressão</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php echo $suporteOriginal; ?></td>
+                            <td><?php echo $suportePreenchimento; ?></td>
+                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="3" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Arquivo
                             </th>
                         </tr>
                         <tr>
@@ -7349,13 +7852,14 @@ desired effect
                     </table>
 
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
+
 
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Cumprimento Normativo
+                                style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                             </th>
                         </tr>
                         <tr>
@@ -7389,7 +7893,26 @@ desired effect
                         </tr>
                         </tbody>
                     </table>
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="4" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Obsoletos
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Ficheiros</th>
+                            <th>Acções</th>
+                        </tr>
 
+                        <tr class="text-left">
+                            <td>Lista de ficheiros aqui</td>
+                            <td>Ver</td>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
@@ -7414,7 +7937,7 @@ desired effect
 
         <?php
 
-        $queryTableProd = "SELECT * FROM tbl_control_docs WHERE procedimento = 'controldoc' AND  tipo_documento = 'Procedimento'";
+        $queryTableProd = "SELECT * FROM tbl_control_docs WHERE procedimento = 'controlodoc' AND  tipo_documento = 'Procedimento'";
         $resultQueryTableProd = mysqli_query($link, $queryTableProd);
 
         while ($rowTableProd = mysqli_fetch_object($resultQueryTableProd)) {
@@ -7446,7 +7969,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -7468,7 +7991,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -7485,36 +8008,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -7534,12 +8032,33 @@ desired effect
 
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -7556,15 +8075,14 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -7599,7 +8117,26 @@ desired effect
                     </tbody>
                 </table>
 
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -7623,7 +8160,7 @@ desired effect
     <div class="box-body" style="display: none;">
         <?php
 
-        $queryTableProd = "SELECT * FROM tbl_control_docs WHERE procedimento = 'controldoc' AND  tipo_documento = 'Outros'";
+        $queryTableProd = "SELECT * FROM tbl_control_docs WHERE procedimento = 'controlodoc' AND  tipo_documento = 'Outros'";
         $resultQueryTableProd = mysqli_query($link, $queryTableProd);
 
         while ($rowTableProd = mysqli_fetch_object($resultQueryTableProd)) {
@@ -7655,7 +8192,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -7677,7 +8214,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -7694,36 +8231,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -7743,12 +8255,32 @@ desired effect
 
                     </tbody>
                 </table>
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -7765,15 +8297,13 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
-
+            <div class="col-md-6">
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -7807,7 +8337,26 @@ desired effect
                     </tr>
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -7878,7 +8427,7 @@ desired effect
                 <div class="box box-default collapsed-box own-border-top">
                     <div class="box-header own-activity-style">
                         <h3 class="box-title sub-titulo-2"
-                            data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                            data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse"><i
                                     class="fa fa-plus"></i></button>
@@ -7900,7 +8449,7 @@ desired effect
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Documento em vigor
+                                    style="background-color: #9dacb5; color: white;">Documento em vigor
                                 </th>
                             </tr>
                             <tr>
@@ -7917,36 +8466,11 @@ desired effect
 
                             </tbody>
                         </table>
-
-                        <table class="table table-bordered center">
-                            <tbody>
-                            <tr>
-                                <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Suporte
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>Suporte original</th>
-                                <th>Suporte de Preenchimento</th>
-                                <th>Cópia não controlada após impressão</th>
-                            </tr>
-
-                            <tr class="text-left">
-                                <td><?php echo $suporteOriginal; ?></td>
-                                <td><?php echo $suportePreenchimento; ?></td>
-                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Detentores
+                                    style="background-color: #9dacb5; color: white;">Detentores
                                 </th>
                             </tr>
                             <tr>
@@ -7966,12 +8490,32 @@ desired effect
 
                             </tbody>
                         </table>
-
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="3" class="text-center"
-                                    style="background-color: #ededed;">Arquivo
+                                    style="background-color: #9dacb5; color: white;">Suporte
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Suporte original</th>
+                                <th>Suporte de Preenchimento</th>
+                                <th>Cópia não controlada após impressão</th>
+                            </tr>
+
+                            <tr class="text-left">
+                                <td><?php echo $suporteOriginal; ?></td>
+                                <td><?php echo $suportePreenchimento; ?></td>
+                                <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="3" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Arquivo
                                 </th>
                             </tr>
                             <tr>
@@ -7988,15 +8532,15 @@ desired effect
 
                             </tbody>
                         </table>
-
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
+
 
                         <table class="table table-bordered center">
                             <tbody>
                             <tr>
                                 <th colspan="4" class="text-center"
-                                    style="background-color: #ededed;">Cumprimento Normativo
+                                    style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                                 </th>
                             </tr>
                             <tr>
@@ -8031,7 +8575,26 @@ desired effect
                             </tbody>
                         </table>
 
+                        <table class="table table-bordered center">
+                            <tbody>
+                            <tr>
+                                <th colspan="4" class="text-center"
+                                    style="background-color: #9dacb5; color: white;">Obsoletos
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Ficheiros</th>
+                                <th>Acções</th>
+                            </tr>
 
+                            <tr class="text-left">
+                                <td>Lista de ficheiros aqui</td>
+                                <td>Ver</td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -8087,7 +8650,7 @@ desired effect
             <div class="box box-default collapsed-box own-border-top">
                 <div class="box-header own-activity-style">
                     <h3 class="box-title sub-titulo-2"
-                        data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                        data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i
                                 class="fa fa-plus"></i></button>
@@ -8109,7 +8672,7 @@ desired effect
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Documento em vigor
+                                style="background-color: #9dacb5; color: white;">Documento em vigor
                             </th>
                         </tr>
                         <tr>
@@ -8126,36 +8689,11 @@ desired effect
 
                         </tbody>
                     </table>
-
-                    <table class="table table-bordered center">
-                        <tbody>
-                        <tr>
-                            <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Suporte
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Suporte original</th>
-                            <th>Suporte de Preenchimento</th>
-                            <th>Cópia não controlada após impressão</th>
-                        </tr>
-
-                        <tr class="text-left">
-                            <td><?php echo $suporteOriginal; ?></td>
-                            <td><?php echo $suportePreenchimento; ?></td>
-                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                        </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-md-6">
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Detentores
+                                style="background-color: #9dacb5; color: white;">Detentores
                             </th>
                         </tr>
                         <tr>
@@ -8175,12 +8713,32 @@ desired effect
 
                         </tbody>
                     </table>
-
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="3" class="text-center"
-                                style="background-color: #ededed;">Arquivo
+                                style="background-color: #9dacb5; color: white;">Suporte
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Suporte original</th>
+                            <th>Suporte de Preenchimento</th>
+                            <th>Cópia não controlada após impressão</th>
+                        </tr>
+
+                        <tr class="text-left">
+                            <td><?php echo $suporteOriginal; ?></td>
+                            <td><?php echo $suportePreenchimento; ?></td>
+                            <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="3" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Arquivo
                             </th>
                         </tr>
                         <tr>
@@ -8199,13 +8757,13 @@ desired effect
                     </table>
 
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6">
 
                     <table class="table table-bordered center">
                         <tbody>
                         <tr>
                             <th colspan="4" class="text-center"
-                                style="background-color: #ededed;">Cumprimento Normativo
+                                style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                             </th>
                         </tr>
                         <tr>
@@ -8239,7 +8797,26 @@ desired effect
                         </tr>
                         </tbody>
                     </table>
+                    <table class="table table-bordered center">
+                        <tbody>
+                        <tr>
+                            <th colspan="4" class="text-center"
+                                style="background-color: #9dacb5; color: white;">Obsoletos
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Ficheiros</th>
+                            <th>Acções</th>
+                        </tr>
 
+                        <tr class="text-left">
+                            <td>Lista de ficheiros aqui</td>
+                            <td>Ver</td>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
@@ -8296,7 +8873,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -8318,7 +8895,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -8335,36 +8912,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -8389,7 +8941,29 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -8406,15 +8980,15 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
+
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -8448,7 +9022,26 @@ desired effect
                     </tr>
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -8505,7 +9098,7 @@ desired effect
         <div class="box box-default collapsed-box own-border-top">
             <div class="box-header own-activity-style">
                 <h3 class="box-title sub-titulo-2"
-                    data-widget="collapse"><?php echo $nomeDescricaoDocumento; ?></h3>
+                    data-widget="collapse"><?php echo $codigoControlDoc. " - ".$nomeDescricaoDocumento; ?></h3>
                 <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i
                             class="fa fa-plus"></i></button>
@@ -8527,7 +9120,7 @@ desired effect
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Documento em vigor
+                            style="background-color: #9dacb5; color: white;">Documento em vigor
                         </th>
                     </tr>
                     <tr>
@@ -8544,36 +9137,11 @@ desired effect
 
                     </tbody>
                 </table>
-
-                <table class="table table-bordered center">
-                    <tbody>
-                    <tr>
-                        <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Suporte
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>Suporte original</th>
-                        <th>Suporte de Preenchimento</th>
-                        <th>Cópia não controlada após impressão</th>
-                    </tr>
-
-                    <tr class="text-left">
-                        <td><?php echo $suporteOriginal; ?></td>
-                        <td><?php echo $suportePreenchimento; ?></td>
-                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-6">
-
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Detentores
+                            style="background-color: #9dacb5; color: white;">Detentores
                         </th>
                     </tr>
                     <tr>
@@ -8593,12 +9161,33 @@ desired effect
 
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="3" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Suporte
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Suporte original</th>
+                        <th>Suporte de Preenchimento</th>
+                        <th>Cópia não controlada após impressão</th>
+                    </tr>
+
+                    <tr class="text-left">
+                        <td><?php echo $suporteOriginal; ?></td>
+                        <td><?php echo $suportePreenchimento; ?></td>
+                        <td><?php echo $copiaNaoControladaPosPrint; ?></td>
+                    </tr>
+
+                    </tbody>
+                </table>
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="3" class="text-center"
-                            style="background-color: #ededed;">Arquivo
+                            style="background-color: #9dacb5; color: white;">Arquivo
                         </th>
                     </tr>
                     <tr>
@@ -8615,15 +9204,15 @@ desired effect
 
                     </tbody>
                 </table>
-
             </div>
-            <div class="col-md-12">
+            <div class="col-md-6">
+
 
                 <table class="table table-bordered center">
                     <tbody>
                     <tr>
                         <th colspan="4" class="text-center"
-                            style="background-color: #ededed;">Cumprimento Normativo
+                            style="background-color: #9dacb5; color: white;">Cumprimento Normativo
                         </th>
                     </tr>
                     <tr>
@@ -8657,7 +9246,26 @@ desired effect
                     </tr>
                     </tbody>
                 </table>
+                <table class="table table-bordered center">
+                    <tbody>
+                    <tr>
+                        <th colspan="4" class="text-center"
+                            style="background-color: #9dacb5; color: white;">Obsoletos
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Ficheiros</th>
+                        <th>Acções</th>
+                    </tr>
 
+                    <tr class="text-left">
+                        <td>Lista de ficheiros aqui</td>
+                        <td>Ver</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
