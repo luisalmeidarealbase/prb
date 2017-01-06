@@ -220,7 +220,7 @@ desired effect
                     </dl>
 
                     <br>
-                    <form action="editrostocontroldoc.php" name="formEdicaoRostoControlDoc" method="POST">
+                    <form action="editrostoprod.php" name="formEdicaoRostoControlDoc" method="POST">
                         <dl class="dl-horizontal">
                             <dt>Objectivo procedimento</dt>
                             <dd><input type="text" value='<?php echo utf8_decode($objectivo); ?>'
