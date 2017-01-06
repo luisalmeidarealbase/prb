@@ -199,7 +199,7 @@ desired effect
 
                                 <tr>
                                     <td><a href="controlodocumental.php"><?php echo $rowQueryHistorico->nome_procedimento; ?></a></td>
-                                    <td>xx.xx.xx</td>
+                                    <td><?php echo $rowQueryHistorico->nome_versao_rosto; ?></td>
                                     <td><?php echo $rowQueryHistorico->data_versao_rosto; ?></td>
                                     <td><span class="label label-obsoleto">Obsoleto</span></td>
                                     <!-- todo -> criar pagina de visualização de procedimento em status historico -->

@@ -13,7 +13,6 @@ if (!isset($_SESSION['fullname'])) {
 $idprocedimento = $_GET['idprocedimento'];
 $idrosto = $_GET['idrosto'];
 
-
 ?>
 
 <!DOCTYPE html>

@@ -174,6 +174,7 @@ desired effect
             $acompanhamento = utf8_encode($rowrosto->acompanhamento);
             $avaliacao_e_medicao = utf8_encode($rowrosto->avaliacao_e_medicao);
             $responsavel_procedimento = utf8_encode($rowrosto->responsavel_procedimento);
+            $versao = $rowrosto->versao_vigor;
             //$metodo = $rowrosto->metodo;
         }
 
@@ -225,8 +226,8 @@ desired effect
                         <dl class="dl-horizontal">
                             <dt>Procedimento:</dt>
                             <dd><?php echo $nomeprocedimento; ?></dd>
-                            <dt>Ref. Doc Versão em vigor</dt>
-                            <dd>XXX.01-04</dd>
+                            <dt>Código Doc:</dt>
+                            <dd><?php echo $versao; ?></dd>
                             <dt>Data de Aprovação.</dt>
                             <dd>24 de Agosto 2015</dd>
                             <dt>Responsável</dt>

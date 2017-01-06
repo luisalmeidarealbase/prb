@@ -467,6 +467,7 @@ desired effect
                 </div><!-- /.box-footer -->
             </div>
 
+
             <!-- ------------------------------- END - LISTA DE METODO ------------------------------- -->
 
             <div class="col-md-6">
@@ -482,7 +483,7 @@ desired effect
             </div>
             </form>
 
-
+                    <br><br>
             <!-- Your Page Content Here -->
 
         </section><!-- /.content -->

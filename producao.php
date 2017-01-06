@@ -1,6 +1,7 @@
 <?php
 
 require_once("connection/conn.php");
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -10,8 +11,61 @@ if (!isset($_SESSION['fullname'])) {
     header('location: index.php');
 }
 
-$idprocedimento = $_GET['idprocedimento'];
-$idrosto = $_GET['idrosto'];
+
+
+
+function checkEditMode()
+{
+
+    global $link;
+    global $erroModoEdicao;
+    //modo de edicao
+    /* "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto
+    INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento
+    WHERE id_procedimento = 2 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 0 AND historico_versao_rosto != 1 ";
+
+    */
+    $query1 = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto
+    INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento
+    WHERE id_procedimento = 3 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 0 AND historico_versao_rosto != 1";
+
+    $resultQuery1 = mysqli_query($link, $query1);
+
+    $firstResult = mysqli_num_rows($resultQuery1);
+
+    $query2 = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto
+    INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento
+    WHERE id_procedimento = 3 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 1 AND validado_versao_rosto = 0 AND historico_versao_rosto != 1";
+
+    $resultQuery2 = mysqli_query($link, $query2);
+
+    $secondResult = mysqli_num_rows($resultQuery2);
+
+    $query3 = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto
+    INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento
+    WHERE id_procedimento = 3 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 1 AND validado_versao_rosto = 1 AND historico_versao_rosto != 1";
+
+    $resultQuery3 = mysqli_query($link, $query3);
+
+    $thirdResult = mysqli_num_rows($resultQuery3);
+
+    $countEdit = $firstResult + $secondResult + $thirdResult;
+
+    if ($countEdit > 0) {
+        $erroModoEdicao = true;
+    }
+
+    else {
+        header('location: edicao-producao.php');
+    }
+
+
+}
+
+
+if (isset($_GET["edit"]) == "true") {
+    checkEditMode();
+}
 
 
 ?>
@@ -39,10 +93,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
-      -->
+        -->
     <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
     <link rel="stylesheet" type="text/css" href="dist/css/personalcss.css">
-
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,7 +103,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
     <script src="plugins/ckeditor/ckeditor.js"></script>
+
+
+
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -110,7 +167,7 @@ desired effect
                     <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p><?php echo utf8_decode($_SESSION['fullname']); ?></p>
+                    <p><?php echo utf8_encode($_SESSION['fullname']); ?></p>
                     <!-- Status -->
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
@@ -120,10 +177,10 @@ desired effect
             <form action="#" method="get" class="sidebar-form">
                 <div class="input-group">
                     <input type="text" name="q" class="form-control" placeholder="Search...">
-						<span class="input-group-btn">
-							<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
-                                    class="fa fa-search"></i></button>
-						</span>
+            <span class="input-group-btn">
+              <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i
+                      class="fa fa-search"></i></button>
+            </span>
                 </div>
             </form>
             <!-- /.search form -->
@@ -142,131 +199,142 @@ desired effect
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Bem vindo ao Portal Realbase <br>
+                Controlo Documental <br>
                 <small>Recreating DNA</small>
             </h1>
+            <br>
+            <div class="btn-group">
+                <a href="producao.php?edit=true">
+                    <button type="button" class="btn btn-info">Editar Procedimento</button>
+
+                </a>
+                <a href="procedimento-historico.php?id=2">
+                    <button type="button" class="btn btn-info">Histórico Obsoletos</button>
+                </a>
+
+
+            </div>
+            <br>
+            <?php
+
+                if (isset($erroModoEdicao) == true) {
+
+                   ?>
+
+                    <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4><i class="icon fa fa-ban"></i> Erro!</h4>
+                        Já existe uma versão em revisão do procedimento Controlo de Documentos e Registos.
+                    </div>
+
+
+            <?php
+
+                }
+
+                ?>
+
+
+
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <br>
+
+                <br>
+
                 <!--       <li class="active">Here</li>
                 -->    </ol>
         </section>
 
-
-        <?php
-
-
-        $queryrosto = "SELECT * FROM tbl_rostos INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento WHERE id_rosto = '$idrosto' AND id_procedimento = '$idprocedimento'";
-        $resultrosto = mysqli_query($link, $queryrosto);
-
-        while ($rowrosto = mysqli_fetch_object($resultrosto)) {
-
-
-            //save data to variables from the previous query
-            $idrostoedicao = $rowrosto->id_rosto;
-            $objectivo = utf8_encode($rowrosto->objectivo_procedimento);
-            $ambito = utf8_encode($rowrosto->ambito_procedimento);
-            $entradas = utf8_encode($rowrosto->entradas);
-            $saidas = utf8_encode($rowrosto->saidas);
-            $definicaoAbreviatura = utf8_encode($rowrosto->indicadores);
-            $pontosnorma = utf8_encode($rowrosto->norma_pontos_norma);
-            $nomeprocedimento = utf8_encode($rowrosto->nome_procedimento);
-            $indicadores = utf8_encode($rowrosto->indicadores);
-            $acompanhamento = utf8_encode($rowrosto->acompanhamento);
-            $avaliacao_e_medicao = utf8_encode($rowrosto->avaliacao_e_medicao);
-            $responsavel_procedimento = utf8_encode($rowrosto->responsavel_procedimento);
-            $metodo = $rowrosto->metodo;
-            $versao = $rowrosto->versao_vigor;
-        }
-
-
-        ?>
-
-
         <!-- Main content -->
         <section class="content">
-            <br><br>
+            <br><br><br>
 
-            <div class="alert alert-warning alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h4><i class="icon fa fa-warning"></i> Modo de Edição do Procedimento
-                    <b><?php echo $nomeprocedimento; ?></b></h4>
-                Clique na secção do procedimento que deseja editar. Não se esqueça de gravar as suas alterações.
-            </div>
 
-            <br>
+            <!-- ------------------------------- BEGIN - LISTA DE ROSTO  ------------------------------- -->
+
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Documento rosto em modo Aprovação activo</h3>
+                    <h3 class="box-title">Rosto e Fluxograma</h3>
                     <div class="box-tools pull-right">
-                        <form action="submittovalidation.php?id=<?php echo $idrostoedicao; ?>"
-                              name="formEdicaoRostoControlDoc" method="POST">
-                            <!-- <button type="submit" name="action" value="toAprove" class="btn btn-danger">Submeter para validação</button>
-                            <button type="submit" name="action" value="toEdit" class="btn btn-info">Remeter para Edição</button> -->
-                            <!-- <button type="button" id="btn-editmode" onclick="editMode();" class="btn btn-info">Editar</button> -->
-
+                        <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>-->
                     </div>
                 </div><!-- /.box-header -->
-
                 <div class="box-body" style="display: block;">
+                    <?php
+
+                    $queryrosto = "SELECT * FROM tbl_procedimentos INNER JOIN tbl_rostos ON id_procedimento = tbl_procedimentos_id_procedimento INNER JOIN tbl_versoes_rostos ON id_rosto = tbl_rostos_id_rosto  WHERE tbl_versoes_rostos.publicado_versao_rosto = 1 AND id_procedimento = 3";
+
+                    $resultrosto = mysqli_query($link, $queryrosto);
+
+                    while ($rowrosto = mysqli_fetch_object($resultrosto)) {
+                        //save data to variables from the previous query
+                        $objectivo = $rowrosto->objectivo_procedimento;
+                        $ambito = $rowrosto->ambito_procedimento;
+                        $entradas = $rowrosto->entradas;
+                        $saidas = $rowrosto->saidas;
+                        $definicaoAbreviatura = $rowrosto->indicadores;
+                        $pontosnorma = $rowrosto->norma_pontos_norma;
+                        $nomeprocedimento = $rowrosto->nome_procedimento;
+                        $indicadores = $rowrosto->indicadores;
+                        $acompanhamento = $rowrosto->acompanhamento;
+                        $avaliacao_e_medicao = $rowrosto->avaliacao_e_medicao;
+                        $responsavel_procedimento = $rowrosto->responsavel_procedimento;
+                        $metodo = $rowrosto->metodo;
+                        $idrosto = $rowrosto->id_rosto;
+                        $versao_vigor = $rowrosto->versao_vigor;
+
+
+                    }
+                    ?>
+
                     <div class="col-md-6">
+
                         <dl class="dl-horizontal">
                             <dt>Procedimento:</dt>
                             <dd><?php echo $nomeprocedimento; ?></dd>
-                            <dt>Código Doc:</dt>
-                            <dd><?php echo $versao; ?></dd>
+                            <dt>Ref. Doc Versão em vigor</dt>
+                            <dd><?php echo $versao_vigor; ?></dd>
                             <dt>Data de Aprovação.</dt>
                             <dd>24 de Agosto 2015</dd>
                             <dt>Responsável</dt>
-                            <dd><?php echo $responsavel_procedimento; ?></dd>
+                            <dd><?php echo utf8_encode($responsavel_procedimento); ?></dd>
                         </dl>
-
                         <br>
 
                         <dl class="dl-horizontal">
                             <dt>Objectivo procedimento</dt>
-                            <dd><input type="text" value='<?php echo utf8_decode($objectivo); ?>'
-                                       name="objectivoprocedimento" style="width: 100%;">
-                            </dt><br><br>
+                            <dd>
+                            <?php echo $objectivo; ?></dt><br><br>
                             <dt>Âmbito de Procedimento</dt>
-                            <dd><input type="text" value='<?php echo utf8_decode($ambito); ?>' name="ambitoprocedimento"
-                                       style="width: 100%;"></dd>
+                            <dd><?php echo $ambito; ?></dd>
                             <br><br>
                             <dt>Entradas</dt>
-                            <dd><input type="text" value='<?php echo utf8_decode($entradas); ?>' name="entradas"
-                                       style="width: 100%; height: auto;"></dd>
+                            <dd><?php echo $entradas; ?></dd>
                             <br><br>
                             <dt>Saídas</dt>
-                            <dd><input type="text" value='<?php echo $saidas; ?>' name="saidas" style="width: 100%" ;>
-                            </dd>
+                            <dd><?php echo $saidas; ?></dd>
                             <br><br>
-                            <!--  <dt>Definição e abreviatura</dt>
-       <dd><input type="text" value='<?php // echo $definicaoAbreviatura; ?>' name="definicaoabreviatura" style="width: 100%;"></dd> <br><br> -->
-                            <!-- <dt>Pontos por norma</dt>
-      <dd><?php //echo $pontosnorma; ?></dd> <br> -->
                         </dl>
 
                         <div class="col-md-4">
                             <b>Indicadores</b> <br>
                             <br>
-                            <input type="text" value='<?php echo utf8_decode($indicadores); ?>' name="indicadores"
-                                   style="width: 100%; height: 20%;">
+                            <?php echo $indicadores; ?>
                             <br>
                         </div>
                         <div class="col-md-4">
                             <b>Acompanhamento</b> <br>
                             <br>
-                            <input type="text" value='<?php echo utf8_decode($acompanhamento); ?>' name="acompanhamento"
-                                   style="width: 100%; height: 20%;">
+                            <?php echo $acompanhamento; ?>
                             <br>
                         </div>
                         <div class="col-md-4">
                             <b>Avaliação e medição</b> <br>
                             <br>
-                            <input type="text" value='<?php echo utf8_decode($avaliacao_e_medicao); ?>'
-                                   name="avaliacaomedicao" style="width: 100%; height: 20%;">
+                            <?php echo $avaliacao_e_medicao; ?>
                             <br>
                         </div>
-                        <br>
 
                     </div>
                     <div class="col-md-6">
@@ -279,22 +347,76 @@ desired effect
                     <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
                     <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
                 </div><!-- /.box-footer -->
-
-
             </div>
 
-           
+
+            <!-- ------------------------------- END - LISTA DE ROSTO ------------------------------- -->
+
+
+            <!-- ------------------------------- BEGIN - LISTA DE FLUXOGRAMA PROCEDIMENTO  ------------------------------- -->
+
+            <!--            <div class="box box-info collapsed-box">-->
+            <!--                <div class="box-header with-border">-->
+            <!--                    <h3 class="box-title">Fluxograma</h3>-->
+            <!--                    <div class="box-tools pull-right">-->
+            <!--                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>-->
+            <!--                    </div>-->
+            <!--                </div><!-- /.box-header -->
+            <!--                <div class="box-body" style="display: none;">-->
+            <!---->
+            <!--                    <!--     <img class="img-responsive" src="http://placehold.it/2560x1440" alt="fluxo-controlo-documental"> -->
+            <!---->
+            <!--                    <!-- code to embed a pdf file -->
+            <!--                    <embed src="teste2.pdf" style="min-width: 100%;  min-height: 800px;" class="img-responsive"-->
+            <!--                           type='application/pdf'>-->
+            <!---->
+            <!--                </div><!-- /.box-body -->
+            <!--                <div class="box-footer clearfix" style="display: none;">-->
+            <!--                    <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>-->
+            <!--                    <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
+            <!--                </div><!-- /.box-footer -->
+            <!--            </div>-->
+
+
+            <!-- ------------------------------- END - LISTA DE FLUXOGRAMA PROCEDIMENTO ------------------------------- -->
+
 
             <!-- ------------------------------- BEGIN - LISTA DE METODO  ------------------------------- -->
 
-            <div class="box box-info">
+            <!--<div class="box box-info collapsed-box">
                 <div class="box-header with-border">
                     <h3 class="box-title">Método e Matriz RH</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div><!-- /.box-header -->
+            <!--  <div class="box-body" style="display: none;">-->
+
+            <?php /*echo $metodo; */ ?>
+
+            <!--    </div><!-- /.box-body -->
+            <!--<div class="box-footer clearfix" style="display: none;">
+                <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
+                <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
+            <!--  </div><!-- /.box-footer -->
+            <!-- </div>-->
+
+            <!-- ------------------------------- END - LISTA DE METODO ------------------------------- -->
+
+            <!-- ------------------------------- BEGIN - NOVO METODO FRONT END BUILDING  ------------------------------- -->
+
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Método | Matriz RH</h3>
                     <div class="box-tools pull-right">
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     </div>
                 </div><!-- /.box-header -->
                 <div class="box-body" style="display: block;">
+
+
+                    <!-- information goes here -->
+
 
                     <?php
 
@@ -306,7 +428,7 @@ desired effect
                     while ($rowSubProcessos = mysqli_fetch_object($resultSubProcessos)) {
 
                         $idsubprocesso = $rowSubProcessos->id_sub_processo;
-                        $nomeSubProcesso = html_entity_decode($rowSubProcessos->nome_sub_processo);
+                        $nomeSubProcesso = $rowSubProcessos->nome_sub_processo;
                         ?>
 
 
@@ -314,14 +436,11 @@ desired effect
 
                         <div class="box box-default">
                             <div class="box-header with-border">
-                                <h3 class="box-title sub-titulo-1"><input type="text"
-                                                                          style="min-width:100%; padding: 5px;"
-                                                                          name="subprocesso<?php echo $idsubprocesso; ?>"
-                                                                          value="<?php echo $nomeSubProcesso; ?>"></h3>
-                                <div class="box-tools pull-right">
+                                <h3 class="box-title sub-titulo-1"><?php echo $nomeSubProcesso; ?></h3>
+                                <!--<div class="box-tools pull-right">
                                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
                                     </button>
-                                </div><!-- /.box-tools -->
+                                </div>--><!-- /.box-tools -->
                             </div><!-- /.box-header -->
                             <div class="box-body" style="display: block;">
 
@@ -334,13 +453,13 @@ desired effect
                                 while ($rowActividade = mysqli_fetch_object($resultActividade)) {
 
                                     $idActividade = $rowActividade->id_actividade;
-                                    $nomeActividade = html_entity_decode($rowActividade->nome_actividade);
-                                    $descricaoActividade = html_entity_decode($rowActividade->descricao_actividade);
-                                    $observacaoActividade = html_entity_decode($rowActividade->observacao_actividade);
-                                    $c90012008 = html_entity_decode($rowActividade->c9001_2008);
-                                    $c90012015 = html_entity_decode($rowActividade->c9001_2015);
-                                    $fsc = html_entity_decode($rowActividade->fsc);
-                                    $pefc = html_entity_decode($rowActividade->pefc);
+                                    $nomeActividade = $rowActividade->nome_actividade;
+                                    $descricaoActividade = $rowActividade->descricao_actividade;
+                                    $observacaoActividade = $rowActividade->observacao_actividade;
+                                    $c90012008 = $rowActividade->c9001_2008;
+                                    $c90012015 = $rowActividade->c9001_2015;
+                                    $fsc = $rowActividade->fsc;
+                                    $pefc = $rowActividade->pefc;
 
 
                                     ?>
@@ -349,11 +468,8 @@ desired effect
 
                                     <div class="box box-default collapsed-box own-border-top">
                                         <div class="box-header own-activity-style">
-                                            <h3 class="box-title sub-titulo-2" data-widget="collapse"><input type="text"
-                                                                                      style="min-width:100%; padding: 5px;"
-                                                                                      name="nomeactividade<?php echo $idActividade; ?>"
-                                                                                      value="<?php echo $nomeActividade; ?>">
-                                            </h3>
+                                            <h3 class="box-title sub-titulo-2"
+                                                data-widget="collapse"><?php echo $nomeActividade; ?></h3>
                                             <div class="box-tools pull-right">
                                                 <button class="btn btn-box-tool" data-widget="collapse"><i
                                                         class="fa fa-plus"></i></button>
@@ -362,19 +478,21 @@ desired effect
 
 
                                         <div class="box-body" style="display: none;">
+                                            <br>
                                             <div class="col-md-6">
                                                 <dl>
                                                     <dt>Descrição</dt>
-                                                    <dd><textarea style="padding: 5px; width: 100%; height: auto;"
-                                                                  rows="10"
-                                                                  name="descricaoactividade<?php echo $idActividade; ?>"><?php echo $descricaoActividade; ?></textarea>
-                                                    </dd>
+                                                    <dd><?php echo $descricaoActividade; ?></dd>
                                                     <br>
                                                     <dt>Observações</dt>
                                                     <dd>
-                                                        <textarea style="padding: 5px; width: 100%; height: auto;"
-                                                                  rows="5"
-                                                                  name="observacaoactividade<?php echo $idActividade; ?>"><?php echo $observacaoActividade; ?></textarea>
+                                                        <?php
+                                                        if ($observacaoActividade == "") {
+                                                            echo "Não existem observações.";
+                                                        } else {
+                                                            echo $observacaoActividade;
+                                                        }
+                                                        ?>
                                                     </dd>
 
                                                 </dl>
@@ -406,12 +524,17 @@ desired effect
                                                 </table>
 
                                             </div>
+
                                             <br>
 
                                             <table class="table table-bordered center">
+                                                <br>
+                                                <b>Cumprimento Normativo</b> <br><br>
                                                 <tbody>
 
                                                 <tr>
+                                                    <th>Nome do documento</th>
+                                                    <th>Codificação</th>
                                                     <th>9001:2008</th>
                                                     <th>9001:2015</th>
                                                     <th>FSC</th>
@@ -421,22 +544,39 @@ desired effect
                                                 <tr>
 
                                                     <td>
-                                                        <input type="text"
-                                                               name="c90012008IdAct<?php echo $idActividade; ?>"
-                                                               value="<?php echo $c90012008; ?>">
+                                                        <?php
+                                                        if ($c90012008 == "") {
+                                                            echo "--";
+                                                        } else {
+                                                            echo $c90012008;
+                                                        }
+                                                        ?>
                                                     </td>
                                                     <td>
-                                                        <input type="text"
-                                                               name="c90012015IdAct<?php echo $idActividade; ?>"
-                                                               value="<?php echo $c90012015; ?>">
+                                                        <?php
+                                                        if ($c90012015 == "") {
+                                                            echo "--";
+                                                        } else {
+                                                            echo $c90012015;
+                                                        }
+                                                        ?>
                                                     </td>
                                                     <td>
-                                                        <input type="text" name="fscIdAct<?php echo $idActividade; ?>"
-                                                               value="<?php echo $fsc; ?>">
+                                                        <?php
+                                                        if ($fsc == "") {
+                                                            echo "--";
+                                                        } else {
+                                                            echo $fsc;
+                                                        } ?>
                                                     </td>
                                                     <td>
-                                                        <input type="text" name="pefcIdAct<?php echo $idActividade; ?>"
-                                                               value="<?php echo $pefc; ?>">
+                                                        <?php
+                                                        if ($pefc == "") {
+                                                            echo "--";
+                                                        } else {
+                                                            echo $pefc;
+                                                        }
+                                                        ?>
                                                     </td>
                                                 </tr>
 
@@ -462,42 +602,24 @@ desired effect
 
                     ?>
 
+
                 </div><!-- /.box-body -->
-                <div class="box-footer clearfix" style="display: none;">
-                    <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-                    <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
-                </div><!-- /.box-footer -->
             </div>
 
-            <!-- ------------------------------- END - LISTA DE METODO ------------------------------- -->
+    </div><!-- /.box-body -->
+    <div class="box-footer clearfix" style="display: none;">
+        A good place to put some useful information. Just a simple footer code.
+        <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
+        <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
+    </div><!-- /.box-footer -->
+</div>
+
+<!-- ------------------------------- END - NOVO METODO FRONT END BUILDING ------------------------------- -->
 
 
-            <br>
-            <div class="row">
-                <div class="col-md-6">
-                    <br>
-                    <button type="submit" name="action" value="toSave"
-                            onclick="return confirm('Deseja gravar as alterações efectuadas?')"
-                            class="btn btn-block btn-info">
-                        Gravar
-                    </button>
-                </div>
-                <div class="col-md-6">
-                    <br>
-                    <button type="submit" name="action" value="toClose" class="btn btn-block btn-info"
-                            onclick="return confirm('Deseja fechar a edição do procedimento?')">
-                        Fechar
-                    </button>
-                </div>
-            </div>
-    </div>
+<!-- Your Page Content Here -->
 
-    <br><!-- /.box-body -->
-
-
-    <!-- Your Page Content Here -->
-
-    </section><!-- /.content -->
+</section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 
 <!-- Main Footer -->
@@ -550,24 +672,23 @@ desired effect
             </ul><!-- /.control-sidebar-menu -->
 
         </div><!-- /.tab-pane -->
-        <!-- Stats tab content <--></
-    -->
-    <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
-    <!-- Settings tab content -->
-    <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-            <h3 class="control-sidebar-heading">General Settings</h3>
-            <div class="form-group">
-                <label class="control-sidebar-subheading">
-                    Report panel usage
-                    <input type="checkbox" class="pull-right" checked>
-                </label>
-                <p>
-                    Some information about this general settings option
-                </p>
-            </div><!-- /.form-group -->
-        </form>
-    </div><!-- /.tab-pane -->
+        <!-- Stats tab content -->
+        <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
+        <!-- Settings tab content -->
+        <div class="tab-pane" id="control-sidebar-settings-tab">
+            <form method="post">
+                <h3 class="control-sidebar-heading">General Settings</h3>
+                <div class="form-group">
+                    <label class="control-sidebar-subheading">
+                        Report panel usage
+                        <input type="checkbox" class="pull-right" checked>
+                    </label>
+                    <p>
+                        Some information about this general settings option
+                    </p>
+                </div><!-- /.form-group -->
+            </form>
+        </div><!-- /.tab-pane -->
     </div>
 </aside><!-- /.control-sidebar -->
 <!-- Add the sidebar's background. This div must be placed
@@ -579,29 +700,19 @@ immediately after the control sidebar -->
 
 <!-- jQuery 2.1.4 -->
 <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script>
+    function tableWidth() {
+
+        $('table:first-of-type').css('width', '100%');
+
+    }
+
+    tableWidth();
+</script>
 <!-- Bootstrap 3.3.5 -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
-
-<script>
-
-    function editMode() {
-        alert("edit mode activated");
-        $('#btn-editmode').html("Gravar");
-        $('.native').hide();
-        $('.editing').show();
-    }
-
-    function beginLoad() {
-
-        $('.editing').hide();
-
-    }
-
-    beginLoad();
-
-</script>
 
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
@@ -610,12 +721,3 @@ immediately after the control sidebar -->
      fixed layout. -->
 </body>
 </html>
-
-
-
-
-
-
-
-
-

@@ -298,7 +298,7 @@ desired effect
                             <dt>Data de Aprovação.</dt>
                             <dd>24 de Agosto 2015</dd>
                             <dt>Responsável</dt>
-                            <dd><?php echo $responsavel_procedimento; ?></dd>
+                            <dd><?php echo utf8_encode($responsavel_procedimento); ?></dd>
                         </dl>
                         <br>
 

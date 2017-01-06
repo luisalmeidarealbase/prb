@@ -22,13 +22,13 @@ $metodo = $_POST['control-doc-metodo-matriz'];
 */
 $getIdProcedimento = "SELECT * FROM tbl_rostos WHERE id_rosto = '$idrostoedicao'";
 
-	$resultGetIdProcedimento = mysqli_query($link, $getIdProcedimento);
+$resultGetIdProcedimento = mysqli_query($link, $getIdProcedimento);
 
-	while ($rowIdProcedimento = mysqli_fetch_object($resultGetIdProcedimento)){
+while ($rowIdProcedimento = mysqli_fetch_object($resultGetIdProcedimento)){
 
-		$idprocedimento = $rowIdProcedimento->tbl_procedimentos_id_procedimento;
+	$idprocedimento = $rowIdProcedimento->tbl_procedimentos_id_procedimento;
 
-	}
+}
 
 if ($_POST['action'] == "toAprove"){
 	
@@ -43,9 +43,9 @@ if ($_POST['action'] == "toAprove"){
 	// end - code to submit to aprove
 
 	//add here the correct URL.
-		$url = "revisao.php";
+	$url = "revisao.php";
 
-		header('location: '.$url);
+	header('location: '.$url);
 
 }
 
@@ -55,18 +55,18 @@ if ($_POST['action'] == "toAprove"){
 
 			// begin - code to submit to aprove
 
-			$estadoAprovado = 1;
+	$estadoAprovado = 1;
 
-			$updateEstadoAprovacao = "UPDATE tbl_versoes_rostos SET validado_versao_rosto = '$estadoAprovado' WHERE tbl_rostos_id_rosto = '$idrostoedicao'";
+	$updateEstadoAprovacao = "UPDATE tbl_versoes_rostos SET validado_versao_rosto = '$estadoAprovado' WHERE tbl_rostos_id_rosto = '$idrostoedicao'";
 
-			$resultUpdateEstadoAprovacao = mysqli_query($link, $updateEstadoAprovacao);
+	$resultUpdateEstadoAprovacao = mysqli_query($link, $updateEstadoAprovacao);
 
 			// end - code to submit to aprove
 
 			//add here the correct URL.
-				$url = "revisao.php";
+	$url = "revisao.php";
 
-				header('location: revisao.php');
+	header('location: revisao.php');
 
 }
 
@@ -75,13 +75,13 @@ if ($_POST['action'] == "toEdit") {
 
 			// send to edit
 
-			$toEdit = "UPDATE tbl_versoes_rostos SET aprovado_versao_rosto = 0, publicado_versao_rosto = 0 WHERE tbl_rostos_id_rosto = '$idrostoedicao'";
+	$toEdit = "UPDATE tbl_versoes_rostos SET aprovado_versao_rosto = 0, publicado_versao_rosto = 0 WHERE tbl_rostos_id_rosto = '$idrostoedicao'";
 
-			$resultToEdit = mysqli_query($link,$toEdit);	
+	$resultToEdit = mysqli_query($link,$toEdit);	
 
 			//$url = "viewedicaorosto.php?idrosto=".$idrostoedicao."&idprocedimento=".$idprocedimento;
 
-			header('location: revisao.php');
+	header('location: revisao.php');
 
 
 }
@@ -104,46 +104,43 @@ if ($_POST['action'] == "toPublish"){
 
 	$getIdPublished = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto WHERE publicado_versao_rosto = 1 AND tbl_procedimentos_id_procedimento = '$idprocedimento'";
 
-$resultGetIdPublished = mysqli_query($link,$getIdPublished);
+	$resultGetIdPublished = mysqli_query($link,$getIdPublished);
 
-while ($rowGetIdPublished = mysqli_fetch_object($resultGetIdPublished)) {
+	while ($rowGetIdPublished = mysqli_fetch_object($resultGetIdPublished)) {
 
-	$idToChange = $rowGetIdPublished->id_versao_rosto;
+		$idToChange = $rowGetIdPublished->id_versao_rosto;
 
-
-	// BEGIN - NOVO CODIGO DE ATUALIZAÇÃO DE VERSOES
-
-	$getCodeProc = "SELECT codigo FROM tbl_control_docs WHERE tipo_documento = 'Procedimento' AND procedimento = 'controlodoc'";
-
-	$resultCodeProc = mysqli_query($link,$getCodeProc);
-
-	while ($rowNewCode = mysqli_fetch_object($resultCodeProc)) {
-		$codigo = $rowNewCode->codigo;
 	}
 
-	$versao = substr($codigo,-2);
+	if ($idprocedimento == 2) {
+			
+			# code to update versions ...
+			$getVersionToChange = "SELECT * FROM tbl_control_docs WHERE procedimento = 'controlodoc' AND tipo_documento = 'Procedimento'";
+			$resultGetVersionToChange = mysqli_query($link,$getVersionToChange);
 
-	$novaVersao = (int)$versao + 1;
+			while ($rowGetVersionToChange = mysqli_fetch_object($resultGetVersionToChange)){
+				$oldCodigo = $rowGetVersionToChange->codigo;
+				$oldVersion = $rowGetVersionToChange->versao;
+			} 
 
-	$novaVersao = "0".$novaVersao;
+			$int = (int)$oldVersion;
+			$int++;
+
+			$newVersion = sprintf("%'.02d\n", $int);
+
+			$updateProcTableControlDoc = "UPDATE tbl_control_docs SET versao = '$newVersion' WHERE procedimento = 'controlodoc' AND tipo_documento = 'Procedimento'";
+			$resultUpdateProcTableControlDoc = mysqli_query($link,$updateProcTableControlDoc);
+
+			$concatenacao = $oldCodigo . "-" . $newVersion;
+
+			$updateTableProcedimentos = "UPDATE tbl_procedimentos SET versao_vigor = '$concatenacao' WHERE id_procedimento = 2";
+			$resultUpdateTableProcedimentos = mysqli_query($link,$updateTableProcedimentos);
+
+	}
 
 
-	$novoCodigo = str_replace($versao, $novaVersao, $codigo);
 
-	$updateProcTableControlDoc = "UPDATE tbl_control_docs SET codigo = '$novoCodigo' WHERE procedimento = 'controlodoc' AND tipo_documento = 'Procedimento'";
-
-	$resultUpdateProcTableControlDoc = mysqli_query($link,$updateProcTableControlDoc);
-
-	$updateTableProc = "UPDATE tbl_procedimentos SET versao_vigor = '$novoCodigo' WHERE id_procedimento = '$idprocedimento'";
-
-	$resultUpdateTableProc = mysqli_query($link,$updateTableProc);
-	// END - NOVO CODIGO DE ATUALIZAÇÃO DE VERSOES
-
-
-
-}
-
-// remove published status of old rosto
+	// remove published status of old rosto
 
 	$notPublish = 0;
 	$historyStatus = 1;
@@ -153,9 +150,7 @@ while ($rowGetIdPublished = mysqli_fetch_object($resultGetIdPublished)) {
 	$resultChangeOldPublished = mysqli_query($link,$changeOldPublished);
 
 
-
-
-// publish new rosto
+	// publish new rosto
 
 	$publishNewRosto = "UPDATE tbl_versoes_rostos SET publicado_versao_rosto = 1 WHERE tbl_rostos_id_rosto = '$idrostoedicao'";
 
