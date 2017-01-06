@@ -205,8 +205,8 @@ $insertResultNewRostoVersao = mysqli_query($link,$insertNewRostoVersao);
                     echo "</tr>";*/
                 }
 
-            $contArray++;
+            $contArray++;   
         }
 /* -------------------------- ETAPA 3 - END ------------------------------ >*/
-header('location: controlodocumental.php');
+header('location: producao.php');
 ?>
