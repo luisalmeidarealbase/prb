@@ -36,7 +36,7 @@ $acompanhamento = htmlentities($_POST['acompanhamento']);
 $avaliacaomedicao = htmlentities($_POST['avaliacaomedicao']);
 
 
-$insertNewRosto = "INSERT INTO tbl_rostos (objectivo_procedimento, ambito_procedimento, entradas, saidas, indicadores, norma_pontos_norma, acompanhamento, avaliacao_e_medicao, tbl_procedimentos_id_procedimento) VALUES ('$objectivoprocedimento','$ambitoprocedimento','$entradas','$saidas','$indicadores','--','$acompanhamento','$avaliacaomedicao','2')";
+$insertNewRosto = "INSERT INTO tbl_rostos (objectivo_procedimento, ambito_procedimento, entradas, saidas, indicadores, norma_pontos_norma, acompanhamento, avaliacao_e_medicao, tbl_procedimentos_id_procedimento) VALUES ('$objectivoprocedimento','$ambitoprocedimento','$entradas','$saidas','$indicadores','--','$acompanhamento','$avaliacaomedicao','3')";
 
 
 
