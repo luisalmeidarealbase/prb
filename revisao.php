@@ -164,7 +164,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <tr>
 
               <th>Procedimento</th>
-              <th>Data de última Edição</th>
+              <th>Data de criação da versão</th>
               <th>Status</th>
               <th>Acções</th>
 
@@ -194,7 +194,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <tr>
                 <td>
                   
-                  <a href="#"><?php echo $rowQueryAprovacoesRostos->nome_procedimento; ?></a>
+                  <a href="#"><?php echo utf8_encode($rowQueryAprovacoesRostos->nome_procedimento); ?></a>
                   </td>
                 <td><?php echo $rowQueryAprovacoesRostos->data_versao_rosto; ?></td>
                 <td><span class="label label-success">Aguarda envio para Aprovação</span></td>
@@ -242,7 +242,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               
               <th>Procedimento</th>
-              <th>Data de última Edição</th>
+              <th>Data de criação da versão</th>
               <th>Status</th>
               <th>Acções</th>
             </tr>
@@ -268,7 +268,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
               <tr>
-                <td><a href="controlodocumental.php"><?php echo $rowQueryAprovacoesRostos->nome_procedimento; ?></a></td>
+                <td><a href="controlodocumental.php"><?php echo utf8_encode($rowQueryAprovacoesRostos->nome_procedimento); ?></a></td>
                 <td><?php echo $rowQueryAprovacoesRostos->data_versao_rosto; ?></td>
                 <td><span class="label label-warning">Aguarda envio para Validação</span></td>
                 <td><a href='viewvalidacaorosto.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Editar</span></a> <a href='preview-procedimento-aprovacao.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Visualizar</span></a></td>
@@ -313,7 +313,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <tr>
 
               <th>Procedimento</th>
-              <th>Data de última Edição</th>
+              <th>Data de criação da versão</th>
               <th>Status</th>
               <th>Acções</th>
 
@@ -328,7 +328,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
-            $queryAprovacoesRostos = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento WHERE id_procedimento = 2 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 1 AND validado_versao_rosto = 1 AND historico_versao_rosto != 1 ORDER BY data_versao_rosto DESC";
+            $queryAprovacoesRostos = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento WHERE publicado_versao_rosto = 0 AND aprovado_versao_rosto = 1 AND validado_versao_rosto = 1 AND historico_versao_rosto != 1 ORDER BY data_versao_rosto DESC";
 
             $resultQueryAprovacoesRostos = mysqli_query($link,$queryAprovacoesRostos);
 
@@ -341,7 +341,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
               <tr>
-                <td><a href="controlodocumental.php"><?php echo $rowQueryAprovacoesRostos->nome_procedimento; ?></a></td>
+                <td><a href="controlodocumental.php"><?php echo utf8_encode($rowQueryAprovacoesRostos->nome_procedimento); ?></a></td>
                 <td><?php echo $rowQueryAprovacoesRostos->data_versao_rosto; ?></td>
                 <td><span class="label label-danger">Aguarda envio para Publicação</span></td>
                 <td><a href='viewpublicacaorosto.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info"><!--Editar--></span></a> <a href='preview-procedimento-validacao.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Visualizar</span></a></td>

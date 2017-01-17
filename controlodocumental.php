@@ -404,6 +404,12 @@ desired effect
             <!-- ------------------------------- END - LISTA DE METODO ------------------------------- -->
 
             <!-- ------------------------------- BEGIN - NOVO METODO FRONT END BUILDING  ------------------------------- -->
+            
+            CRIAR NOVO QUADRO AQUI COM NOME: "DEFINIÇÕES E ABREVIATURAS".
+            
+            <br>
+
+
 
             <div class="box box-info">
                 <div class="box-header with-border">

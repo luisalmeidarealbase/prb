@@ -225,34 +225,34 @@ desired effect
                         <dl class="dl-horizontal">
                             <dt>Objectivo procedimento</dt>
                             <dd>
-                            <?php echo $objectivo; ?></dt><br><br>
+                            <?php echo utf8_decode($objectivo); ?></dt><br><br>
                             <dt>Âmbito de Procedimento</dt>
-                            <dd><?php echo $ambito; ?></dd>
+                            <dd><?php echo utf8_decode($ambito); ?></dd>
                             <br><br>
                             <dt>Entradas</dt>
-                            <dd><?php echo $entradas; ?></dd>
+                            <dd><?php echo utf8_decode($entradas); ?></dd>
                             <br><br>
                             <dt>Saídas</dt>
-                            <dd><?php echo $saidas; ?></dd>
+                            <dd><?php echo utf8_decode($saidas); ?></dd>
                             <br><br>
                         </dl>
 
                         <div class="col-md-4">
                             <b>Indicadores</b> <br>
                             <br>
-                            <?php echo $indicadores; ?>
+                            <?php echo utf8_decode($indicadores); ?>
                             <br>
                         </div>
                         <div class="col-md-4">
                             <b>Acompanhamento</b> <br>
                             <br>
-                            <?php echo $acompanhamento; ?>
+                            <?php echo utf8_decode($acompanhamento); ?>
                             <br>
                         </div>
                         <div class="col-md-4">
                             <b>Avaliação e medição</b> <br>
                             <br>
-                            <?php echo $avaliacao_e_medicao; ?>
+                            <?php echo utf8_decode($avaliacao_e_medicao); ?>
                             <br>
                         </div>
 
