@@ -22,18 +22,23 @@ while ($row = mysqli_fetch_object($resultShowIt)) {
 	$autor = $row->autor_it;
 	$estado = $row->tbl_estados_revisao_id_estado_revisao;
 
-$queryToKnowProcedimentoIt = "SELECT * FROM tbl_procedimentos WHERE id_procedimento = $procedimento";
-                      $resultToKnowProcedimentoIt = mysqli_query($link, $queryToKnowProcedimentoIt);
+	$queryToKnowProcedimentoIt = "SELECT * FROM tbl_procedimentos WHERE id_procedimento = $procedimento";
+	$resultToKnowProcedimentoIt = mysqli_query($link, $queryToKnowProcedimentoIt);
 
-                      while ($rowProcedimento = mysqli_fetch_object($resultToKnowProcedimentoIt)) {
+	while ($rowProcedimento = mysqli_fetch_object($resultToKnowProcedimentoIt)) {
                         # code...
-                        $tituloProcedimento = $rowProcedimento->nome_procedimento;
-                      }
+		$tituloProcedimento = $rowProcedimento->nome_procedimento;
+	}
 
 
 
 
 }
+
+if (isset($_GET['status'])){
+	$estado = $_GET['status'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -210,7 +215,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<div class="col-md-12">
 		<div class="box box-info">
 			<div class="box-header">
-				<h3 class="box-title">Visualização de Instrução de Trabalho - <b style="text-transform: uppercase;"><?php echo utf8_encode($tituloProcedimento); ?></b></h3>
+				<h3 class="box-title">Edição de Instrução de Trabalho - <b style="text-transform: uppercase;"><?php echo utf8_encode($tituloProcedimento); ?></b></h3>
 				<!-- tools box -->
 				<div class="pull-right box-tools">
 					<button class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
@@ -219,20 +224,90 @@ scratch. This page gets rid of all links and provides the needed markup only.
 			</div><!-- /.box-header -->
 
 			<div class="box-body">
-				<dl>
-					<dt>Objectivo:</dt>
-						<dd><?php echo $objectivo?></dd><br>
-					<dt>Sub Processo</dt>
-						<dd><?php echo $subprocesso; ?></dd><br>
+				<div class="form-group">
+
+					<label>Escolha da lista o procedimento em que se insere a instrução de trabalho:</label>
+
+					<select class="form-control" id="listaprocedimento" name="listaprocedimento">
 						
-					<dt>Something's missing here</dt>
-						<dd><?php echo $body; ?></dd>
-				</dl>
-			</div>
+						<option value="cit">CIT</option>
+						<option value="compras">Compras</option>
+						<option value="comevendas">Comercial & Vendas</option>
+						<option value="1">Gestão</option>
+						<?php if ($procedimento = 3) {
+							# code...
+							echo "<option value='3' selected='selected'>Produção</option>";
+						}
+						?>
+						
+						<option value="recursoshumanos">Recursos Humanos</option>
+						<option value="recursospatrimoniais">Recursos Patrimoniais</option>
+						<option value="ocorrencias">Ocorrências</option>
+						<option value="2">Controlo de Documentos e Registos</option>
+						<option value="auditorias">Auditorias</option>
 
-		</div>  </div>
+					</select>
 
-	</div>
+				</div>
+
+				<div class="form-group">
+					
+					<label>Escolha da lista o sub processo em que se insere a instrução de trabalho:</label>
+					<small>Atenção: rever sempre o subprocesso em que se insere a IT.</small>
+
+					<select class="form-control" id="listasubprocesso" name="listasubprocesso">
+						<?php if ($procedimento = 3){
+
+						 ?>
+
+						<option value="naoaplicavel">Não aplicável</option>
+						<option value="Pré Impressão">Pré impressão</option>
+						<option value="Impressão">Impressão</option>
+						<option value="Acabamentos">Acabamentos</option>
+						<option value="Controlo de qualidade">Controlo de qualidade</option>
+						<option value="Expedição">Expedição</option>
+						<option value="Gestão de Armazém">Gestão de Armazém</option>
+
+						<?php } ?>
+
+					</select>
+
+				</div>
+
+				<div class="form-group">
+					<label>Objectivo</label>
+					<input type="text" class="form-control" name="objectivoit" value="<?php echo $objectivo; ?>" >
+				</div>
+
+
+				<label>Corpo da Instrução de Trabalho</label>
+				<textarea  id="editor1" name="editor1" rows="10" cols="80" value="fsdfd" placeholder="Escrever o conteúdo da IT aqui..."> 
+				<?php echo $body; ?></textarea>
+
+
+				<script>
+
+
+
+					var editor = CKEDITOR.replace( 'editor1' );
+					CKFinder.setupCKEditor( editor );
+
+
+        //CKEDITOR.replace( 'editor1' );
+        
+    </script>
+
+
+    <br><br>
+    <div class="col-md-6">
+    	<button class="btn btn-block btn-primary">GRAVAR</button>
+
+
+    </div>
+</form>
+</div>  </div>
+
+</div>
 </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 
