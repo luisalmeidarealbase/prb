@@ -9,7 +9,6 @@ session_start();
 
 if (isset($_GET['id'])){
 	$idIT = $_GET['id'];
-	$status = $_GET['status'];
 }
 $queryToShowIt = "SELECT * FROM tbl_its WHERE id_it = $idIT";
 $resultShowIt = mysqli_query($link, $queryToShowIt);
@@ -35,6 +34,11 @@ while ($row = mysqli_fetch_object($resultShowIt)) {
 
 
 }
+
+if (isset($_GET['status'])){
+	$estado = $_GET['status'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -211,136 +215,173 @@ scratch. This page gets rid of all links and provides the needed markup only.
 	<div class="col-md-12">
 		<div class="box box-info">
 			<div class="box-header">
-				<h3 class="box-title">Visualização de Instrução de Trabalho - <b style="text-transform: uppercase;"><?php echo utf8_encode($tituloProcedimento); ?></b></h3>
+				<h3 class="box-title">Edição de Instrução de Trabalho - <b style="text-transform: uppercase;"><?php echo utf8_encode($tituloProcedimento); ?></b></h3>
 				<!-- tools box -->
 				<div class="pull-right box-tools">
-
-					<!-- The available options will depend of the it status -->
+					<button class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
 					
-					<div class="btn-group">
-						<button type="button" class="btn btn-default">Gerir</button>
-						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-							<span class="caret"></span>
-							<span class="sr-only">Toggle Dropdown</span>
-						</button>
+				</div><!-- /. tools -->
+			</div><!-- /.box-header -->
 
-						<!-- MANAGMENT MENU OF AN IT -->
-						<ul class="dropdown-menu" role="menu">
-							<?php if ($status == 1) {
+			<div class="box-body">
+				<div class="form-group">
+					
 
-								?>
-								<li><a href="update-status-it.php?id=<?php echo $idIT;?>&a=yes&status=1">Remeter para Aprovação</a></li>
-							<?php } ?>
+					<form action="process-update-it.php?id=<?php echo $idIT;?>" name="form-new-version-it" method="post">
+					<label>Escolha da lista o procedimento em que se insere a instrução de trabalho:</label>
 
-							<?php if ($status == 2) {
+					<select class="form-control" id="listaprocedimento" name="listaprocedimento">
+						
+						<option value="cit">CIT</option>
+						<option value="compras">Compras</option>
+						<option value="comevendas">Comercial & Vendas</option>
+						<option value="1">Gestão</option>
+						<?php if ($procedimento = 3) {
+							# code...
+							echo "<option value='3' selected='selected'>Produção</option>";
+						}
+						?>
+						
+						<option value="recursoshumanos">Recursos Humanos</option>
+						<option value="recursospatrimoniais">Recursos Patrimoniais</option>
+						<option value="ocorrencias">Ocorrências</option>
+						<option value="2">Controlo de Documentos e Registos</option>
+						<option value="auditorias">Auditorias</option>
 
-							?>
-								<li><a href="update-status-it.php?id=<?php echo $idIT;?>&a=no&status=2">Remeter para Edição</a></li>
-								<li><a href="update-status-it.php?id=<?php echo $idIT;?>&a=yes&status=2">Remeter para Validação</a></li>
-							<?php } ?>
-							<?php if ($status == 3) {
+					</select>
 
-							?>
-								<li><a href="update-status-it.php?id=<?php echo $idIT;?>&a=no&status=3">Remeter para Aprovação</a></li>
-								<li><a href="update-status-it.php?id=<?php echo $idIT;?>&a=yes&status=3">Remeter para Publicação</a></li>
-							<?php } ?>
-								</ul>
-							</div>
+				</div>
+
+				<div class="form-group">
+					
+					<label>Escolha da lista o sub processo em que se insere a instrução de trabalho:</label>
+					<small>Atenção: rever sempre o subprocesso em que se insere a IT.</small>
+
+					<select class="form-control" id="listasubprocesso" name="listasubprocesso">
+						<?php if ($procedimento = 3){
+
+						 ?>
+
+						<option value="naoaplicavel">Não aplicável</option>
+						<option value="Pré Impressão">Pré impressão</option>
+						<option value="Impressão">Impressão</option>
+						<option value="Acabamentos">Acabamentos</option>
+						<option value="Controlo de qualidade">Controlo de qualidade</option>
+						<option value="Expedição">Expedição</option>
+						<option value="Gestão de Armazém">Gestão de Armazém</option>
+
+						<?php } ?>
+
+					</select>
+
+				</div>
+
+				<div class="form-group">
+					<label>Objectivo</label>
+					<input type="text" class="form-control" name="objectivoit" value="<?php echo $objectivo; ?>" >
+				</div>
 
 
-						</div><!-- /. tools -->
-					</div><!-- /.box-header -->
+				<label>Corpo da Instrução de Trabalho</label>
+				<textarea  id="editor1" name="editor1" rows="10" cols="80" value="fsdfd" placeholder="Escrever o conteúdo da IT aqui..."> 
+				<?php echo $body; ?></textarea>
 
-					<div class="box-body">
+
+				<script>
 
 
-						menu goes here 
-						<dl>
-							<dt>Objectivo:</dt>
-							<dd><?php echo $objectivo?></dd><br>
-							<dt>Sub Processo</dt>
-							<dd><?php echo $subprocesso; ?></dd><br>
 
-							<dt>Something's missing here</dt>
-							<dd><?php echo $body; ?></dd>
-						</dl>
-					</div>
+					var editor = CKEDITOR.replace( 'editor1' );
+					CKFinder.setupCKEditor( editor );
 
-				</div>  </div>
 
-			</div>
-		</section><!-- /.content -->
-	</div><!-- /.content-wrapper -->
+        //CKEDITOR.replace( 'editor1' );
+        
+    </script>
 
-	<!-- Main Footer -->
-	<footer class="main-footer">
-		<!-- To the right -->
-		<div class="pull-right hidden-xs">
-			SGQ&CoC
-		</div>
-		<!-- Default to the left -->
-		<strong>Copyright &copy; 2016 <a href="#">Portal Realbase</a>.</strong> Todos os direitos reservados.
-	</footer>
 
-	<!-- Control Sidebar -->
-	<aside class="control-sidebar control-sidebar-dark">
-		<!-- Create the tabs -->
-		<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-			<li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-			<li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-		</ul>
-		<!-- Tab panes -->
-		<div class="tab-content">
-			<!-- Home tab content -->
-			<div class="tab-pane active" id="control-sidebar-home-tab">
-				<h3 class="control-sidebar-heading">Recent Activity</h3>
-				<ul class="control-sidebar-menu">
-					<li>
-						<a href="javascript::;">
-							<i class="menu-icon fa fa-birthday-cake bg-red"></i>  
-							<div class="menu-info">
-								<h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-								<p>Will be 23 on April 24th</p>
-							</div>
-						</a>
-					</li>
-				</ul><!-- /.control-sidebar-menu -->
+    <br><br>
+    <div class="col-md-6">
+    	<button class="btn btn-block btn-primary">GRAVAR</button>
 
-				<h3 class="control-sidebar-heading">Tasks Progress</h3>
-				<ul class="control-sidebar-menu">
-					<li>
-						<a href="javascript::;">
-							<h4 class="control-sidebar-subheading">
-								Custom Template Design
-								<span class="label label-danger pull-right">70%</span>
-							</h4>
-							<div class="progress progress-xxs">
-								<div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-							</div>
-						</a>
-					</li>
-				</ul><!-- /.control-sidebar-menu -->
 
-			</div><!-- /.tab-pane -->
-			<!-- Stats tab content -->
-			<div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
-			<!-- Settings tab content -->
-			<div class="tab-pane" id="control-sidebar-settings-tab">
-				<form method="post">
-					<h3 class="control-sidebar-heading">General Settings</h3>
-					<div class="form-group">
-						<label class="control-sidebar-subheading">
-							Report panel usage
-							<input type="checkbox" class="pull-right" checked>
-						</label>
-						<p>
-							Some information about this general settings option
-						</p>
-					</div><!-- /.form-group -->
-				</form>
-			</div><!-- /.tab-pane -->
-		</div>
-	</aside><!-- /.control-sidebar -->
+    </div>
+</form>
+</div>  </div>
+
+</div>
+</section><!-- /.content -->
+</div><!-- /.content-wrapper -->
+
+<!-- Main Footer -->
+<footer class="main-footer">
+	<!-- To the right -->
+	<div class="pull-right hidden-xs">
+		SGQ&CoC
+	</div>
+	<!-- Default to the left -->
+	<strong>Copyright &copy; 2016 <a href="#">Portal Realbase</a>.</strong> Todos os direitos reservados.
+</footer>
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+	<!-- Create the tabs -->
+	<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+		<li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+		<li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+	</ul>
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<!-- Home tab content -->
+		<div class="tab-pane active" id="control-sidebar-home-tab">
+			<h3 class="control-sidebar-heading">Recent Activity</h3>
+			<ul class="control-sidebar-menu">
+				<li>
+					<a href="javascript::;">
+						<i class="menu-icon fa fa-birthday-cake bg-red"></i>  
+						<div class="menu-info">
+							<h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+							<p>Will be 23 on April 24th</p>
+						</div>
+					</a>
+				</li>
+			</ul><!-- /.control-sidebar-menu -->
+
+			<h3 class="control-sidebar-heading">Tasks Progress</h3>
+			<ul class="control-sidebar-menu">
+				<li>
+					<a href="javascript::;">
+						<h4 class="control-sidebar-subheading">
+							Custom Template Design
+							<span class="label label-danger pull-right">70%</span>
+						</h4>
+						<div class="progress progress-xxs">
+							<div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+						</div>
+					</a>
+				</li>
+			</ul><!-- /.control-sidebar-menu -->
+
+		</div><!-- /.tab-pane -->
+		<!-- Stats tab content -->
+		<div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
+		<!-- Settings tab content -->
+		<div class="tab-pane" id="control-sidebar-settings-tab">
+			<form method="post">
+				<h3 class="control-sidebar-heading">General Settings</h3>
+				<div class="form-group">
+					<label class="control-sidebar-subheading">
+						Report panel usage
+						<input type="checkbox" class="pull-right" checked>
+					</label>
+					<p>
+						Some information about this general settings option
+					</p>
+				</div><!-- /.form-group -->
+			</form>
+		</div><!-- /.tab-pane -->
+	</div>
+</aside><!-- /.control-sidebar -->
       <!-- Add the sidebar's background. This div must be placed
       immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>

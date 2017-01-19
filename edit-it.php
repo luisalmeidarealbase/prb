@@ -225,7 +225,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 			<div class="box-body">
 				<div class="form-group">
+					
 
+					<form action="new-version-it.php" name="form-new-version-it" method="post">
 					<label>Escolha da lista o procedimento em que se insere a instrução de trabalho:</label>
 
 					<select class="form-control" id="listaprocedimento" name="listaprocedimento">

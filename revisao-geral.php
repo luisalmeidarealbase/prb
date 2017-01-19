@@ -177,24 +177,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <?php 
 
-                $queryItsEdicao = "SELECT * FROM tbl_its WHERE tbl_estados_revisao_id_estado_revisao = 1";
-                $resultQueryItsEdicao = mysqli_query($link, $queryItsEdicao);
+            $queryItsEdicao = "SELECT * FROM tbl_its WHERE tbl_estados_revisao_id_estado_revisao = 1";
+            $resultQueryItsEdicao = mysqli_query($link, $queryItsEdicao);
 
-                while ($rowItsEdicao = mysqli_fetch_object($resultQueryItsEdicao)) {
+            while ($rowItsEdicao = mysqli_fetch_object($resultQueryItsEdicao)) {
                 # code...
 
-                      $idProcedimentoIt = $rowItsEdicao->tbl_procedimentos_id_procedimento;
+              $idProcedimentoIt = $rowItsEdicao->tbl_procedimentos_id_procedimento;
 
-                      $queryToKnowProcedimentoIt = "SELECT * FROM tbl_procedimentos WHERE id_procedimento = $idProcedimentoIt";
-                      $resultToKnowProcedimentoIt = mysqli_query($link, $queryToKnowProcedimentoIt);
+              $queryToKnowProcedimentoIt = "SELECT * FROM tbl_procedimentos WHERE id_procedimento = $idProcedimentoIt";
+              $resultToKnowProcedimentoIt = mysqli_query($link, $queryToKnowProcedimentoIt);
 
-                      while ($rowProcedimento = mysqli_fetch_object($resultToKnowProcedimentoIt)) {
+              while ($rowProcedimento = mysqli_fetch_object($resultToKnowProcedimentoIt)) {
                         # code...
-                        $procedimentoIt = $rowProcedimento->nome_procedimento;
-                      }
+                $procedimentoIt = $rowProcedimento->nome_procedimento;
+              }
 
 
-            ?>
+              ?>
 
               <tr>
                 <td><a href="#"><?php echo $rowItsEdicao->objectivo_it; ?></a></td>
@@ -202,13 +202,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <td><span class="label label-success">Aguarda envio para Aprovação</span></td>
                 <td>
                   <a href="edit-it.php?id=<?php echo $rowItsEdicao->id_it; ?>&status=1"><span class="label label-info">Editar</span></a>
-                  <a href="show-it.php?id=<?php echo $rowItsEdicao->id_it; ?>"><span class="label label-info">Visualizar</span></a>
+                  <a href="show-it.php?id=<?php echo $rowItsEdicao->id_it; ?>&status=1"><span class="label label-info">Visualizar</span></a>
 
                 </td>
               </tr>
-    
-            <?php 
-               } 
+
+              <?php 
+            } 
             ?>    
 
           </tr> 
@@ -240,47 +240,56 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <tr>
 
+           <th>Documento</th>
+           <th>Procedimento</th>
+           <th>Status</th>
+           <th>Acções</th>
+         </tr>
 
-            <th>Procedimento</th>
-            <th>Data de criação da versão</th>
-            <th>Status</th>
-            <th>Acções</th>
-          </tr>
+       </thead>
+        
+         <?php 
 
-        </thead>
+            $queryItsAprovacao = "SELECT * FROM tbl_its WHERE tbl_estados_revisao_id_estado_revisao = 2";
+            $resultQueryItsAprovacao = mysqli_query($link, $queryItsAprovacao);
 
-        <tbody>
-          <?php 
+            while ($rowItsAprovacao = mysqli_fetch_object($resultQueryItsAprovacao)) {
+                # code...
 
+              $idProcedimentoIt = $rowItsAprovacao->tbl_procedimentos_id_procedimento;
 
+              $queryToKnowProcedimentoIt = "SELECT * FROM tbl_procedimentos WHERE id_procedimento = $idProcedimentoIt";
+              $resultToKnowProcedimentoIt = mysqli_query($link, $queryToKnowProcedimentoIt);
 
-
-
-          $queryAprovacoesRostos = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento WHERE publicado_versao_rosto = 0 AND aprovado_versao_rosto = 1 AND validado_versao_rosto = 0 AND historico_versao_rosto != 1 ORDER BY data_versao_rosto DESC";
-
-          $resultQueryAprovacoesRostos = mysqli_query($link,$queryAprovacoesRostos);
-
-          $aprovacoescount = 0;
-
-          while ($rowQueryAprovacoesRostos = mysqli_fetch_object($resultQueryAprovacoesRostos)){
-           $aprovacoescount++;
-           ?>
+              while ($rowProcedimento = mysqli_fetch_object($resultToKnowProcedimentoIt)) {
+                        # code...
+                $procedimentoIt = $rowProcedimento->nome_procedimento;
+              }
 
 
-           <tr>
-            <td><a href="controlodocumental.php"><?php echo utf8_encode($rowQueryAprovacoesRostos->nome_procedimento); ?></a></td>
-            <td><?php echo $rowQueryAprovacoesRostos->data_versao_rosto; ?></td>
-            <td><span class="label label-warning">Aguarda envio para Validação</span></td>
-            <td><a href='viewvalidacaorosto.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Editar</span></a> <a href='preview-procedimento-aprovacao.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Visualizar</span></a></td>
-          </tr>
-          <?php
-        }
-        if ($aprovacoescount == 0){
-          echo "Nenhum registo a mostrar.";
-        }
+              ?>
 
-        ?>
 
+
+       <tbody>
+
+
+
+
+
+
+         <tr>
+                <td><a href="#"><?php echo $rowItsAprovacao->objectivo_it; ?></a></td>
+                <td><?php echo utf8_encode($procedimentoIt); ?></td>
+                <td><span class="label label-warning">Aguarda envio para Validacao</span></td>
+                <td>
+                  <a href="update-it.php?id=<?php echo $rowItsAprovacao->id_it; ?>&status=2"><span class="label label-info">Editar</span></a>
+                  <a href="show-it.php?id=<?php echo $rowItsAprovacao->id_it; ?>&status=2"><span class="label label-info">Visualizar</span></a>
+
+                </td>
+              </tr>
+
+<?php } ?>
 
       </tr> 
     </tbody>
@@ -310,48 +319,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <thead>
 
-          <tr>
+        <tr>
 
-            <th>Procedimento</th>
-            <th>Data de criação da versão</th>
-            <th>Status</th>
-            <th>Acções</th>
-
-          </tr>
+           <th>Documento</th>
+           <th>Procedimento</th>
+           <th>Status</th>
+           <th>Acções</th>
+         </tr>
 
         </thead>
+<?php 
 
+            $queryItsValidacao = "SELECT * FROM tbl_its WHERE tbl_estados_revisao_id_estado_revisao = 3";
+            $resultQueryItsValidacao = mysqli_query($link, $queryItsValidacao);
+
+            while ($rowItsValidacao = mysqli_fetch_object($resultQueryItsValidacao)) {
+                # code...
+
+              $idProcedimentoIt = $rowItsValidacao->tbl_procedimentos_id_procedimento;
+
+              $queryToKnowProcedimentoIt = "SELECT * FROM tbl_procedimentos WHERE id_procedimento = $idProcedimentoIt";
+              $resultToKnowProcedimentoIt = mysqli_query($link, $queryToKnowProcedimentoIt);
+
+              while ($rowProcedimento = mysqli_fetch_object($resultToKnowProcedimentoIt)) {
+                        # code...
+                $procedimentoIt = $rowProcedimento->nome_procedimento;
+              }
+
+
+              ?>
         <tbody>
-         <?php 
+         
 
+                  <tr>
+                <td><a href="#"><?php echo $rowItsValidacao->objectivo_it; ?></a></td>
+                <td><?php echo utf8_encode($procedimentoIt); ?></td>
+                <td><span class="label label-danger">Aguarda envio para Publicação</span></td>
+                <td>
+                  <a href="update-it.php?id=<?php echo $rowItsValidacao->id_it; ?>&status=3"><span class="label label-info">Editar</span></a>
+                  <a href="show-it.php?id=<?php echo $rowItsValidacao->id_it; ?>&status=3"><span class="label label-info">Visualizar</span></a>
 
+                </td>
+              </tr>
 
-
-
-         $queryAprovacoesRostos = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento WHERE publicado_versao_rosto = 0 AND aprovado_versao_rosto = 1 AND validado_versao_rosto = 1 AND historico_versao_rosto != 1 ORDER BY data_versao_rosto DESC";
-
-         $resultQueryAprovacoesRostos = mysqli_query($link,$queryAprovacoesRostos);
-
-         $validacoescount = 0;
-
-
-         while ($rowQueryAprovacoesRostos = mysqli_fetch_object($resultQueryAprovacoesRostos)){
-          $validacoescount++;
-          ?>
-
-
-          <tr>
-            <td><a href="controlodocumental.php"><?php echo utf8_encode($rowQueryAprovacoesRostos->nome_procedimento); ?></a></td>
-            <td><?php echo $rowQueryAprovacoesRostos->data_versao_rosto; ?></td>
-            <td><span class="label label-danger">Aguarda envio para Publicação</span></td>
-            <td><a href='viewpublicacaorosto.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info"><!--Editar--></span></a> <a href='preview-procedimento-validacao.php?idrosto=<?php echo $rowQueryAprovacoesRostos->id_rosto;?>&idprocedimento=<?php echo $rowQueryAprovacoesRostos->id_procedimento; ?>'><span class="label label-info">Visualizar</span></a></td>
-          </tr>
-          <?php
-        }
-        if ($validacoescount == 0){
-          echo "Nenhum registo a mostrar.";
-        }
-        ?>
+<?php } ?>
 
 
       </tr> 
