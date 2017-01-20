@@ -18,7 +18,14 @@
 
     <li><a href="comercialvendas.php"><i class="fa fa-euro"></i> <span>Comercial & Vendas</span></a></li>
 
-    <li><a href="producao.php"><i class="fa fa-cogs"></i> <span>Produção</span></a></li>
+    <li class="treeview">
+      <a href="#"><i class="fa fa-cogs"></i> <span>Produção</span> <i class="fa fa-angle-left pull-right"></i></a>
+      <ul class="treeview-menu">
+        <li><a href="producao.php"><i class="fa fa-file-o"></i>Procedimento</a></li>
+        <li><a href="list-its.php"><i class="fa fa-file-o"></i>Instruções de Trabalho</a></li>
+      </ul>
+    </li> 
+
 
     <li><a href="gestao.php"><i class="fa fa-bank"></i> <span>Gestão</span></a></li>
 
@@ -33,118 +40,81 @@
       </ul>
     </li> 
 
-         <!--  <li><a href="controlodocumental.php"><i class="fa fa-file-o"></i> <span>Controlo Documental</span></a></li>
-
-          <li><a href="recursospatrimoniais.php"><i class="fa fa-file-o"></i> <span>Recursos Patrimoniais</span></a></li>
-
-          <li><a href="projecto.php"><i class="fa fa-file-o"></i> <span>Projecto</span></a></li>
-
-          <li><a href="recursoshumanos.php"><i class="fa fa-file-o"></i> <span>Recursos Humanos</span></a></li> -->
 
 
-          <li><a href="controlodocumental.php"><i class="fa fa-file-o"></i> <span>Controlo Documental</span></a></li>
-          <!-- code to create sub menu levels -->
-          
-          <!-- menu antigo de contorlo documental com os respectivos sub menus -->
-          <!--  <li class="treeview">
-            <a href="#"><i class="fa fa-files-o"></i> <span>Controlo Docs</span> <i class="fa fa-angle-left pull-right"></i></a>
-            <ul class="treeview-menu">
-              <li><a href="controlodocumental.php"><i class="fa fa-file-o"></i>Controlo Documental</a></li>
-              <li><a href="#"><i class="fa fa-balance-scale"></i>Legislação Aplicada</a></li>
-               <li><a href="obscontroldocs.php"><i class="fa fa-balance-scale"></i>Obsoletos</a></li>
-            </ul>
-          </li> --> 
+    <li><a href="controlodocumental.php"><i class="fa fa-file-o"></i> <span>Controlo Documental</span></a></li>
 
 
+    <li class="treeview">
+      <a href="#"><i class="fa fa-files-o"></i> <span>Ferramentas</span> <i class="fa fa-angle-left pull-right"></i></a>
+      <ul class="treeview-menu">
+        <li><a href="nova-it.php"><i class="fa fa-file-o"></i>Inserir IT</a></li>
+      </ul>
 
-<!--           <li><a href="aprovacoesgeral.php"><i class="fa fa-file-o"></i> <span>Aprovações</span></a></li>
--->
+      <ul class="treeview-menu">
+        <li><a href="revisao.php"><i class="fa fa-eye"></i><span>Revisão de Procedimentos</span></a></li>
+      </ul>
+      <ul class="treeview-menu">
+        <?php
 
-<!-- code to menu revisao -->
+        $itsEdicao = "SELECT * FROM tbl_its WHERE tbl_estados_revisao_id_estado_revisao = 1";
+        $resultItsEdicao = mysqli_query($link, $itsEdicao);
+        $nItsEdicao=mysqli_num_rows($resultItsEdicao);
 
-          <!-- <li class="treeview">
+        $itsAprovacao = "SELECT * FROM tbl_its WHERE tbl_estados_revisao_id_estado_revisao = 2";
+        $resultItsAprovacao = mysqli_query($link, $itsAprovacao);
+        $nItsAprovacao=mysqli_num_rows($resultItsAprovacao);
 
-            <a href="#"><i class="fa fa-eye"></i> <span>Revisão de Sistema</span> <i class="fa fa-angle-left pull-right"></i></a>
-           
-            <ul class="treeview-menu">
-              
-              <li><a href="revisaoedicoes.php"><i class="fa fa-file-o"></i>Edição/a></li>
-              <li><a href="revisaoaprovacoes.php"><i class="fa fa-files-o"></i>Aprovação</a></li>
-              <li><a href="revisaovalidacoes.php"><i class="fa fa-files-o"></i>Validação</a></li>
-
-            </ul>
-          
-          </li> -->
-
-
-
-          <li class="treeview">
-            <a href="#"><i class="fa fa-files-o"></i> <span>Ferramentas</span> <i class="fa fa-angle-left pull-right"></i></a>
-            <ul class="treeview-menu">
-              <li><a href="nova-it.php"><i class="fa fa-file-o"></i>Inserir IT</a></li>
-            </ul>
-
-            <ul class="treeview-menu">
-              <li><a href="revisao.php"><i class="fa fa-eye"></i> <span>Revisão de Procedimentos</span></a></li>
-            </ul>
-            <ul class="treeview-menu">
-            <?php
-
-              $itsEdicao = "SELECT * FROM tbl_its WHERE tbl_estados_revisao_id_estado_revisao = 1";
-              $resultItsEdicao = mysqli_query($link, $itsEdicao);
-              $nItsEdicao=mysqli_num_rows($resultItsEdicao);
-
-              $itsAprovacao = "SELECT * FROM tbl_its WHERE tbl_estados_revisao_id_estado_revisao = 2";
-              $resultItsAprovacao = mysqli_query($link, $itsAprovacao);
-              $nItsAprovacao=mysqli_num_rows($resultItsAprovacao);
-
-              $itsValidacao = "SELECT * FROM tbl_its WHERE tbl_estados_revisao_id_estado_revisao = 3";
-              $resultItsValidacao = mysqli_query($link, $itsValidacao);
-              $nItsValidacao=mysqli_num_rows($resultItsValidacao);
+        $itsValidacao = "SELECT * FROM tbl_its WHERE tbl_estados_revisao_id_estado_revisao = 3";
+        $resultItsValidacao = mysqli_query($link, $itsValidacao);
+        $nItsValidacao=mysqli_num_rows($resultItsValidacao);
 
 
-            ?>
-            <li>
-              <a href="revisao-geral.php"><i class="fa fa-eye"></i> 
-              <span>Revisão de Its</span>
-              <span class="pull-right">
+        ?>
+        <li>
+          <a href="revisao-geral.php"><i class="fa fa-eye"></i>
+            <span>Revisão de Its</span>
+            <span class="pull-right">
               <small class="label bg-green"><?php echo $nItsEdicao; ?></small>
               <small class="label bg-yellow"><?php echo $nItsAprovacao; ?></small>
               <small class="label bg-red"><?php echo $nItsValidacao; ?></small></span> </a> 
-              
+
             </li>
+            <li><a href="table-control-docs.php"><i class="fa fa-table"></i> <span>Tabela Control Doc</span></a></li>
+
+          </ul>
+        </li> 
+
+
+      </ul><!-- /.sidebar-menu -->
+
+
+
+
+      <?php }
+
+
+      if ( $_SESSION['tipouser'] == 3 ){
+        ?>
+
+
+
+        <ul class="sidebar-menu">
+          <li class="header">Menu</li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-files-o"></i> <span>Recursos Patrimoniais</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="manutencoes.php"><i class="fa fa-file-o"></i>Manutenção</a></li>
             </ul>
           </li> 
 
-        </ul><!-- /.sidebar-menu -->
-
-
-
-
-        <?php }
-
-
-        if ( $_SESSION['tipouser'] == 3 ){
-          ?>
-
-
-
-          <ul class="sidebar-menu">
-            <li class="header">Menu</li>
-            <li class="treeview">
-              <a href="#"><i class="fa fa-files-o"></i> <span>Recursos Patrimoniais</span> <i class="fa fa-angle-left pull-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="manutencoes.php"><i class="fa fa-file-o"></i>Manutenção</a></li>
-              </ul>
-            </li> 
-
-          </li> 
-        </ul><!-- /.sidebar-menu -->
-        <?php
-      }
-      ?>
-
-
+        </li> 
+      </ul><!-- /.sidebar-menu -->
       <?php
-      ?>
+    }
+    ?>
+
+
+    <?php
+    ?>
 
