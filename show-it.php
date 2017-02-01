@@ -251,10 +251,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						</div><!-- /. tools -->
 					</div><!-- /.box-header -->
 
-					<div class="box-body">
+					<div class="box-body" style="background-color: #f3f3f3;">
 
 
-						menu goes here 
 						<dl>
 							<dt>Objectivo:</dt>
 							<dd><?php echo $objectivo?></dd><br>
@@ -334,7 +333,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							<input type="checkbox" class="pull-right" checked>
 						</label>
 						<p>
-							Some information about this general settings option
+							Some information here
 						</p>
 					</div><!-- /.form-group -->
 				</form>
