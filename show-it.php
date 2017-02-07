@@ -5,6 +5,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
+if (!isset($_SESSION['fullname'])) {
+  header('location: index.php');
+}
 
 
 if (isset($_GET['id'])){
@@ -251,7 +254,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						</div><!-- /. tools -->
 					</div><!-- /.box-header -->
 
-					<div class="box-body" style="background-color: #f3f3f3;">
+					<div class="box-body">
 
 
 						<dl>

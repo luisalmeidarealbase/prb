@@ -21,7 +21,7 @@ if (isset($_POST['listaprocedimento'])) {
 
 	$resultInserirNovaIt = mysqli_query($link, $inserirNovaIt);
 
-	header('location: nova-it.php');
+	header('location: revisao-geral.php');
 
 }
 else{

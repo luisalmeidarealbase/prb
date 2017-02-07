@@ -6,6 +6,9 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
 
+if (!isset($_SESSION['fullname'])) {
+  header('location: index.php');
+}
 
 ?>
 
@@ -201,17 +204,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <label>Escolha da lista o procedimento em que se insere a instrução de trabalho:</label>
 
             <select class="form-control" id="listaprocedimento" name="listaprocedimento">
-
-              <option value="cit">CIT</option>
-              <option value="compras">Compras</option>
-              <option value="comevendas">Comercial & Vendas</option>
+              <option selected>Escolher...</option>
+              <option value="4">CIT</option>
+              <option value="7">Compras</option>
+              <option value="5">Comercial & Vendas</option>
               <option value="1">Gestão</option>
               <option value="3">Produção</option>
-              <option value="recursoshumanos">Recursos Humanos</option>
-              <option value="recursospatrimoniais">Recursos Patrimoniais</option>
-              <option value="ocorrencias">Ocorrências</option>
+              <option value="10">Recursos Humanos</option>
+              <option value="6">Recursos Patrimoniais</option>
+              <option value="8">Ocorrências</option>
               <option value="2">Controlo de Documentos e Registos</option>
-              <option value="auditorias">Auditorias</option>
+              <option value="9">Auditorias</option>
 
             </select>
 
