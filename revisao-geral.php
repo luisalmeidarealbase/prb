@@ -201,7 +201,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <td><?php echo utf8_encode($procedimentoIt); ?></td>
                 <td><span class="label label-success">Aguarda envio para Aprovação</span></td>
                 <td>
-                  <a href="edit-it.php?id=<?php echo $rowItsEdicao->id_it; ?>&status=1"><span class="label label-info">Editar</span></a>
+                  <a href="update-it.php?id=<?php echo $rowItsEdicao->id_it; ?>&status=1"><span class="label label-info">Editar</span></a>
                   <a href="show-it.php?id=<?php echo $rowItsEdicao->id_it; ?>&status=1"><span class="label label-info">Visualizar</span></a>
 
                 </td>

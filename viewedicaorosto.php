@@ -266,7 +266,7 @@ desired effect
                                        style="width: 100%; height: auto;"></dd>
                             <br><br>
                             <dt>Saídas</dt>
-                            <dd><input type="text" value='<?php echo $saidas; ?>' name="saidas" style="width: 100%" ;>
+                            <dd><input type="text" value='<?php echo utf8_decode($saidas); ?>' name="saidas" style="width: 100%" ;>
                             </dd>
                             <br><br>
                             <!--  <dt>Definição e abreviatura</dt>

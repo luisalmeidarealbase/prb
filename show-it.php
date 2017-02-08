@@ -6,7 +6,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
 if (!isset($_SESSION['fullname'])) {
-  header('location: index.php');
+	header('location: index.php');
 }
 
 
@@ -211,7 +211,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Main content -->
 <section class="content">
 	<!-- Your Page Content Here -->
-	<div class="col-md-12">
+	<div class="col-md-8 col-sm-12">
 		<div class="box box-info">
 			<div class="box-header">
 				<h3 class="box-title">Visualização de Instrução de Trabalho - <b style="text-transform: uppercase;"><?php echo utf8_encode($tituloProcedimento); ?></b></h3>
@@ -233,116 +233,130 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 								?>
 								<li><a href="update-status-it.php?id=<?php echo $idIT;?>&a=yes&status=1">Remeter para Aprovação</a></li>
-							<?php } ?>
+								<li class="divider"></li>
+								<li><a href="update-it.php?id=<?php echo $idIT;?>&a=yes&status=1">Editar</a></li>
+								<?php } ?>
 
-							<?php if ($status == 2) {
+								<?php if ($status == 2) {
 
+									?>
+									<li><a href="update-status-it.php?id=<?php echo $idIT;?>&a=no&status=2">Remeter para Edição</a></li>
+									<li><a href="update-status-it.php?id=<?php echo $idIT;?>&a=yes&status=2">Remeter para Validação</a></li>
+									<li class="divider"></li>
+								<li><a href="update-it.php?id=<?php echo $idIT;?>&a=yes&status=1">Editar</a></li>
+									<?php } ?>
+									<?php if ($status == 3) {
+
+										?>
+										<li><a href="update-status-it.php?id=<?php echo $idIT;?>&a=no&status=3">Remeter para Aprovação</a></li>
+										<li><a href="update-status-it.php?id=<?php echo $idIT;?>&a=yes&status=3">Remeter para Publicação</a></li>
+										<li class="divider"></li>
+								<li><a href="update-it.php?id=<?php echo $idIT;?>&a=yes&status=1">Editar</a></li>
+										<?php } ?>
+									</ul>
+								</div>
+
+
+							</div><!-- /. tools -->
+						</div><!-- /.box-header -->
+
+						<div class="box-body" style="background-color: #ECF0F5; padding: 0; padding-top: 10px; ">
+							<div  style="background-color: #fff; border: 1px solid #ededed; padding:10px;">
+								<h2><?php echo $objectivo; ?></h2>
+
+								<dl>
+							<!-- <dt>Objectivo:</dt>
+							<dd><?php echo $objectivo?></dd><br> -->
+							<?php 
+								if ($subprocesso != "naoaplicavel"){
 							?>
-								<li><a href="update-status-it.php?id=<?php echo $idIT;?>&a=no&status=2">Remeter para Edição</a></li>
-								<li><a href="update-status-it.php?id=<?php echo $idIT;?>&a=yes&status=2">Remeter para Validação</a></li>
-							<?php } ?>
-							<?php if ($status == 3) {
-
-							?>
-								<li><a href="update-status-it.php?id=<?php echo $idIT;?>&a=no&status=3">Remeter para Aprovação</a></li>
-								<li><a href="update-status-it.php?id=<?php echo $idIT;?>&a=yes&status=3">Remeter para Publicação</a></li>
-							<?php } ?>
-								</ul>
-							</div>
-
-
-						</div><!-- /. tools -->
-					</div><!-- /.box-header -->
-
-					<div class="box-body">
-
-
-						<dl>
-							<dt>Objectivo:</dt>
-							<dd><?php echo $objectivo?></dd><br>
 							<dt>Sub Processo</dt>
 							<dd><?php echo $subprocesso; ?></dd><br>
-
-							<dt>Something's missing here</dt>
+							<?php } ?>
+							<dt></dt>
 							<dd><?php echo $body; ?></dd>
 						</dl>
 					</div>
 
-				</div>  </div>
-
+				</div>
+	
+			</div>  
 			</div>
+
+		</div>
 		</section><!-- /.content -->
-	</div><!-- /.content-wrapper -->
 
-	<!-- Main Footer -->
-	<footer class="main-footer">
-		<!-- To the right -->
-		<div class="pull-right hidden-xs">
-			SGQ&CoC
-		</div>
-		<!-- Default to the left -->
-		<strong>Copyright &copy; 2016 <a href="#">Portal Realbase</a>.</strong> Todos os direitos reservados.
-	</footer>
 
-	<!-- Control Sidebar -->
-	<aside class="control-sidebar control-sidebar-dark">
-		<!-- Create the tabs -->
-		<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-			<li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-			<li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-		</ul>
-		<!-- Tab panes -->
-		<div class="tab-content">
-			<!-- Home tab content -->
-			<div class="tab-pane active" id="control-sidebar-home-tab">
-				<h3 class="control-sidebar-heading">Recent Activity</h3>
-				<ul class="control-sidebar-menu">
-					<li>
-						<a href="javascript::;">
-							<i class="menu-icon fa fa-birthday-cake bg-red"></i>  
-							<div class="menu-info">
-								<h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-								<p>Will be 23 on April 24th</p>
-							</div>
-						</a>
-					</li>
-				</ul><!-- /.control-sidebar-menu -->
 
-				<h3 class="control-sidebar-heading">Tasks Progress</h3>
-				<ul class="control-sidebar-menu">
-					<li>
-						<a href="javascript::;">
-							<h4 class="control-sidebar-subheading">
-								Custom Template Design
-								<span class="label label-danger pull-right">70%</span>
-							</h4>
-							<div class="progress progress-xxs">
-								<div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-							</div>
-						</a>
-					</li>
-				</ul><!-- /.control-sidebar-menu -->
+		<!-- Main Footer -->
+		<footer class="main-footer">
+			<!-- To the right -->
+			<div class="pull-right hidden-xs">
+				SGQ&CoC
+			</div>
+			<!-- Default to the left -->
+			<strong>Copyright &copy; 2017 <a href="#">Portal Realbase</a>.</strong> Todos os direitos reservados.
+		</footer>
 
-			</div><!-- /.tab-pane -->
-			<!-- Stats tab content -->
-			<div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
-			<!-- Settings tab content -->
-			<div class="tab-pane" id="control-sidebar-settings-tab">
-				<form method="post">
-					<h3 class="control-sidebar-heading">General Settings</h3>
-					<div class="form-group">
-						<label class="control-sidebar-subheading">
-							Report panel usage
-							<input type="checkbox" class="pull-right" checked>
-						</label>
-						<p>
-							Some information here
-						</p>
-					</div><!-- /.form-group -->
-				</form>
-			</div><!-- /.tab-pane -->
-		</div>
-	</aside><!-- /.control-sidebar -->
+		<!-- Control Sidebar -->
+		<aside class="control-sidebar control-sidebar-dark">
+			<!-- Create the tabs -->
+			<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+				<li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+				<li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+			</ul>
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<!-- Home tab content -->
+				<div class="tab-pane active" id="control-sidebar-home-tab">
+					<h3 class="control-sidebar-heading">Recent Activity</h3>
+					<ul class="control-sidebar-menu">
+						<li>
+							<a href="javascript::;">
+								<i class="menu-icon fa fa-birthday-cake bg-red"></i>  
+								<div class="menu-info">
+									<h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+									<p>Will be 23 on April 24th</p>
+								</div>
+							</a>
+						</li>
+					</ul><!-- /.control-sidebar-menu -->
+
+					<h3 class="control-sidebar-heading">Tasks Progress</h3>
+					<ul class="control-sidebar-menu">
+						<li>
+							<a href="javascript::;">
+								<h4 class="control-sidebar-subheading">
+									Custom Template Design
+									<span class="label label-danger pull-right">70%</span>
+								</h4>
+								<div class="progress progress-xxs">
+									<div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+								</div>
+							</a>
+						</li>
+					</ul><!-- /.control-sidebar-menu -->
+
+				</div><!-- /.tab-pane -->
+				<!-- Stats tab content -->
+				<div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
+				<!-- Settings tab content -->
+				<div class="tab-pane" id="control-sidebar-settings-tab">
+					<form method="post">
+						<h3 class="control-sidebar-heading">General Settings</h3>
+						<div class="form-group">
+							<label class="control-sidebar-subheading">
+								Report panel usage
+								<input type="checkbox" class="pull-right" checked>
+							</label>
+							<p>
+								Some information here
+							</p>
+						</div><!-- /.form-group -->
+					</form>
+				</div><!-- /.tab-pane -->
+			</div>
+		</aside><!-- /.control-sidebar -->
       <!-- Add the sidebar's background. This div must be placed
       immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>

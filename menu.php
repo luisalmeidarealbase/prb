@@ -28,10 +28,12 @@
 
 
     <li><a href="gestao.php"><i class="fa fa-bank"></i> <span>Gestão</span></a></li>
+    <li><a href="rh.php"><i class="fa fa-users"></i> <span>Recursos Humanos</span></a></li>
 
     <li><a href="auditorias.php"><i class="fa fa-legal"></i> <span>Auditorias</span></a></li>
 
     <li><a href="ocorrencias.php"><i class="fa fa-file-o"></i> <span>Ocorrências</span></a></li>
+
 
     <li class="treeview">
       <a href="#"><i class="fa fa-files-o"></i> <span>Recursos Patrimoniais</span> <i class="fa fa-angle-left pull-right"></i></a>
