@@ -14,25 +14,73 @@
     <!-- Optionally, you can add icons to the links -->
     <li class="active"><a href="starter.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
-    <li><a href="compras.php"><i class="fa fa-shopping-cart"></i> <span>Compras</span></a></li>
+    <li class="treeview">
 
-    <li><a href="comercialvendas.php"><i class="fa fa-euro"></i> <span>Comercial & Vendas</span></a></li>
+      <a href="#"><i class="fa fa-shopping-cart"></i> <span>Compras</span> <i class="fa fa-angle-left pull-right"></i></a>
+      <ul class="treeview-menu">
+        <li><a href="compras.php"><i class="fa fa-file-o"></i>Procedimento</a></li>
+        <li><a href="list-its.php?id=7"><i class="fa fa-file-o"></i>Instruções de Trabalho</a></li>
+      </ul>
+
+    </li>
+
+    <li class="treeview">
+    
+      <a href="#"><i class="fa fa-euro"></i> <span>Comercial & Vendas</span> <i class="fa fa-angle-left pull-right"></i></a>
+      <ul class="treeview-menu">
+        <li><a href="comercialvendas.php"><i class="fa fa-file-o"></i>Procedimento</a></li>
+        <li><a href="list-its.php?id=5"><i class="fa fa-file-o"></i>Instruções de Trabalho</a></li>
+      </ul>
+
+    </li>
 
     <li class="treeview">
       <a href="#"><i class="fa fa-cogs"></i> <span>Produção</span> <i class="fa fa-angle-left pull-right"></i></a>
       <ul class="treeview-menu">
         <li><a href="producao.php"><i class="fa fa-file-o"></i>Procedimento</a></li>
-        <li><a href="list-its.php"><i class="fa fa-file-o"></i>Instruções de Trabalho</a></li>
+        <li><a href="list-its.php?id=3"><i class="fa fa-file-o"></i>Instruções de Trabalho</a></li>
       </ul>
     </li> 
 
 
-    <li><a href="gestao.php"><i class="fa fa-bank"></i> <span>Gestão</span></a></li>
-    <li><a href="rh.php"><i class="fa fa-users"></i> <span>Recursos Humanos</span></a></li>
+    <li class="treeview">
+    
+      <a href="#"><i class="fa fa-bank"></i> <span>Gestão</span><i class="fa fa-angle-left pull-right"></i></a>
+      <ul class="treeview-menu">
+        <li><a href="gestao.php"><i class="fa fa-file-o"></i>Procedimento</a></li>
+        <li><a href="list-its.php?id=1"><i class="fa fa-file-o"></i>Instruções de Trabalho</a></li>
+      </ul>
 
-    <li><a href="auditorias.php"><i class="fa fa-legal"></i> <span>Auditorias</span></a></li>
+    </li>
+    
+    <li class="treeview">
 
-    <li><a href="ocorrencias.php"><i class="fa fa-file-o"></i> <span>Ocorrências</span></a></li>
+      <a href="#"><i class="fa fa-users"></i> <span>Recursos Humanos</span> <i class="fa fa-angle-left pull-right"></i></a>
+       <ul class="treeview-menu">
+        <li><a href="rh.php"><i class="fa fa-file-o"></i>Procedimento</a></li>
+        <li><a href="list-its.php?id=10"><i class="fa fa-file-o"></i>Instruções de Trabalho</a></li>
+      </ul>
+
+    </li>
+
+    <li class="treeview">
+
+      <a href="#"><i class="fa fa-legal"></i> <span>Auditorias</span> <i class="fa fa-angle-left pull-right"></i></a>
+      <ul class="treeview-menu">
+        <li><a href="auditorias.php"><i class="fa fa-file-o"></i>Procedimento</a></li>
+        <li><a href="list-its.php?id=9"><i class="fa fa-file-o"></i>Instruções de Trabalho</a></li>
+      </ul>
+
+    </li>
+
+    <li>
+
+      <a href="#"><i class="fa fa-file-o"></i> <span>Ocorrências</span> <i class="fa fa-angle-left pull-right"></i></a>
+       <ul class="treeview-menu">
+        <li><a href="ocorrencias.php"><i class="fa fa-file-o"></i>Procedimento</a></li>
+        <li><a href="list-its.php?id=8"><i class="fa fa-file-o"></i>Instruções de Trabalho</a></li>
+      </ul>
+    </li>
 
 
     <li class="treeview">

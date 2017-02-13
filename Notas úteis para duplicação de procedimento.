@@ -5,4 +5,6 @@ Notas úteis para duplicação de procedimento.
 3 - Criar registo na tabela versoes rostos (colocar o estado de publicado com valor de 1)
 4 - criar sub processos na tabela de sub processos
 5 - mudar o hyperlink do botao "editar procedimento" para respectiva pagina - neste caso a mesma do procedimento
-6 -
+6 - mudar o header location para edicao-nomeprocedimento.php
+7 - criar registos na tabela actividades. criar o respectivo numero de actividades que cada sub processo tem, tendo em conta o id do subprocesso
+8 - 
