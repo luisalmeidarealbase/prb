@@ -17,7 +17,7 @@ if ($_GET['id']){
 if (isset($_POST['listaprocedimento'])) {
 	
 	$procedimentoit = $_POST['listaprocedimento'];
-	$listasubprocessoit = $_POST['listasubprocesso'];
+	$listasubprocessoit = htmlentities($_POST['listasubprocesso']);
 	$objectivoit = $_POST['objectivoit'];
 	$corpoit = $_POST['editor1'];
 	$autor = 0;

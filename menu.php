@@ -95,7 +95,7 @@
     <li><a href="controlodocumental.php"><i class="fa fa-file-o"></i> <span>Controlo Documental</span></a></li>
 
 
-    <li class="treeview">
+    <li class="treeview active">
       <a href="#"><i class="fa fa-files-o"></i> <span>Ferramentas</span> <i class="fa fa-angle-left pull-right"></i></a>
       <ul class="treeview-menu">
         <li><a href="nova-it.php"><i class="fa fa-file-o"></i>Inserir IT</a></li>
