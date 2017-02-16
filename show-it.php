@@ -161,35 +161,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<?php
 				include("menu.php")
 				?>
-				<!-- BEGIN LUIS ALMEIDA -->
-				<!-- Sidebar Menu -->
-        <!--   <ul class="sidebar-menu">
-        <li class="header">Menu</li> -->
-        <!-- Optionally, you can add icons to the links -->
-        <!--   <li class="active"><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-
-          <li><a href="#"><i class="fa fa-shopping-cart"></i> <span>Compras</span></a></li>
-
-          <li><a href="#"><i class="fa fa-balance-scale"></i> <span>Comercial & Vendas</span></a></li>
-
-          <li><a href="#"><i class="fa fa-cogs"></i> <span>Produção</span></a></li>
-
-          <li><a href="#"><i class="fa fa-bank"></i> <span>Gestão</span></a></li>
-
-          <li><a href="#"><i class="fa fa-legal"></i> <span>Auditorias</span></a></li>
-
-          <li><a href="#"><i class="fa fa-file-o"></i> <span>Ocorrências</span></a></li>
-      -->
-
-          <!-- <li class="treeview">
-            <a href="#"><i class="fa fa-link"></i> <span>Comercia</span> <i class="fa fa-angle-left pull-right"></i></a>
-            <ul class="treeview-menu">
-              <li><a href="#">Link in level 2</a></li>
-              <li><a href="#">Link in level 2</a></li>
-            </ul>
-        </li> -->
-<!--         </ul>
-	<--></-->
+				
 
 	<!-- END LUIS ALMEIDA -->
 	<!-- /.sidebar-menu -->
@@ -198,7 +170,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </aside>
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<div class="content-wrapper" style="min-height: 1212px;height: auto;overflow: hidden;position: relative;">
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 		<h1>
@@ -283,6 +255,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 									echo $codigo."-".$versao;
 									?>
+									<div class="pull-right"><i>Cópia não controlada após impressão</i> </div>
 									<h2><?php echo $objectivo; ?></h2>
 
 									<dl>
@@ -297,9 +270,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								<dt></dt>
 								<dd><?php echo $body; ?></dd>
 							</dl>
+							
 					</div>
 </div><!-- /.box-body -->
 <div class="box-footer clearfix" style="display: block;">
+<div class="pull-left"><?php echo $codigo."-".$versao; ?> </div>
+
+<div class="pull-right"><i>Cópia não controlada após impressão</i> </div>
      <!--  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
      <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a> -->
    </div><!-- /.box-footer -->

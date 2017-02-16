@@ -197,12 +197,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               ?>
 
               <tr>
-                <td><a href="#"><?php echo $rowItsEdicao->objectivo_it; ?></a></td>
-                <td><?php echo utf8_encode($procedimentoIt); ?></td>
-                <td><span class="label label-success">Aguarda envio para Aprovação</span></td>
-                <td>
+                <td style="width: 40%;"><a href="show-it.php?id=<?php echo $rowItsEdicao->id_it; ?>&status=1"><?php echo $rowItsEdicao->objectivo_it; ?></a></td>
+                <td style="width: 20%;"><?php echo utf8_encode($procedimentoIt); ?></td>
+                <td style="width: 20%;"><span class="label label-success">Aguarda envio para Aprovação</span></td>
+                <td style="width: 20%;">
                   <a href="update-it.php?id=<?php echo $rowItsEdicao->id_it; ?>&status=1"><span class="label label-info">Editar</span></a>
                   <a href="show-it.php?id=<?php echo $rowItsEdicao->id_it; ?>&status=1"><span class="label label-info">Visualizar</span></a>
+                  <a href="update-status-it.php?id=<?php echo $rowItsEdicao->id_it;?>&a=yes&status=1"><span class="label label-info"><i class="fa fa-fw fa-level-down"></i></span></a>
 
                 </td>
               </tr>
@@ -279,12 +280,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
          <tr>
-                <td><a href="#"><?php echo $rowItsAprovacao->objectivo_it; ?></a></td>
-                <td><?php echo utf8_encode($procedimentoIt); ?></td>
-                <td><span class="label label-warning">Aguarda envio para Validacao</span></td>
-                <td>
+                <td style="width: 40%;"><a href="show-it.php?id=<?php echo $rowItsAprovacao->id_it; ?>&status=2"><?php echo $rowItsAprovacao->objectivo_it; ?></a></td>
+                <td style="width: 20%;"><?php echo utf8_encode($procedimentoIt); ?></td>
+                <td style="width: 20%;"><span class="label label-warning">Aguarda envio para Validacao</span></td>
+                <td style="width: 20%;">
                   <a href="update-it.php?id=<?php echo $rowItsAprovacao->id_it; ?>&status=2"><span class="label label-info">Editar</span></a>
                   <a href="show-it.php?id=<?php echo $rowItsAprovacao->id_it; ?>&status=2"><span class="label label-info">Visualizar</span></a>
+                  <a href="update-status-it.php?id=<?php echo $rowItsAprovacao->id_it;?>&a=yes&status=2"><span class="label label-info"><i class="fa fa-fw fa-level-down"></i></span></a>
+                  <a href="update-status-it.php?id=<?php echo $rowItsAprovacao->id_it;?>&a=no&status=2"><span class="label label-info"><i class="fa fa-fw fa-level-up"></i></span></a>
 
                 </td>
               </tr>
@@ -352,13 +355,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
          
 
                   <tr>
-                <td><a href="#"><?php echo $rowItsValidacao->objectivo_it; ?></a></td>
-                <td><?php echo utf8_encode($procedimentoIt); ?></td>
-                <td><span class="label label-danger">Aguarda envio para Publicação</span></td>
-                <td>
+                <td style="width: 40%;"><a href="show-it.php?id=<?php echo $rowItsValidacao->id_it; ?>&status=3"><?php echo $rowItsValidacao->objectivo_it; ?></a></td>
+                <td style="width: 20%;"><?php echo utf8_encode($procedimentoIt); ?></td>
+                <td style="width: 20%;"><span class="label label-danger">Aguarda envio para Publicação</span></td>
+                <td style="width: 20%;">
                   <a href="update-it.php?id=<?php echo $rowItsValidacao->id_it; ?>&status=3"><span class="label label-info">Editar</span></a>
                   <a href="show-it.php?id=<?php echo $rowItsValidacao->id_it; ?>&status=3"><span class="label label-info">Visualizar</span></a>
-
+                  <a href="update-status-it.php?id=<?php echo $rowItsValidacao->id_it;?>&a=no&status=3"><span class="label label-info"><i class="fa fa-fw fa-level-up"></i></span></a>
                 </td>
               </tr>
 

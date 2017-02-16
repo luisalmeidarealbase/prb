@@ -191,7 +191,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       $subprocIT = $rowIt->subprocesso_it;
 
-
+      if (utf8_encode($subprocIT) == "Não Aplicável" || utf8_encode($subprocIT) == "naoaplicavel" ||utf8_encode($subprocIT) == "Não aplicável" ) {
+        # code...
+        $subprocIT = "Outros";
+      }
 
       ?>
 
