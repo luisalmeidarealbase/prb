@@ -40,7 +40,8 @@ $(document).ready(function () {
             $("#listasubprocesso").html("<option value='Gestão STIC'>Gestão STIC</option><option value='Gestão de Infra-Estruturas'>Gestão de Infra-Estruturas</option>");
         } 
         else{
-            $('#listasubprocesso').prop('disabled', true);
+            //$('#listasubprocesso').prop('disabled', true);
+            $('#listasubprocesso').html("<option value='Não aplicável'>Não Aplicável</option>");
         }
 
     });
