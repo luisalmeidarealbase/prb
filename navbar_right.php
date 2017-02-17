@@ -107,29 +107,29 @@
                 <li class="user-header">
                   <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                   <p>
-                    <?php echo utf8_decode($_SESSION['fullname']) ?> 
-                    <small>2016</small>
+                    <?php echo utf8_encode($_SESSION['fullname']) ?> 
+                    <small>2017</small>
                   </p>
                 </li>
                 <!-- Menu Body -->
                 <li class="user-body">
                   <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
+                    <a href="#">item 1</a>
                   </div>
                   <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
+                    <a href="#">item 2</a>
                   </div>
                   <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
+                    <a href="#">item 3</a>
                   </div>
                 </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    <a href="#" class="btn btn-default btn-flat">Perfil</a>
                   </div>
                   <div class="pull-right">
-                    <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+                    <a href="logout.php" class="btn btn-default btn-flat">Terminar sessão</a>
                   </div>
                 </li>
               </ul>

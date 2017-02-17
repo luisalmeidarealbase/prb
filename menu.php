@@ -13,6 +13,8 @@
     <li class="header">Menu</li>
     <!-- Optionally, you can add icons to the links -->
     <li class="active"><a href="starter.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+    <li class="active"><a href="profile.php?id=<?php echo $_SESSION['iduser']?>"><i class="fa fa-user"></i> <span><?php echo utf8_encode($_SESSION['fullname']); ?></span></a></li>
+
 
     <li class="treeview">
 
