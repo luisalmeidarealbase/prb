@@ -87,7 +87,7 @@
 
     <li>
 
-      <a href="#"><i class="fa fa-file-o"></i> <span>Ocorrências</span> <i class="fa fa-angle-left pull-right"></i></a>
+      <a href="#"><i class="fa fa-file-o"></i> <span>Ocorrências e Tratamento</span> <i class="fa fa-angle-left pull-right"></i></a>
        <ul class="treeview-menu">
         <li><a href="ocorrencias.php"><i class="fa fa-file-o"></i>Procedimento</a></li>
         <li><a href="list-its.php?id=8"><i class="fa fa-file-o"></i>Instruções de Trabalho</a></li>
@@ -98,8 +98,10 @@
     <li class="treeview">
       <a href="#"><i class="fa fa-files-o"></i> <span>Recursos Patrimoniais</span> <i class="fa fa-angle-left pull-right"></i></a>
       <ul class="treeview-menu">
-        <li><a href="manutencoes.php"><i class="fa fa-file-o"></i>Manutenção</a></li>
-      </ul>
+        <li><a href="recursospatrimoniais.php"><i class="fa fa-file-o"></i>Procedimento</a></li>
+        <li><a href="list-its.php?id=6"><i class="fa fa-file-o"></i>Instruções de Trabalho</a></li>
+<!--         <li><a href="manutencoes.php"><i class="fa fa-file-o"></i>Manutenção</a></li>
+ -->      </ul>
     </li> 
 
 
