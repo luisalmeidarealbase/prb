@@ -220,7 +220,7 @@ desired effect
                     </dl>
 
                     <br>
-                    <form action="editrostocomevendas.php" name="formEdicaoRostoControlDoc" method="POST">
+                    <form action="edicaorostocomevendas.php" name="formEdicaoRostoControlDoc" method="POST">
                         <dl class="dl-horizontal">
                             <dt>Objectivo procedimento</dt>
                             <dd><input type="text" value='<?php echo utf8_decode($objectivo); ?>'
@@ -272,7 +272,7 @@ desired effect
                 </div>
                     <div class="col-md-6">
                         <!-- code to embed a pdf file -->
-                        <embed src="fluxogramas/fluxogramacompras.pdf" style="min-width: 100%;  min-height: 500px;" class="img-responsive"
+                        <embed src="fluxogramas/fluxogramacomevendas.pdf" style="min-width: 100%;  min-height: 500px;" class="img-responsive"
                                type='application/pdf'>
                     </div>
                 </div><!-- /.box-body -->

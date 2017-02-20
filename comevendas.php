@@ -199,7 +199,7 @@ desired effect
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Compras<br>
+                Comercial & Vendas<br>
                 <small>Recreating DNA</small>
             </h1>
             <br>
@@ -339,7 +339,7 @@ desired effect
                     </div>
                     <div class="col-md-6">
                         <!-- code to embed a pdf file -->
-                        <embed src="fluxogramas/fluxogramacompras.pdf" style="min-width: 100%;  min-height: 500px;" class="img-responsive"
+                        <embed src="fluxogramas/fluxogramacomevendas.pdf" style="min-width: 100%;  min-height: 500px;" class="img-responsive"
                                type='application/pdf'>
                     </div>
                 </div><!-- /.box-body -->
