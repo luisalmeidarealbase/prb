@@ -37,6 +37,16 @@
     </li>
 
     <li class="treeview">
+    
+      <a href="#"><i class="fa fa-comments"></i> <span>Comunicação & IT</span> <i class="fa fa-angle-left pull-right"></i></a>
+      <ul class="treeview-menu">
+        <li><a href="comit.php"><i class="fa fa-file-o"></i>Procedimento</a></li>
+        <li><a href="list-its.php?id=4"><i class="fa fa-file-o"></i>Instruções de Trabalho</a></li>
+      </ul>
+
+    </li>
+
+    <li class="treeview">
       <a href="#"><i class="fa fa-cogs"></i> <span>Produção</span> <i class="fa fa-angle-left pull-right"></i></a>
       <ul class="treeview-menu">
         <li><a href="producao.php"><i class="fa fa-file-o"></i>Procedimento</a></li>

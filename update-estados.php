@@ -294,6 +294,32 @@ if ($_POST['action'] == "toPublish"){
 
 	}
 
+	if ($idprocedimento == 4) {
+			
+			# code to update versions ...
+			$getVersionToChange = "SELECT * FROM tbl_control_docs WHERE procedimento = 'compras' AND tipo_documento = 'Procedimento'";
+			$resultGetVersionToChange = mysqli_query($link,$getVersionToChange);
+
+			while ($rowGetVersionToChange = mysqli_fetch_object($resultGetVersionToChange)){
+				$oldCodigo = $rowGetVersionToChange->codigo;
+				$oldVersion = $rowGetVersionToChange->versao;
+			} 
+
+			$int = (int)$oldVersion;
+			$int++;
+
+			$newVersion = sprintf("%'.02d\n", $int);
+
+			$updateProcTableControlDoc = "UPDATE tbl_control_docs SET versao = '$newVersion' WHERE procedimento = 'compras' AND tipo_documento = 'Procedimento'";
+			$resultUpdateProcTableControlDoc = mysqli_query($link,$updateProcTableControlDoc);
+
+			$concatenacao = $oldCodigo . "-" . $newVersion;
+
+			$updateTableProcedimentos = "UPDATE tbl_procedimentos SET versao_vigor = '$concatenacao' WHERE id_procedimento = 4";
+			$resultUpdateTableProcedimentos = mysqli_query($link,$updateTableProcedimentos);
+
+	}
+
 
 
 	// remove published status of old rosto
@@ -341,6 +367,10 @@ if ($_POST['action'] == "toPublish"){
 	if ($idprocedimento == 5) {
 		# code...
 		header('location: comevendas.php');
+	}
+	if ($idprocedimento == 4) {
+		# code...
+		header('location: comit.php');
 	}
 	
 }

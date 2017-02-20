@@ -8,4 +8,6 @@ Notas úteis para duplicação de procedimento.
 6 - mudar o header location para edicao-nomeprocedimento.php
 7 - criar registos na tabela actividades. criar o respectivo numero de actividades que cada sub processo tem, tendo em conta o id do subprocesso
 8 - mudar no edicao-procedimento.php o id 
-9 - mudar form action para edicaorostoPROCEDIMENTO.php
+9 - mudar form action para edicaorostoPROCEDIMENTO.php e mudar nessa pagina o ID DA QUERY INSERT NEW ROSTO
+10 - atualizar ficheiro de update-estados.php
+
