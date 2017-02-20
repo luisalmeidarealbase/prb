@@ -100,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            <img src="users/<?php echo $_SESSION['fotouser']; ?>" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
             <p><?php echo utf8_encode($_SESSION['fullname']); ?></p>
@@ -152,7 +152,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Profile Image -->
       <div class="box box-primary">
         <div class="box-body box-profile">
-          <img class="profile-user-img img-responsive img-circle" src="dist/img/user2-160x160.jpg" alt="User profile picture">
+          <img class="profile-user-img img-responsive img-circle" src="users/<?php echo $_SESSION['fotouser']; ?>" alt="User profile picture">
           <h3 class="profile-username text-center"><?php echo utf8_encode($_SESSION['fullname']); ?></h3>
           <p class="text-muted text-center">Colaborador desde 2014</p>
 

@@ -39,6 +39,8 @@ if (isset($_POST['username'])) {
 
         $_SESSION['fullname'] = $_SESSION['firstname']." ".$_SESSION['lastname'];
 
+        $_SESSION['fotouser'] = $row->photo_profile_name;
+
          header('Location: starter.php');
 //        echo $_SESSION['fullname'];
 

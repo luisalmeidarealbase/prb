@@ -164,7 +164,7 @@ desired effect
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="users/<?php echo $_SESSION['fotouser']; ?>" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p><?php echo utf8_encode($_SESSION['fullname']); ?></p>
@@ -292,7 +292,7 @@ desired effect
 
                         <dl class="dl-horizontal">
                             <dt>Procedimento:</dt>
-                            <dd><?php echo $nomeprocedimento; ?></dd>
+                            <dd><?php echo utf8_encode($nomeprocedimento); ?></dd>
                             <dt>Ref. Doc Versão em vigor</dt>
                             <dd><?php echo $versao_vigor; ?></dd>
                             <dt>Data de Aprovação.</dt>
