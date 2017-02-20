@@ -30,7 +30,7 @@
     
       <a href="#"><i class="fa fa-euro"></i> <span>Comercial & Vendas</span> <i class="fa fa-angle-left pull-right"></i></a>
       <ul class="treeview-menu">
-        <li><a href="comercialvendas.php"><i class="fa fa-file-o"></i>Procedimento</a></li>
+        <li><a href="comevendas.php"><i class="fa fa-file-o"></i>Procedimento</a></li>
         <li><a href="list-its.php?id=5"><i class="fa fa-file-o"></i>Instruções de Trabalho</a></li>
       </ul>
 

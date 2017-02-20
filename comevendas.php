@@ -27,7 +27,7 @@ function checkEditMode()
     */
     $query1 = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto
     INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento
-    WHERE id_procedimento = 7 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 0 AND historico_versao_rosto != 1";
+    WHERE id_procedimento = 5 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 0 AND historico_versao_rosto != 1";
 
     $resultQuery1 = mysqli_query($link, $query1);
 
@@ -35,7 +35,7 @@ function checkEditMode()
 
     $query2 = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto
     INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento
-    WHERE id_procedimento = 7 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 1 AND validado_versao_rosto = 0 AND historico_versao_rosto != 1";
+    WHERE id_procedimento = 5 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 1 AND validado_versao_rosto = 0 AND historico_versao_rosto != 1";
 
     $resultQuery2 = mysqli_query($link, $query2);
 
@@ -43,7 +43,7 @@ function checkEditMode()
 
     $query3 = "SELECT * FROM tbl_rostos INNER JOIN tbl_versoes_rostos ON tbl_versoes_rostos.tbl_rostos_id_rosto = tbl_rostos.id_rosto
     INNER JOIN tbl_procedimentos ON tbl_procedimentos.id_procedimento = tbl_rostos.tbl_procedimentos_id_procedimento
-    WHERE id_procedimento = 7 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 1 AND validado_versao_rosto = 1 AND historico_versao_rosto != 1";
+    WHERE id_procedimento = 5 AND publicado_versao_rosto = 0 AND aprovado_versao_rosto = 1 AND validado_versao_rosto = 1 AND historico_versao_rosto != 1";
 
     $resultQuery3 = mysqli_query($link, $query3);
 
@@ -56,7 +56,7 @@ function checkEditMode()
     }
 
     else {
-        header('location: edicao-compras.php');
+        header('location: edicao-comevendas.php');
     }
 
 
@@ -204,7 +204,7 @@ desired effect
             </h1>
             <br>
             <div class="btn-group">
-                <a href="compras.php?edit=true">
+                <a href="comevendas.php?edit=true">
                     <button type="button" class="btn btn-info">Editar Procedimento</button>
 
                 </a>
@@ -263,7 +263,7 @@ desired effect
                 <div class="box-body" style="display: block;">
                     <?php
 
-                    $queryrosto = "SELECT * FROM tbl_procedimentos INNER JOIN tbl_rostos ON id_procedimento = tbl_procedimentos_id_procedimento INNER JOIN tbl_versoes_rostos ON id_rosto = tbl_rostos_id_rosto  WHERE tbl_versoes_rostos.publicado_versao_rosto = 1 AND id_procedimento = 7";
+                    $queryrosto = "SELECT * FROM tbl_procedimentos INNER JOIN tbl_rostos ON id_procedimento = tbl_procedimentos_id_procedimento INNER JOIN tbl_versoes_rostos ON id_rosto = tbl_rostos_id_rosto  WHERE tbl_versoes_rostos.publicado_versao_rosto = 1 AND id_procedimento = 5";
 
                     $resultrosto = mysqli_query($link, $queryrosto);
 
