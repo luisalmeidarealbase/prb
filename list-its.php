@@ -19,6 +19,7 @@ while ($rowNameProc = mysqli_fetch_object($resultQueryNameProc)){
 
 }
 
+
 ?>
 
 <!DOCTYPE html>
@@ -188,6 +189,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     while ($rowIt = mysqli_fetch_object($resultQueryIt)) {
 
+      
 
       $subprocIT = $rowIt->subprocesso_it;
 
@@ -245,20 +247,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div><!-- /.box-body -->
 
         </div>
-        <?php } ?>
+        <?php }?>
         <br>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         <!-- Your Page Content Here -->

@@ -262,7 +262,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <h3 class="box-title">Ficha de Colaborador</h3>
         </div><!-- /.box-header -->
         <div class="box-body">
-         A informação do colaborador irá surgir aqui.
+          Brevemente.
         </div><!-- /.box-body -->
 
 

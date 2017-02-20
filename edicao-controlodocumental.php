@@ -272,7 +272,7 @@ desired effect
                 </div>
                     <div class="col-md-6">
                         <!-- code to embed a pdf file -->
-                        <embed src="teste2.pdf" style="min-width: 100%;  min-height: 500px;" class="img-responsive"
+                        <embed src="fluxogramas/fluxogramacontrolodocumental.pdf" style="min-width: 100%;  min-height: 500px;" class="img-responsive"
                                type='application/pdf'>
                     </div>
                 </div><!-- /.box-body -->
